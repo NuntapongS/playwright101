@@ -24,4 +24,6 @@ test("ผู้ใช้งานกรอกข้อมูลใน Text Box �
 
   await expect(page.getByText(/Nuntapong Siripanyawong/i)).toBeVisible();
   await expect(page.getByText(/nuntapong@gmail.com/i)).toBeVisible();
+  await expect(page.getByText(/Bangkok/i)).toBeVisible();
+  await expect(page.getByText(/Phuket/i)).toBeVisible();
 });
