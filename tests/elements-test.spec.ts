@@ -49,3 +49,21 @@ test("ผู้ใช้งานกดปุ่ม radio Impressive ใน tab 
   await page.click("text=Radio Button");
   await page.check("text=Impressive");
 });
+
+test("ผู้ใช้งานกรอกข้อมูลใน tab Web Tables", async ({ page }) => {
+  await page.click("text=Elements");
+  await page.click("text=Web Tables");
+  await page.click("id=addNewRecordButton");
+  await page.getByPlaceholder("First Name").type("Nuntapong", { delay: 100 });
+  await page
+    .getByPlaceholder("Last Name")
+    .type("Siripanyawong", { delay: 100 });
+  await page
+    .getByPlaceholder("name@example.com")
+    .type("nuntapong@gmail.com", { delay: 100 });
+  await page.getByPlaceholder("Age").type("25", { delay: 100 });
+  await page.getByPlaceholder("Salary").type("10000", { delay: 100 });
+  await page.getByPlaceholder("Department").type("Developer", { delay: 100 });
+  await page.click("text=Submit");
+  await page.getByPlaceholder("Search").type("Nuntapong", { delay: 100 });
+});
