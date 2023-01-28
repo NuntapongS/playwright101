@@ -41,3 +41,11 @@ test("ผู้ใช้งานกดปุ่ม radio Yes ใน tab Radio b
   await page.click("text=Radio Button");
   await page.check("text=Yes");
 });
+
+test("ผู้ใช้งานกดปุ่ม radio Impressive ใน tab Radio button", async ({
+  page,
+}) => {
+  await page.click("text=Elements");
+  await page.click("text=Radio Button");
+  await page.check("text=Impressive");
+});
