@@ -5,7 +5,7 @@ test.beforeEach(async ({ page }) => {
   await page.goto("https://demoqa.com/");
 });
 
-test.skip("ผู้ใช้งานกรอกข้อมูลใน tab Text Box แล้่วกดปุ่ม Submit", async ({
+test("ผู้ใช้งานกรอกข้อมูลใน tab Text Box แล้่วกดปุ่ม Submit", async ({
   page,
 }) => {
   await page.click("text=Elements");
@@ -34,4 +34,10 @@ test("ผู้ใช้งานกดปุ่ม checkbox ใน tab checkbox
   await page.click("text=Elements");
   await page.click("text=Check Box");
   await page.check("text=Home");
+});
+
+test("ผู้ใช้งานกดปุ่ม radio Yes ใน tab Radio button", async ({ page }) => {
+  await page.click("text=Elements");
+  await page.click("text=Radio Button");
+  await page.check("text=Yes");
 });
