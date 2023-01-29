@@ -83,3 +83,9 @@ test("ผู้ใช้งานกดปุ่ม Right click me button ใน
   await page.click("text=Buttons");
   await page.click("text=Right click me", { button: "right" });
 });
+
+test("ผู้ใช้งานกดปุ่ม Click me button ใน tab Buttons", async ({ page }) => {
+  await page.click("text=Elements");
+  await page.click("text=Buttons");
+  await page.click("text=Click me");
+});
