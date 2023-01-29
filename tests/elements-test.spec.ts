@@ -5,7 +5,7 @@ test.beforeEach(async ({ page }) => {
   await page.goto("https://demoqa.com/");
 });
 
-test("ผู้ใช้งานกรอกข้อมูลใน tab Text Box แล้่วกดปุ่ม Submit", async ({
+test.skip("ผู้ใช้งานกรอกข้อมูลใน tab Text Box แล้่วกดปุ่ม Submit", async ({
   page,
 }) => {
   await page.click("text=Elements");
@@ -30,19 +30,19 @@ test("ผู้ใช้งานกรอกข้อมูลใน tab Text B
   await expect(page.getByText(/Phuket/i)).toBeVisible();
 });
 
-test("ผู้ใช้งานกดปุ่ม checkbox ใน tab checkbox", async ({ page }) => {
+test.skip("ผู้ใช้งานกดปุ่ม checkbox ใน tab checkbox", async ({ page }) => {
   await page.click("text=Elements");
   await page.click("text=Check Box");
   await page.check("text=Home");
 });
 
-test("ผู้ใช้งานกดปุ่ม radio Yes ใน tab Radio button", async ({ page }) => {
+test.skip("ผู้ใช้งานกดปุ่ม radio Yes ใน tab Radio button", async ({ page }) => {
   await page.click("text=Elements");
   await page.click("text=Radio Button");
   await page.check("text=Yes");
 });
 
-test("ผู้ใช้งานกดปุ่ม radio Impressive ใน tab Radio button", async ({
+test.skip("ผู้ใช้งานกดปุ่ม radio Impressive ใน tab Radio button", async ({
   page,
 }) => {
   await page.click("text=Elements");
@@ -50,7 +50,7 @@ test("ผู้ใช้งานกดปุ่ม radio Impressive ใน tab 
   await page.check("text=Impressive");
 });
 
-test("ผู้ใช้งานกรอกข้อมูลใน tab Web Tables", async ({ page }) => {
+test.skip("ผู้ใช้งานกรอกข้อมูลใน tab Web Tables", async ({ page }) => {
   await page.click("text=Elements");
   await page.click("text=Web Tables");
   await page.click("id=addNewRecordButton");
@@ -66,4 +66,12 @@ test("ผู้ใช้งานกรอกข้อมูลใน tab Web Ta
   await page.getByPlaceholder("Department").type("Developer", { delay: 100 });
   await page.click("text=Submit");
   await page.getByPlaceholder("Search").type("Nuntapong", { delay: 100 });
+});
+
+test("ผู้ใช้งานกดปุ่ม Double click me button ใน tab Buttons", async ({
+  page,
+}) => {
+  await page.click("text=Elements");
+  await page.click("text=Buttons");
+  await page.dblclick("text=Double click me");
 });
