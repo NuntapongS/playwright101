@@ -7,4 +7,5 @@ test.beforeEach(async ({ page }) => {
 test("ผู้ใช้งานกรอกข้อมูลใน tab Practice Form", async ({ page }) => {
   await page.click("text=Forms");
   await page.click("text=Practice Form");
+  await page.getByPlaceholder("First Name").type("Nuntapong", { delay: 100 });
 });
