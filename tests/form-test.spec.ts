@@ -11,4 +11,7 @@ test("ผู้ใช้งานกรอกข้อมูลใน tab Practi
   await page
     .getByPlaceholder("Last Name")
     .type("Siripanyawong", { delay: 100 });
+  await page
+    .getByPlaceholder("name@example.com")
+    .type("nuntapong@gmail.com", { delay: 100 });
 });
