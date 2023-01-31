@@ -14,4 +14,8 @@ test("ผู้ใช้งานกรอกข้อมูลใน tab Practi
   await page
     .getByPlaceholder("name@example.com")
     .type("nuntapong@gmail.com", { delay: 100 });
+  //   await page.check("input[name=gender][value=Male]");
+  await page
+    .getByPlaceholder("Mobile Number")
+    .type("0831757157", { delay: 100 });
 });
