@@ -51,4 +51,8 @@ export class DemoQaPage {
   async expectContainCurrentAddress() {
     await expect(this.page.getByText(/Bangkok/i)).toBeVisible();
   }
+
+  async expectContainPermanentAddress() {
+    await expect(this.page.getByText(/Phuket/i)).toBeVisible();
+  }
 }

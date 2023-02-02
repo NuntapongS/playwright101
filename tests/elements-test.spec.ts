@@ -20,5 +20,6 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน t
     await demoQaPage.expectContainName();
     await demoQaPage.expectContainEmail();
     await demoQaPage.expectContainCurrentAddress();
+    await demoQaPage.expectContainPermanentAddress();
   });
 });
