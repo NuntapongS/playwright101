@@ -18,4 +18,10 @@ export class DemoQaPage {
   async clickTextbox(element: string) {
     await this.page.click(element);
   }
+
+  async typeFullname(fullname: string) {
+    await this.page
+      .getByPlaceholder("Full Name")
+      .type(fullname, { delay: 100 });
+  }
 }

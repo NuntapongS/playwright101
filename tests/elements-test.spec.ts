@@ -12,5 +12,6 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน t
     await demoQaPage.expectUrl();
     await demoQaPage.clickElement("text=Elements");
     await demoQaPage.clickTextbox("text=Text Box");
+    await demoQaPage.typeFullname("Nuntapong Siripanyawong");
   });
 });
