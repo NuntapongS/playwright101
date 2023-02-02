@@ -30,4 +30,10 @@ export class DemoQaPage {
       .getByPlaceholder("name@example")
       .type(email, { delay: 100 });
   }
+
+  async typeCurrentAddress(currentAddress: string) {
+    await this.page
+      .getByPlaceholder("Current Address")
+      .type(currentAddress, { delay: 100 });
+  }
 }

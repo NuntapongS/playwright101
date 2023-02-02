@@ -1,5 +1,5 @@
 import { test } from "@playwright/test";
-import { DemoQaPage } from "../pages/demo-qa-page.spec";
+import { DemoQaPage } from "../pages/elements-qa-page.spec";
 
 // go to link https://demoqa.com/
 test.beforeEach(async ({ page }) => {
@@ -14,5 +14,6 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน t
     await demoQaPage.clickTextbox("text=Text Box");
     await demoQaPage.typeFullname("Maverick");
     await demoQaPage.typeEmail("marverick@gmail.com");
+    await demoQaPage.typeCurrentAddress("Bangkok");
   });
 });
