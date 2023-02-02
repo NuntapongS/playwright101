@@ -20,20 +20,19 @@ export class DemoQaPage {
   }
 
   async typeFullname(fullname: string) {
-    await this.page
-      .getByPlaceholder("Full Name")
-      .type(fullname, { delay: 100 });
+    await this.page.getByPlaceholder("Full Name").type(fullname);
   }
 
   async typeEmail(email: string) {
-    await this.page
-      .getByPlaceholder("name@example")
-      .type(email, { delay: 100 });
+    await this.page.getByPlaceholder("name@example").type(email);
   }
 
   async typeCurrentAddress(currentAddress: string) {
-    await this.page
-      .getByPlaceholder("Current Address")
-      .type(currentAddress, { delay: 100 });
+    await this.page.getByPlaceholder("Current Address").type(currentAddress);
+  }
+
+  async typePermanentAddress(permanentAddress: string) {
+    const address = await this.page.$("#permanentAddress.form-control");
+    await address?.type(permanentAddress);
   }
 }
