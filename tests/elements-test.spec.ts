@@ -16,5 +16,6 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน t
     await demoQaPage.typeEmail("marverick@gmail.com");
     await demoQaPage.typeCurrentAddress("Bangkok");
     await demoQaPage.typePermanentAddress("Phuket");
+    await demoQaPage.clickElement("text=Submit");
   });
 });

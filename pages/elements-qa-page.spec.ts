@@ -35,4 +35,12 @@ export class DemoQaPage {
     const address = await this.page.$("#permanentAddress.form-control");
     await address?.type(permanentAddress);
   }
+
+  async clickSubmit() {
+    await this.page.click("text=Submit");
+  }
+
+  async expectContainName() {
+    await expect(this.page.getByText(/Maverick/)).toBeVisible();
+  }
 }
