@@ -18,5 +18,6 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน t
     await demoQaPage.typePermanentAddress("Phuket");
     await demoQaPage.clickElement("text=Submit");
     await demoQaPage.expectContainName();
+    await demoQaPage.expectContainEmail();
   });
 });

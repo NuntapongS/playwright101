@@ -41,6 +41,10 @@ export class DemoQaPage {
   }
 
   async expectContainName() {
-    await expect(this.page.getByText(/Maverick/)).toBeVisible();
+    await expect(this.page.getByText(/Maverick/i)).toBeVisible();
+  }
+
+  async expectContainEmail() {
+    await expect(this.page.getByText(/marverick@gmail.com/i)).toBeVisible();
   }
 }
