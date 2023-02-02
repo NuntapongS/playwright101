@@ -24,4 +24,10 @@ export class DemoQaPage {
       .getByPlaceholder("Full Name")
       .type(fullname, { delay: 100 });
   }
+
+  async typeEmail(email: string) {
+    await this.page
+      .getByPlaceholder("name@example")
+      .type(email, { delay: 100 });
+  }
 }

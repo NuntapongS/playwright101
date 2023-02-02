@@ -12,6 +12,7 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน t
     await demoQaPage.expectUrl();
     await demoQaPage.clickElement("text=Elements");
     await demoQaPage.clickTextbox("text=Text Box");
-    await demoQaPage.typeFullname("Nuntapong Siripanyawong");
+    await demoQaPage.typeFullname("Maverick");
+    await demoQaPage.typeEmail("marverick@gmail.com");
   });
 });
