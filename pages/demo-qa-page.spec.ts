@@ -14,4 +14,8 @@ export class DemoQaPage {
   async clickElement(element: string) {
     await this.page.click(element);
   }
+
+  async clickTextbox(element: string) {
+    await this.page.click(element);
+  }
 }
