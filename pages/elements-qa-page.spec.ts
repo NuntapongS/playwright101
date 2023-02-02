@@ -47,4 +47,8 @@ export class DemoQaPage {
   async expectContainEmail() {
     await expect(this.page.getByText(/marverick@gmail.com/i)).toBeVisible();
   }
+
+  async expectContainCurrentAddress() {
+    await expect(this.page.getByText(/Bangkok/i)).toBeVisible();
+  }
 }
