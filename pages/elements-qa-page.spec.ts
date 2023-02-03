@@ -55,4 +55,8 @@ export class DemoQaPage {
   async expectContainPermanentAddress() {
     await expect(this.page.getByText(/Phuket/i)).toBeVisible();
   }
+
+  async checkbox() {
+    await this.page.click("text=Home");
+  }
 }

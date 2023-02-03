@@ -22,4 +22,11 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน t
     await demoQaPage.expectContainCurrentAddress();
     await demoQaPage.expectContainPermanentAddress();
   });
+  test("ผู้ใช้งานกด checkbox ใน tab check box", async ({ page }) => {
+    const demoQaPage = new DemoQaPage(page);
+    await demoQaPage.expectUrl();
+    await demoQaPage.clickElement("text=Elements");
+    await demoQaPage.clickTextbox("text=Check Box");
+    await demoQaPage.checkbox();
+  });
 });
