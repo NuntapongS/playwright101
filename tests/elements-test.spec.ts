@@ -36,4 +36,14 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน t
     await demoQaPage.clickTextbox("text=Radio Button");
     await demoQaPage.clickRadioButtonYes();
   });
+
+  test("ผู้ใช้งานกด radio button Impressive ใน tab Radio Button", async ({
+    page,
+  }) => {
+    const demoQaPage = new DemoQaPage(page);
+    await demoQaPage.expectUrl();
+    await demoQaPage.clickElement("text=Elements");
+    await demoQaPage.clickTextbox("text=Radio Button");
+    await demoQaPage.clickRadioButtonImpressive();
+  });
 });
