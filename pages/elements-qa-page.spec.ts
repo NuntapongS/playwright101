@@ -69,6 +69,6 @@ export class DemoQaPage {
   }
 
   async clickAddButton() {
-    await this.page.click("text=Add");
+    await this.page.click("id=addNewRecordButton");
   }
 }
