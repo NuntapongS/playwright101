@@ -59,4 +59,8 @@ export class DemoQaPage {
   async checkbox() {
     await this.page.click("text=Home");
   }
+
+  async clickRadioButtonYes() {
+    await this.page.click("text=Yes");
+  }
 }

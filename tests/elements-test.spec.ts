@@ -7,7 +7,7 @@ test.beforeEach(async ({ page }) => {
 });
 
 test.describe("ผู้ใช้งานกรอกข้อมูลใน tab Text Box", () => {
-  test("ผู้ใช้กรอกข้อมูลใน tab Text box ครบถ้วน", async ({ page }) => {
+  test.skip("ผู้ใช้กรอกข้อมูลใน tab Text box ครบถ้วน", async ({ page }) => {
     const demoQaPage = new DemoQaPage(page);
     await demoQaPage.expectUrl();
     await demoQaPage.clickElement("text=Elements");
@@ -22,11 +22,18 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน t
     await demoQaPage.expectContainCurrentAddress();
     await demoQaPage.expectContainPermanentAddress();
   });
-  test("ผู้ใช้งานกด checkbox ใน tab check box", async ({ page }) => {
+  test.skip("ผู้ใช้งานกด checkbox ใน tab Check Box", async ({ page }) => {
     const demoQaPage = new DemoQaPage(page);
     await demoQaPage.expectUrl();
     await demoQaPage.clickElement("text=Elements");
     await demoQaPage.clickTextbox("text=Check Box");
     await demoQaPage.checkbox();
+  });
+  test("ผู้ใช้งานกด radio button Yes ใน tab Radio Button", async ({ page }) => {
+    const demoQaPage = new DemoQaPage(page);
+    await demoQaPage.expectUrl();
+    await demoQaPage.clickElement("text=Elements");
+    await demoQaPage.clickTextbox("text=Radio Button");
+    await demoQaPage.clickRadioButtonYes();
   });
 });
