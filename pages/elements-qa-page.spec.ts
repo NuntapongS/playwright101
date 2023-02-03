@@ -68,7 +68,7 @@ export class DemoQaPage {
     await this.page.click("text=Impressive");
   }
 
-  async clickRadioButtonNo() {
-    await this.page.click("text=No");
+  async clickAddButton() {
+    await this.page.click("text=Add");
   }
 }

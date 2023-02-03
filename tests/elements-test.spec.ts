@@ -47,11 +47,11 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน t
     await demoQaPage.clickRadioButtonImpressive();
   });
 
-  test("ผู้ใช้งานกด radio button No ใน tab Radio Button", async ({ page }) => {
+  test("ผู้ใช้งานกดเพิ่มข้อมูลใน tab Web Tables", async ({ page }) => {
     const demoQaPage = new DemoQaPage(page);
     await demoQaPage.expectUrl();
     await demoQaPage.clickElement("text=Elements");
-    await demoQaPage.clickTextbox("text=Radio Button");
-    await demoQaPage.clickRadioButtonNo();
+    await demoQaPage.clickTextbox("text=Web Tables");
+    await demoQaPage.clickAddButton();
   });
 });
