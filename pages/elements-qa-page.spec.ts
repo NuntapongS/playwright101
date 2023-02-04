@@ -71,4 +71,8 @@ export class DemoQaPage {
   async clickAddButton() {
     await this.page.click("id=addNewRecordButton");
   }
+
+  typeFirstName(firstName: string) {
+    return this.page.getByPlaceholder("First Name").type(firstName);
+  }
 }

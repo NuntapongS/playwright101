@@ -55,5 +55,6 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน t
     await demoQaPage.clickElement("text=Elements");
     await demoQaPage.clickTextbox("text=Web Tables");
     await demoQaPage.clickAddButton();
+    await demoQaPage.typeFirstName("Topgun");
   });
 });
