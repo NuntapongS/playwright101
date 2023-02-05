@@ -83,4 +83,8 @@ export class DemoQaPage {
   typeAge(age: string) {
     return this.page.getByPlaceholder("Age").type(age);
   }
+
+  typeSalary(salary: string) {
+    return this.page.getByPlaceholder("Salary").type(salary);
+  }
 }

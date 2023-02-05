@@ -59,5 +59,6 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน t
     await demoQaPage.typeLastName("Maverick");
     await demoQaPage.typeEmail("marverick@gmail.com");
     await demoQaPage.typeAge("30");
+    await demoQaPage.typeSalary("30000");
   });
 });
