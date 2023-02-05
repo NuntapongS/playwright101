@@ -63,5 +63,6 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน t
     await demoQaPage.typeDepartment("Developer Team");
     await demoQaPage.clickSubmitButton();
     await demoQaPage.expectContainFirstName();
+    await demoQaPage.expectContainLastName();
   });
 });

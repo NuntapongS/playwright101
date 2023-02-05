@@ -99,4 +99,8 @@ export class DemoQaPage {
   async expectContainFirstName() {
     await expect(this.page.getByText(/Topgun/i)).toBeVisible();
   }
+
+  async expectContainLastName() {
+    await expect(this.page.getByText(/Maverick/i)).toBeVisible();
+  }
 }
