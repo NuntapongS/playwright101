@@ -96,7 +96,7 @@ export class DemoQaPage {
     await this.page.click("text=Submit");
   }
 
-  async expectFirstName() {
+  async expectContainFirstName() {
     await expect(this.page.getByText(/Topgun/i)).toBeVisible();
   }
 }
