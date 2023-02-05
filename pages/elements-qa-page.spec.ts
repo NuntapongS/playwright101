@@ -103,4 +103,8 @@ export class DemoQaPage {
   async expectContainLastName() {
     await expect(this.page.getByText(/Maverick/i)).toBeVisible();
   }
+
+  async expectContaiDepartment() {
+    await expect(this.page.getByText(/Develop/i)).toBeVisible();
+  }
 }
