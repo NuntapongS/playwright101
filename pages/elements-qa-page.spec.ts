@@ -79,4 +79,8 @@ export class DemoQaPage {
   typeLastName(lastName: string) {
     return this.page.getByPlaceholder("Last Name").type(lastName);
   }
+
+  typeAge(age: string) {
+    return this.page.getByPlaceholder("Age").type(age);
+  }
 }
