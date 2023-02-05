@@ -72,19 +72,19 @@ export class DemoQaPage {
     await this.page.click("id=addNewRecordButton");
   }
 
-  typeFirstName(firstName: string) {
-    return this.page.getByPlaceholder("First Name").type(firstName);
+  async typeFirstName(firstName: string) {
+    await this.page.getByPlaceholder("First Name").type(firstName);
   }
 
-  typeLastName(lastName: string) {
-    return this.page.getByPlaceholder("Last Name").type(lastName);
+  async typeLastName(lastName: string) {
+    await this.page.getByPlaceholder("Last Name").type(lastName);
   }
 
-  typeAge(age: string) {
-    return this.page.getByPlaceholder("Age").type(age);
+  async typeAge(age: string) {
+    await this.page.getByPlaceholder("Age").type(age);
   }
 
-  typeSalary(salary: string) {
-    return this.page.getByPlaceholder("Salary").type(salary);
+  async typeSalary(salary: string) {
+    await this.page.getByPlaceholder("Salary").type(salary);
   }
 }
