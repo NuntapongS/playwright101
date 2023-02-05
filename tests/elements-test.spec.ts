@@ -61,5 +61,6 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน t
     await demoQaPage.typeAge("30");
     await demoQaPage.typeSalary("30000");
     await demoQaPage.typeDepartment("Developer Team");
+    await demoQaPage.clickSubmitButton();
   });
 });

@@ -91,4 +91,12 @@ export class DemoQaPage {
   async typeDepartment(department: string) {
     await this.page.getByPlaceholder("Department").type(department);
   }
+
+  async clickSubmitButton() {
+    await this.page.click("text=Submit");
+  }
+
+  async expectFirstName() {
+    await expect(this.page.getByText(/Topgun/i)).toBeVisible();
+  }
 }
