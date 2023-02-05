@@ -87,4 +87,8 @@ export class DemoQaPage {
   async typeSalary(salary: string) {
     await this.page.getByPlaceholder("Salary").type(salary);
   }
+
+  async typeDepartment(department: string) {
+    await this.page.getByPlaceholder("Department").type(department);
+  }
 }
