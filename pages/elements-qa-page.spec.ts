@@ -107,4 +107,8 @@ export class DemoQaPage {
   async expectContaiDepartment() {
     await expect(this.page.getByText(/Develop/i)).toBeVisible();
   }
+
+  async clickDoubleButton() {
+    await this.page.dblclick("text=Double Click Me");
+  }
 }
