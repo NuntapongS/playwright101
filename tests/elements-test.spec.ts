@@ -76,5 +76,6 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน t
     await demoQaPage.doubleClick();
     await demoQaPage.expectContainDoubleClick();
     await demoQaPage.clickRightClick();
+    await demoQaPage.expectContainRightClick();
   });
 });

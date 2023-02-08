@@ -121,4 +121,10 @@ export class DemoQaPage {
   async clickRightClick() {
     await this.page.locator("text=Right Click Me").click({ button: "right" });
   }
+
+  async expectContainRightClick() {
+    await expect(
+      this.page.getByText(/You have done a right click/i)
+    ).toBeVisible();
+  }
 }
