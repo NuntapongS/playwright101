@@ -6,8 +6,8 @@ test.beforeEach(async ({ page }) => {
   await page.goto("https://demoqa.com/");
 });
 
-test.describe.skip("ผู้ใช้งานกรอกข้อมูลใน tab Text Box", () => {
-  test("ผู้ใช้กรอกข้อมูลใน tab Text box ครบถ้วน", async ({ page }) => {
+test.describe("ผู้ใช้งานกรอกข้อมูลใน tab Text Box", () => {
+  test.skip("ผู้ใช้กรอกข้อมูลใน tab Text box ครบถ้วน", async ({ page }) => {
     const demoQaPage = new DemoQaPage(page);
     await demoQaPage.expectUrl();
     await demoQaPage.clickElement("text=Elements");
@@ -67,6 +67,7 @@ test.describe.skip("ผู้ใช้งานกรอกข้อมูลใ
     await demoQaPage.expectContainEmail();
     await demoQaPage.expectContaiDepartment();
   });
+
   test("ผู้ใช้งานกด double click ปุ่ม Double Click Me", async ({ page }) => {
     const demoQaPage = new DemoQaPage(page);
     await demoQaPage.expectUrl();
@@ -74,5 +75,6 @@ test.describe.skip("ผู้ใช้งานกรอกข้อมูลใ
     await demoQaPage.clickTextbox("text=Buttons");
     await demoQaPage.doubleClick();
     await demoQaPage.expectContainDoubleClick();
+    await demoQaPage.clickRightClick();
   });
 });

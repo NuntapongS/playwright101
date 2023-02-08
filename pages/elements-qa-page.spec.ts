@@ -117,4 +117,8 @@ export class DemoQaPage {
       this.page.getByText(/You have done a double click/i)
     ).toBeVisible();
   }
+
+  async clickRightClick() {
+    await this.page.locator("text=Right Click Me").click({ button: "right" });
+  }
 }
