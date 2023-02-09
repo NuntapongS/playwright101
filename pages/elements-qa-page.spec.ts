@@ -127,4 +127,10 @@ export class DemoQaPage {
       this.page.getByText(/You have done a right click/i)
     ).toBeVisible();
   }
+
+  async expectContainLinkOpenNewTab() {
+    await expect(
+      this.page.getByText(/Following links will open new tab/)
+    ).toBeVisible();
+  }
 }

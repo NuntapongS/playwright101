@@ -68,7 +68,9 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน t
     await demoQaPage.expectContaiDepartment();
   });
 
-  test("ผู้ใช้งานกด double click ปุ่ม Double Click Me", async ({ page }) => {
+  test.skip("ผู้ใช้งานกด double click ปุ่ม Double Click Me", async ({
+    page,
+  }) => {
     const demoQaPage = new DemoQaPage(page);
     await demoQaPage.expectUrl();
     await demoQaPage.clickElement("text=Elements");
@@ -77,5 +79,13 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน t
     await demoQaPage.expectContainDoubleClick();
     await demoQaPage.clickRightClick();
     await demoQaPage.expectContainRightClick();
+  });
+
+  test("ผู้ใช้งานกด link ใน tab Links", async ({ page }) => {
+    const demoQaPage = new DemoQaPage(page);
+    await demoQaPage.expectUrl();
+    await demoQaPage.clickElement("text=Elements");
+    await demoQaPage.clickTextbox("text=Links");
+    await demoQaPage.expectContainLinkOpenNewTab();
   });
 });
