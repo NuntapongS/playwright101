@@ -137,4 +137,8 @@ export class DemoQaPage {
   async clickLinkHome() {
     await this.page.click("text=Home");
   }
+
+  expectContainLinkHome() {
+    expect(this.page.url()).toContain("demoqa.com");
+  }
 }
