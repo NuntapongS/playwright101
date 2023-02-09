@@ -133,4 +133,8 @@ export class DemoQaPage {
       this.page.getByText(/Following links will open new tab/)
     ).toBeVisible();
   }
+
+  async clickLinkHome() {
+    await this.page.click("text=Home");
+  }
 }

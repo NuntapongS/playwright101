@@ -87,5 +87,6 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน t
     await demoQaPage.clickElement("text=Elements");
     await demoQaPage.clickTextbox("text=Links");
     await demoQaPage.expectContainLinkOpenNewTab();
+    await demoQaPage.clickLinkHome();
   });
 });
