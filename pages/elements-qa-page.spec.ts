@@ -138,7 +138,13 @@ export class DemoQaPage {
     await this.page.click("text=Home");
   }
 
-  expectContainLinkHome() {
+  async expectContainLinkHome() {
     expect(this.page.url()).toContain("demoqa.com");
+  }
+
+  async expectContainLinkApiCall() {
+    await expect(
+      this.page.getByText(/Following links will send an api call/)
+    ).toBeVisible();
   }
 }
