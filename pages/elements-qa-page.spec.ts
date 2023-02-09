@@ -147,4 +147,8 @@ export class DemoQaPage {
       this.page.getByText(/Following links will send an api call/)
     ).toBeVisible();
   }
+
+  async clickCreatedLink() {
+    await this.page.click("text=Created");
+  }
 }
