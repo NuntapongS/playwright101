@@ -151,4 +151,12 @@ export class DemoQaPage {
   async clickCreatedLink() {
     await this.page.click("text=Created");
   }
+
+  async expectContainTextCratedLink() {
+    await expect(
+      this.page.getByText(
+        /Link has responded with staus 201 and status text Created/i
+      )
+    ).toBeVisible();
+  }
 }
