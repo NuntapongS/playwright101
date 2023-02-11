@@ -159,4 +159,8 @@ export class DemoQaPage {
       )
     ).toBeVisible();
   }
+
+  async clickNoContentLink() {
+    await this.page.click("text=No Content");
+  }
 }
