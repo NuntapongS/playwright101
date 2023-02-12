@@ -199,4 +199,12 @@ export class DemoQaPage {
   async clickUnauthorized() {
     await this.page.click("text=Unauthorized");
   }
+
+  async expectContainTextUnauthorized() {
+    await expect(
+      this.page.getByText(
+        /Link has responded with staus 401 and status text Unauthorized/i
+      )
+    ).toBeVisible();
+  }
 }

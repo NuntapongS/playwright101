@@ -99,5 +99,6 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน t
     await demoQaPage.clickBadRequest();
     await demoQaPage.expectContainTextBadRequest();
     await demoQaPage.clickUnauthorized();
+    await demoQaPage.expectContainTextUnauthorized();
   });
 });
