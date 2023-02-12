@@ -171,4 +171,8 @@ export class DemoQaPage {
       )
     ).toBeVisible();
   }
+
+  async clickMoved() {
+    await this.page.click("text=Moved");
+  }
 }
