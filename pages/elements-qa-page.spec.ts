@@ -163,4 +163,12 @@ export class DemoQaPage {
   async clickNoContentLink() {
     await this.page.click("text=No Content");
   }
+
+  async expectContainTextNoContent() {
+    await expect(
+      this.page.getByText(
+        /Link has responded with staus 204 and status text No Content/i
+      )
+    ).toBeVisible();
+  }
 }
