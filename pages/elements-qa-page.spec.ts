@@ -175,4 +175,12 @@ export class DemoQaPage {
   async clickMoved() {
     await this.page.click("text=Moved");
   }
+
+  async expectContainTextMoved() {
+    await expect(
+      this.page.getByText(
+        /Link has responded with staus 301 and status text Moved Permanently/i
+      )
+    ).toBeVisible();
+  }
 }
