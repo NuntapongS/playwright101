@@ -195,4 +195,8 @@ export class DemoQaPage {
       )
     ).toBeVisible();
   }
+
+  async clickUnauthorized() {
+    await this.page.click("text=Unauthorized");
+  }
 }
