@@ -183,4 +183,8 @@ export class DemoQaPage {
       )
     ).toBeVisible();
   }
+
+  async clickBadRequest() {
+    await this.page.click("text=Bad Request");
+  }
 }
