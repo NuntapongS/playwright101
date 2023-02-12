@@ -187,4 +187,12 @@ export class DemoQaPage {
   async clickBadRequest() {
     await this.page.click("text=Bad Request");
   }
+
+  async expectContainTextBadRequest() {
+    await expect(
+      this.page.getByText(
+        /Link has responded with staus 400 and status text Bad Request/i
+      )
+    ).toBeVisible();
+  }
 }
