@@ -211,4 +211,12 @@ export class DemoQaPage {
   async clickForbidden() {
     await this.page.click("text=Forbidden");
   }
+
+  async expectContainTextForbidden() {
+    await expect(
+      this.page.getByText(
+        /Link has responded with staus 403 and status text Forbidden/i
+      )
+    ).toBeVisible();
+  }
 }
