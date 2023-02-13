@@ -223,4 +223,12 @@ export class DemoQaPage {
   async clickNotFound() {
     await this.page.click("text=Not Found");
   }
+
+  async expectContainTextNotFound() {
+    await expect(
+      this.page.getByText(
+        /Link has responded with staus 404 and status text Not Found/i
+      )
+    ).toBeVisible();
+  }
 }
