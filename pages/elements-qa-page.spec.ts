@@ -207,4 +207,8 @@ export class DemoQaPage {
       )
     ).toBeVisible();
   }
+
+  async clickForbidden() {
+    await this.page.click("text=Forbidden");
+  }
 }
