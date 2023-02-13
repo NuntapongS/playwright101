@@ -219,4 +219,8 @@ export class DemoQaPage {
       )
     ).toBeVisible();
   }
+
+  async clickNotFound() {
+    await this.page.click("text=Not Found");
+  }
 }

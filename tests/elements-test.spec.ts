@@ -102,5 +102,6 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน t
     await demoQaPage.expectContainTextUnauthorized();
     await demoQaPage.clickForbidden();
     await demoQaPage.expectContainTextForbidden();
+    await demoQaPage.clickNotFound();
   });
 });
