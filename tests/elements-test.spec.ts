@@ -111,5 +111,6 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน t
     await demoQaPage.expectUrl();
     await demoQaPage.clickElement("text=Elements");
     await demoQaPage.clickTextbox("text=Broken Links - Images");
+    await demoQaPage.expectContainTextBrokenLinksImages();
   });
 });

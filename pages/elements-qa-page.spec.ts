@@ -231,4 +231,8 @@ export class DemoQaPage {
       )
     ).toBeVisible();
   }
+
+  async expectContainTextBrokenLinksImages() {
+    await expect(this.page.getByText(/Valid image/i)).toBeVisible();
+  }
 }
