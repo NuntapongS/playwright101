@@ -232,7 +232,7 @@ export class DemoQaPage {
     ).toBeVisible();
   }
 
-  async expectContainTextBrokenLinksImages() {
+  async expectContainTextValidImage() {
     await expect(this.page.getByText(/Valid image/i)).toBeVisible();
   }
 }
