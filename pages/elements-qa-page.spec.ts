@@ -235,4 +235,8 @@ export class DemoQaPage {
   async expectContainTextValidImage() {
     await expect(this.page.getByText(/Valid image/i)).toBeVisible();
   }
+
+  async expectContainTextBrokenImage() {
+    await expect(this.page.getByText(/Broken image/i)).toBeVisible();
+  }
 }
