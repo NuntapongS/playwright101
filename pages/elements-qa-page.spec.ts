@@ -239,4 +239,8 @@ export class DemoQaPage {
   async expectContainTextBrokenImage() {
     await expect(this.page.getByText(/Broken image/i)).toBeVisible();
   }
+
+  async clickValidLink() {
+    await this.page.click("text=Click Here for Valid Link");
+  }
 }
