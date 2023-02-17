@@ -119,6 +119,7 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน t
     await demoQaPage.clickElement("text=Elements");
     await demoQaPage.clickTextbox("text=Broken Links - Images");
     await demoQaPage.clickBrokenLink();
-    await demoQaPage.expectStatusTextInBrokenLink();
+    await demoQaPage.expectUrlBrokenLink();
+    await page.goto("http://the-internet.herokuapp.com/status_codes/500");
   });
 });
