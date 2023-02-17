@@ -248,7 +248,9 @@ export class DemoQaPage {
     await this.page.click("text=Click Here for Broken Link", { timeout: 9000 });
   }
 
-  async expectStatusTextInBrokenLink() {
-    await expect(this.page.getByText(/Status Codes/i)).toBeVisible();
+  async expectUrlBrokenLink() {
+    await expect(this.page).toHaveURL(
+      "http://the-internet.herokuapp.com/status_codes/500"
+    );
   }
 }
