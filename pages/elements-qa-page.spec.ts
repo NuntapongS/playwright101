@@ -245,6 +245,10 @@ export class DemoQaPage {
   }
 
   async clickBrokenLink() {
-    await this.page.click("text=Click Here for Broken Link");
+    await this.page.click("text=Click Here for Broken Link", { timeout: 9000 });
+  }
+
+  async expectStatusTextInBrokenLink() {
+    await expect(this.page.getByText(/Status Codes/i)).toBeVisible();
   }
 }
