@@ -114,5 +114,6 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน t
     await demoQaPage.expectContainTextValidImage();
     await demoQaPage.expectContainTextBrokenImage();
     await demoQaPage.clickValidLink();
+    await demoQaPage.expectContainLinkHome();
   });
 });
