@@ -243,4 +243,8 @@ export class DemoQaPage {
   async clickValidLink() {
     await this.page.click("text=Click Here for Valid Link");
   }
+
+  async clickBrokenLink() {
+    await this.page.click("text=Click Here for Broken Link");
+  }
 }
