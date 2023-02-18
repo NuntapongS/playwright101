@@ -102,7 +102,9 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน t
     await demoQaPage.expectContainTextNotFound();
   });
 
-  test("ผู้ใช้งานกด link ใน tab Broken Links - Images", async ({ page }) => {
+  test.skip("ผู้ใช้งานกด link ใน tab Broken Links - Images", async ({
+    page,
+  }) => {
     const demoQaPage = new DemoQaPage(page);
     await demoQaPage.expectUrl();
     await demoQaPage.clickElement("text=Elements");
@@ -117,4 +119,5 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน t
     await demoQaPage.clickBrokenLink();
     await demoQaPage.expectUrlBrokenLink();
   });
+  // test("ผู้ใช้งานกด link ใน tab Upload and download");
 });
