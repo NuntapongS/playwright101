@@ -129,5 +129,6 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน t
     await demoQaPage.clickElement("text=Elements");
     await demoQaPage.clickTextbox("text=Upload and Download");
     await demoQaPage.clickDownloadButton();
+    await demoQaPage.expectContainTextSelectAFile();
   });
 });

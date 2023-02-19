@@ -257,4 +257,8 @@ export class DemoQaPage {
   async clickDownloadButton() {
     await this.page.click("text=Download");
   }
+
+  async expectContainTextSelectAFile() {
+    await expect(this.page.getByText(/Select a file/i)).toBeVisible();
+  }
 }
