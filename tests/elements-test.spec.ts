@@ -119,5 +119,10 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน t
     await demoQaPage.clickBrokenLink();
     await demoQaPage.expectUrlBrokenLink();
   });
-  // test("ผู้ใช้งานกด link ใน tab Upload and download");
+  test("ผู้ใช้งานกด link ใน tab Upload and download", async ({ page }) => {
+    const demoQaPage = new DemoQaPage(page);
+    await demoQaPage.expectUrl();
+    await demoQaPage.clickElement("text=Elements");
+    await demoQaPage.clickTextbox("text=Upload and Download");
+  });
 });
