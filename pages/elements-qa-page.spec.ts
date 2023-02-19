@@ -269,4 +269,8 @@ export class DemoQaPage {
   async clickEnableButton() {
     await this.page.click("text=Will enable 5 seconds", { timeout: 10000 });
   }
+
+  async expectContainTextColorChangeButton() {
+    await expect(this.page.getByText(/Color Change/i)).toBeVisible();
+  }
 }

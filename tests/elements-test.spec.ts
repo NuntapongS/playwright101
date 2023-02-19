@@ -138,5 +138,6 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน t
     await demoQaPage.clickTextbox("text=Dynamic Properties");
     await demoQaPage.expectContaintextDynamicProperties();
     await demoQaPage.clickEnableButton();
+    await demoQaPage.expectContainTextColorChangeButton();
   });
 });
