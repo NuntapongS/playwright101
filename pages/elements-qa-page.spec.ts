@@ -261,4 +261,8 @@ export class DemoQaPage {
   async expectContainTextSelectAFile() {
     await expect(this.page.getByText(/Select a file/i)).toBeVisible();
   }
+
+  async expectContaintextDynamicProperties() {
+    await expect(this.page.getByText(/This text has random id/i)).toBeVisible();
+  }
 }
