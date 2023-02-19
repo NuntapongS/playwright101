@@ -266,6 +266,10 @@ export class DemoQaPage {
     await expect(this.page.getByText(/This text has random id/i)).toBeVisible();
   }
 
+  async expectContainTextEnableButton() {
+    await expect(this.page.getByText(/Will enable 5 seconds/i)).toBeVisible();
+  }
+
   async clickEnableButton() {
     await this.page.click("text=Will enable 5 seconds", { timeout: 10000 });
   }
