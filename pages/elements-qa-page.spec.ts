@@ -253,4 +253,8 @@ export class DemoQaPage {
       "http://the-internet.herokuapp.com/status_codes/500"
     );
   }
+
+  async clickDownloadButton() {
+    await this.page.click("text=Download");
+  }
 }
