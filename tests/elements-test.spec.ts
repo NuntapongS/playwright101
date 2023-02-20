@@ -6,7 +6,7 @@ test.beforeEach(async ({ page }) => {
   await page.goto("https://demoqa.com/");
 });
 
-test.describe("ผู้ใช้งานกรอกข้อมูลใน tab Text Box", () => {
+test.describe("ผู้ใช้งานกรอกข้อมูลใน tab Elements", () => {
   test.skip("ผู้ใช้กรอกข้อมูลใน tab Text box ครบถ้วน", async ({ page }) => {
     const demoQaPage = new DemoQaPage(page);
     await demoQaPage.expectUrl();
