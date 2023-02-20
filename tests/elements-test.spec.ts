@@ -131,7 +131,7 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน t
     await demoQaPage.clickDownloadButton();
     await demoQaPage.expectContainTextSelectAFile();
   });
-  test("xxx", async ({ page }) => {
+  test("ผู้ใช้งานกด link ใน tab Dynamic Properties", async ({ page }) => {
     const demoQaPage = new DemoQaPage(page);
     await demoQaPage.expectUrl();
     await demoQaPage.clickElement("text=Elements");
