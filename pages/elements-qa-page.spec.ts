@@ -11,6 +11,10 @@ export class DemoQaPage {
     await expect(this.page).toHaveURL("https://demoqa.com/");
   }
 
+  async expectContainTextElements() {
+    await expect(this.page.getByText(/Elements/i)).toBeVisible();
+  }
+
   async clickElement(element: string) {
     await this.page.click(element);
   }

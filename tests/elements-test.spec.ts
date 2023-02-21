@@ -10,6 +10,7 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน t
   test("ผู้ใช้กรอกข้อมูลใน tab Text box ครบถ้วน", async ({ page }) => {
     const demoQaPage = new DemoQaPage(page);
     await demoQaPage.expectUrl();
+    await demoQaPage.expectContainTextElements();
     await demoQaPage.clickElement("text=Elements");
     await demoQaPage.clickTextbox("text=Text Box");
     await demoQaPage.typeFullname("Maverick");
@@ -25,6 +26,7 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน t
   test("ผู้ใช้งานกด checkbox ใน tab Check Box", async ({ page }) => {
     const demoQaPage = new DemoQaPage(page);
     await demoQaPage.expectUrl();
+    await demoQaPage.expectContainTextElements();
     await demoQaPage.clickElement("text=Elements");
     await demoQaPage.clickTextbox("text=Check Box");
     await demoQaPage.checkbox();
@@ -32,6 +34,7 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน t
   test("ผู้ใช้งานกด radio button Yes ใน tab Radio Button", async ({ page }) => {
     const demoQaPage = new DemoQaPage(page);
     await demoQaPage.expectUrl();
+    await demoQaPage.expectContainTextElements();
     await demoQaPage.clickElement("text=Elements");
     await demoQaPage.clickTextbox("text=Radio Button");
     await demoQaPage.clickRadioButtonYes();
@@ -42,6 +45,7 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน t
   }) => {
     const demoQaPage = new DemoQaPage(page);
     await demoQaPage.expectUrl();
+    await demoQaPage.expectContainTextElements();
     await demoQaPage.clickElement("text=Elements");
     await demoQaPage.clickTextbox("text=Radio Button");
     await demoQaPage.clickRadioButtonImpressive();
@@ -50,6 +54,7 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน t
   test("ผู้ใช้งานกดเพิ่มข้อมูลใน tab Web Tables", async ({ page }) => {
     const demoQaPage = new DemoQaPage(page);
     await demoQaPage.expectUrl();
+    await demoQaPage.expectContainTextElements();
     await demoQaPage.clickElement("text=Elements");
     await demoQaPage.clickTextbox("text=Web Tables");
     await demoQaPage.clickAddButton();
@@ -69,6 +74,7 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน t
   test("ผู้ใช้งานกด double click ปุ่ม Double Click Me", async ({ page }) => {
     const demoQaPage = new DemoQaPage(page);
     await demoQaPage.expectUrl();
+    await demoQaPage.expectContainTextElements();
     await demoQaPage.clickElement("text=Elements");
     await demoQaPage.clickTextbox("text=Buttons");
     await demoQaPage.doubleClick();
@@ -80,6 +86,7 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน t
   test("ผู้ใช้งานกด link ใน tab Links", async ({ page }) => {
     const demoQaPage = new DemoQaPage(page);
     await demoQaPage.expectUrl();
+    await demoQaPage.expectContainTextElements();
     await demoQaPage.clickElement("text=Elements");
     await demoQaPage.clickTextbox("text=Links");
     await demoQaPage.expectContainLinkOpenNewTab();
@@ -105,6 +112,7 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน t
   test("ผู้ใช้งานกด link ใน tab Broken Links - Images", async ({ page }) => {
     const demoQaPage = new DemoQaPage(page);
     await demoQaPage.expectUrl();
+    await demoQaPage.expectContainTextElements();
     await demoQaPage.clickElement("text=Elements");
     await demoQaPage.clickTextbox("text=Broken Links - Images");
     await demoQaPage.expectContainTextValidImage();
@@ -120,6 +128,7 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน t
   test("ผู้ใช้งานกด link ใน tab Upload and download", async ({ page }) => {
     const demoQaPage = new DemoQaPage(page);
     await demoQaPage.expectUrl();
+    await demoQaPage.expectContainTextElements();
     await demoQaPage.clickElement("text=Elements");
     await demoQaPage.clickTextbox("text=Upload and Download");
     await demoQaPage.clickDownloadButton();
@@ -128,6 +137,7 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน t
   test("ผู้ใช้งานกด link ใน tab Dynamic Properties", async ({ page }) => {
     const demoQaPage = new DemoQaPage(page);
     await demoQaPage.expectUrl();
+    await demoQaPage.expectContainTextElements();
     await demoQaPage.clickElement("text=Elements");
     await demoQaPage.clickTextbox("text=Dynamic Properties");
     await demoQaPage.expectContaintextDynamicProperties();
