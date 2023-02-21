@@ -14,4 +14,8 @@ export class DemoQaPageForms {
   async expectContainTextForms() {
     await expect(this.page.getByText(/Forms/i)).toBeVisible();
   }
+
+  async clickForms(forms: string) {
+    await this.page.click(forms);
+  }
 }
