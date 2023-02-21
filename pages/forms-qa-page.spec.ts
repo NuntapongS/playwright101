@@ -10,4 +10,8 @@ export class DemoQaPageForms {
   async expectDemoqaUrl() {
     await expect(this.page).toHaveURL("https://demoqa.com/");
   }
+
+  async expectContainTextForms() {
+    await expect(this.page.getByText(/Forms/i)).toBeVisible();
+  }
 }

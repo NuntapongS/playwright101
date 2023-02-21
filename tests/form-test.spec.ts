@@ -10,5 +10,6 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน T
   test("ผู้ใช้งานกรอกข้อมูลใน tab Practice Form", async ({ page }) => {
     const demoQaPageForms = new DemoQaPageForms(page);
     await demoQaPageForms.expectDemoqaUrl();
+    await demoQaPageForms.expectContainTextForms();
   });
 });
