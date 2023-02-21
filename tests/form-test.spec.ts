@@ -8,6 +8,7 @@ test.beforeEach(async ({ page }) => {
 
 describe("ผู้ใช้งานกรอกข้อมูลใน Tab Forms ครบถ้วน", () => {
   test("ผู้ใช้งานกรอกข้อมูลใน tab Practice Form", async ({ page }) => {
-    const demoqa = new DemoQaPage(page);
+    const demoqaPage = new DemoQaPage(page);
+    demoqaPage.expectUrl();
   });
 });
