@@ -17,5 +17,6 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน T
     await demoQaPageForms.expectStudentRegistrationForm();
     await demoQaPageForms.expectName();
     await demoQaPageForms.typeFirstName("Topgun");
+    await demoQaPageForms.typeLastName("Maverick");
   });
 });

@@ -34,5 +34,9 @@ export class DemoQaPageForms {
   async typeFirstName(firstName: string) {
     await this.page.getByPlaceholder("First Name").type("Topgun");
   }
+
+  async typeLastName(lastName: string) {
+    await this.page.getByPlaceholder("Last Name").type("Maverick");
+  }
   
 }
