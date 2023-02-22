@@ -38,5 +38,9 @@ export class DemoQaPageForms {
   async typeLastName(lastName: string) {
     await this.page.getByPlaceholder("Last Name").type("Maverick");
   }
+
+  async expectEmail() {
+    await expect(this.page.getByText(/Email/i)).toBeVisible();
+  }
   
 }
