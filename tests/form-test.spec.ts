@@ -12,5 +12,6 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน T
     await demoQaPageForms.expectDemoqaUrl();
     await demoQaPageForms.expectContainTextForms();
     await demoQaPageForms.clickForms("text=Forms");
+    await demoQaPageForms.expectPracticeForm();
   });
 });
