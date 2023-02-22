@@ -30,5 +30,9 @@ export class DemoQaPageForms {
   async expectName() {
     await expect(this.page.getByText(/Name/i)).toBeVisible();
   }
+
+  async typeFirstName(firstName: string) {
+    await this.page.getByPlaceholder("First Name").type("Topgun");
+  }
   
 }
