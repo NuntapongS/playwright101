@@ -15,11 +15,12 @@ export class DemoQaPageForms {
     await expect(this.page.getByText(/Forms/i)).toBeVisible();
   }
 
-  async clickForms(forms: string) {
-    await this.page.click(forms);
-  }
-
   async expectPracticeForm() {
     await expect(this.page.getByText(/Practice Form/i)).toBeVisible();
   }
+
+  async clickForms(forms: string) {
+    await this.page.click(forms);
+  }
+  
 }
