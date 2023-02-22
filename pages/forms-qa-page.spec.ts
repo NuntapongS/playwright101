@@ -22,5 +22,9 @@ export class DemoQaPageForms {
   async clickForms(forms: string) {
     await this.page.click(forms);
   }
+
+  async expectStudentRegistrationForm() {
+    await expect(this.page.getByText(/Student Registration Form/i)).toBeVisible();
+  }
   
 }
