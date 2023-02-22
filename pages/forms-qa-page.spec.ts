@@ -26,5 +26,9 @@ export class DemoQaPageForms {
   async expectStudentRegistrationForm() {
     await expect(this.page.getByText(/Student Registration Form/i)).toBeVisible();
   }
+
+  async expectName() {
+    await expect(this.page.getByText(/Name/i)).toBeVisible();
+  }
   
 }
