@@ -32,11 +32,11 @@ export class DemoQaPageForms {
   }
 
   async typeFirstName(firstName: string) {
-    await this.page.getByPlaceholder("First Name").type("Topgun");
+    await this.page.getByPlaceholder("First Name").type(firstName);
   }
 
   async typeLastName(lastName: string) {
-    await this.page.getByPlaceholder("Last Name").type("Maverick");
+    await this.page.getByPlaceholder("Last Name").type(lastName);
   }
 
   async expectEmail() {
