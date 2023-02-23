@@ -43,4 +43,7 @@ export class DemoQaPageForms {
     await expect(this.page.getByText(/Email/i)).toBeVisible();
   }
   
+  async typeEmail(email: string) {
+    await this.page.getByPlaceholder("name@exmaple.com").type(email);
+  }
 }
