@@ -21,5 +21,6 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน T
     await demoQaPageForms.expectEmail();
     await demoQaPageForms.typeEmail("marverick@gmail.com")
     await demoQaPageForms.expectGender();
+    await demoQaPageForms.checkGender();
   });
 });

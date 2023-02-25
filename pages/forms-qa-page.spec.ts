@@ -50,4 +50,8 @@ export class DemoQaPageForms {
   async expectGender() {
     await expect(this.page.getByText(/Gender/i)).toBeVisible();
   }
+
+  async checkGender() {
+    await this.page.check("text=Male")
+  }
 }
