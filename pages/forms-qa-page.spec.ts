@@ -44,7 +44,7 @@ export class DemoQaPageForms {
   }
   
   async typeEmail(email: string) {
-    await this.page.getByPlaceholder("name@exmaple.com").type(email);
+    await this.page.getByPlaceholder("name@example").type(email);
   }
 
   async expectGender() {
@@ -52,6 +52,6 @@ export class DemoQaPageForms {
   }
 
   async checkGender() {
-    await this.page.check("text=Male")
+    await this.page.click("input#gender-radio-1", {force: true});
   }
 }
