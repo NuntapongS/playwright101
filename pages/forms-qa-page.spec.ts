@@ -54,4 +54,8 @@ export class DemoQaPageForms {
   async checkGender() {
     await this.page.click("input#gender-radio-1", {force: true});
   }
+
+  async expectMobileNumber() {
+    await expect(this.page.getByText(/Mobile/i)).toBeVisible();
+  }
 }
