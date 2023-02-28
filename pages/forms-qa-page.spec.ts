@@ -58,4 +58,8 @@ export class DemoQaPageForms {
   async expectMobileNumber() {
     await expect(this.page.getByText(/Mobile/i)).toBeVisible();
   }
+
+  async typeMobileNumber(mobileNumber: string) {
+    await this.page.getByPlaceholder("Mobile Number").type(mobileNumber);
+  }
 }
