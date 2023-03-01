@@ -79,4 +79,8 @@ export class DemoQaPageForms {
     const subjectsInput = await this.page.$("input#subjectsInput");
     await subjectsInput?.type(subjects);
   }
+
+  async expectHobbies() {
+    await expect(this.page.getByText(/Hobbies/i)).toBeVisible();
+  }
 }
