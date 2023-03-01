@@ -87,4 +87,8 @@ export class DemoQaPageForms {
   async checkSportsHobbies() {
     await this.page.click("input#hobbies-checkbox-1", {force: true});
   }
+
+  async checkReadingHobbies() {
+    await this.page.click("input#hobbies-checkbox-2", {force: true});
+  }
 }

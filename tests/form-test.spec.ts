@@ -30,6 +30,7 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน T
     await demoQaPageForms.typeSubjects("Developer");
     await demoQaPageForms.expectHobbies();
     await demoQaPageForms.checkSportsHobbies();
+    await demoQaPageForms.checkReadingHobbies();
     
   });
 });
