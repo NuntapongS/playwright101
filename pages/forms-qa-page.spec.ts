@@ -66,4 +66,8 @@ export class DemoQaPageForms {
   async expectDateOfBirth() {
     await expect(this.page.getByText(/Date of Birth/i)).toBeVisible();
   }
+
+  async clickDateOfBirth() {
+    await this.page.click("input#dateOfBirthInput");
+  }
 }
