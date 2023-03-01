@@ -62,4 +62,8 @@ export class DemoQaPageForms {
   async typeMobileNumber(mobileNumber: string) {
     await this.page.getByPlaceholder("Mobile Number").type(mobileNumber);
   }
+
+  async expectDateOfBirth() {
+    await expect(this.page.getByText(/Date of Birth/i)).toBeVisible();
+  }
 }

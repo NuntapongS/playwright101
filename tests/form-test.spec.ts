@@ -24,5 +24,6 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน T
     await demoQaPageForms.checkGender();
     await demoQaPageForms.expectMobileNumber();
     await demoQaPageForms.typeMobileNumber("0812345678");
+    await demoQaPageForms.expectDateOfBirth();
   });
 });
