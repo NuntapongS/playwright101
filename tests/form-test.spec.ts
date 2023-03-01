@@ -27,5 +27,6 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน T
     await demoQaPageForms.expectDateOfBirth();
     await demoQaPageForms.clickDateOfBirth();
     await demoQaPageForms.expectSubjects();
+    await demoQaPageForms.typeSubjects("Developer");
   });
 });
