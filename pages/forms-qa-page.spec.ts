@@ -83,4 +83,8 @@ export class DemoQaPageForms {
   async expectHobbies() {
     await expect(this.page.getByText(/Hobbies/i)).toBeVisible();
   }
+
+  async checkSportsHobbies() {
+    await this.page.click("input#hobbies-checkbox-1", {force: true});
+  }
 }

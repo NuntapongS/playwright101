@@ -29,5 +29,6 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน T
     await demoQaPageForms.expectSubjects();
     await demoQaPageForms.typeSubjects("Developer");
     await demoQaPageForms.expectHobbies();
+    await demoQaPageForms.checkSportsHobbies();
   });
 });
