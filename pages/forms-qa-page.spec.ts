@@ -116,4 +116,8 @@ export class DemoQaPageForms {
   async typeCurrentAddress(currentAddress: string) {
     await this.page.getByPlaceholder("Current Address").type(currentAddress);
   }
+
+  async expectStateAndCity() {
+    await expect(this.page.getByText(/State and City/i)).toBeVisible();
+  }
 }
