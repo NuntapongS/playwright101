@@ -108,4 +108,8 @@ export class DemoQaPageForms {
   async clickChooseFile() {
     await this.page.setInputFiles("input[type='file']", '/Users/nuntapongsiripanyawong/workspace/learning/playwright101/images/click-PNG-free-PNG-Images_82736.html');
   }
+
+  async expectCurrentAddress() {
+    await expect(this.page.getByText(/Current Address/i)).toBeVisible();
+  }
 }
