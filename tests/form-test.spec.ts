@@ -33,6 +33,6 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน T
     await demoQaPageForms.checkReadingHobbies();
     await demoQaPageForms.checkMusicHobbies();
     await demoQaPageForms.expectPicture();
-    await demoQaPageForms.expectSelectPicture();
+    await demoQaPageForms.expectSelectPicture(); 
   });
 });

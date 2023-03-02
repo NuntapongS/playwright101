@@ -69,6 +69,7 @@ export class DemoQaPageForms {
 
   async clickDateOfBirth() {
     await this.page.click("input#dateOfBirthInput");
+    await this.page.click("text=10");
   }
 
   async expectSubjects() {
