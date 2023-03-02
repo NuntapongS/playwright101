@@ -95,4 +95,8 @@ export class DemoQaPageForms {
   async checkMusicHobbies() {
     await this.page.click("input#hobbies-checkbox-3", {force: true});
   }
+
+  async expectPicture() {
+    await expect(this.page.locator('text=Picture').first()).toBeVisible();
+  }
 }
