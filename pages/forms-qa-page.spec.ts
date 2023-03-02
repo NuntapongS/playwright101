@@ -112,4 +112,8 @@ export class DemoQaPageForms {
   async expectCurrentAddress() {
     await expect(this.page.getByText(/Current Address/i)).toBeVisible();
   }
+
+  async typeCurrentAddress(currentAddress: string) {
+    await this.page.getByPlaceholder("Current Address").type(currentAddress);
+  }
 }

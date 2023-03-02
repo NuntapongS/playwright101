@@ -36,5 +36,6 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน T
     await demoQaPageForms.expectSelectPicture(); 
     await demoQaPageForms.clickChooseFile();
     await demoQaPageForms.expectCurrentAddress();
+    await demoQaPageForms.typeCurrentAddress("Bangkok");
   });
 });
