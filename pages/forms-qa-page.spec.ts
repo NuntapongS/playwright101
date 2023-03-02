@@ -69,7 +69,7 @@ export class DemoQaPageForms {
 
   async clickDateOfBirth() {
     await this.page.click("input#dateOfBirthInput");
-    await this.page.click("text=10");
+    await this.page.locator("text=10").last().click();
   }
 
   async expectSubjects() {
