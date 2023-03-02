@@ -99,4 +99,8 @@ export class DemoQaPageForms {
   async expectPicture() {
     await expect(this.page.locator('text=Picture').first()).toBeVisible();
   }
+
+  async expectSelectPicture() {
+    await expect(this.page.getByText(/Select Picture/i)).toBeVisible();
+  }
 }
