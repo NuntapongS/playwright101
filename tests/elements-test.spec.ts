@@ -133,6 +133,7 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน t
     await demoQaPage.clickTextbox("text=Upload and Download");
     await demoQaPage.clickDownloadButton();
     await demoQaPage.expectContainTextSelectAFile();
+    await demoQaPage.chooseFile();
   });
   test("ผู้ใช้งานกด link ใน tab Dynamic Properties", async ({ page }) => {
     const demoQaPage = new DemoQaPage(page);

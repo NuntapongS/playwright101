@@ -265,6 +265,10 @@ export class DemoQaPage {
   async expectContainTextSelectAFile() {
     await expect(this.page.getByText(/Select a file/i)).toBeVisible();
   }
+  
+  async chooseFile() {
+    await this.page.setInputFiles("input[type=file]", "/Users/nuntapongsiripanyawong/workspace/learning/playwright101/images/click-PNG-free-PNG-Images_82736.html");
+  }
 
   async expectContaintextDynamicProperties() {
     await expect(this.page.getByText(/This text has random id/i)).toBeVisible();
