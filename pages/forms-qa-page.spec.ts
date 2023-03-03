@@ -120,4 +120,8 @@ export class DemoQaPageForms {
   async expectStateAndCity() {
     await expect(this.page.getByText(/State and City/i)).toBeVisible();
   }
+
+  async enterSubmit() {
+    await this.page.press("body", "Enter");
+  }
 }
