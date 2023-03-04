@@ -14,4 +14,8 @@ export class DemoQaPageAlertFrameAndWindows {
   async expectTextAlertFrameAndWindows() {
     await expect(this.page.getByText(/Alerts, Frame & Windows/i)).toBeVisible();
   }
+
+  async clickAlertFrameAndWindows(alertFrameAndWindows: string) {
+    await this.page.click(alertFrameAndWindows);
+  }
 }
