@@ -22,4 +22,8 @@ export class DemoQaPageAlertFrameAndWindows {
   async clickBrowserWindows(browserWindows: string) {
     await this.page.click(browserWindows);
   }
+
+  async clickNewTab(newTab: string) {
+    await this.page.click(newTab);
+  }
 }
