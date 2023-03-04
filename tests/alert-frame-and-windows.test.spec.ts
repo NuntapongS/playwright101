@@ -1,6 +1,6 @@
 import { DemoQaPage } from "../pages/elements-qa-page.spec";
 import { test } from "@playwright/test";
-import { DemoQaPageAlertFrameAndWindows } from "../pages/alert-frame-and-windows";
+import { DemoQaPageAlertFrameAndWindows } from "../pages/alert-frame-and-windows.spec";
 
 // go to link https://demoqa.com/
 test.beforeEach(async ({ page }) => {
@@ -11,5 +11,6 @@ test.describe("ผู้ใช้งานกดปุ่มต่างๆใ�
   test("ผู้งานกดปุ่มใน tab browser windows", async ({ page }) => {
     const demoQaPage = new DemoQaPageAlertFrameAndWindows(page);
     await demoQaPage.expectUrl();
+    await demoQaPage.expectTextAlertFrameAndWindows();
   });
 });

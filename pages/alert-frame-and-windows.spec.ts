@@ -8,5 +8,10 @@ export class DemoQaPageAlertFrameAndWindows {
   }
 
   async expectUrl() {
-    await expect(this.page).toHaveURL("https://demoqa.com/");  }
+    await expect(this.page).toHaveURL("https://demoqa.com/");
+  }
+
+  async expectTextAlertFrameAndWindows() {
+    await expect(this.page.getByText(/Alerts, Frame & Windows/i)).toBeVisible();
+  }
 }
