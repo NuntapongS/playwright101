@@ -13,5 +13,6 @@ test.describe("ผู้ใช้งานกดปุ่มต่างๆใ�
     await demoQaPage.expectUrl();
     await demoQaPage.expectTextAlertFrameAndWindows();
     await demoQaPage.clickAlertFrameAndWindows("text=Alerts, Frame & Windows");
+    await demoQaPage.clickBrowserWindows("text=Browser Windows");
   });
 });

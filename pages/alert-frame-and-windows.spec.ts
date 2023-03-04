@@ -18,4 +18,8 @@ export class DemoQaPageAlertFrameAndWindows {
   async clickAlertFrameAndWindows(alertFrameAndWindows: string) {
     await this.page.click(alertFrameAndWindows);
   }
+
+  async clickBrowserWindows(browserWindows: string) {
+    await this.page.click(browserWindows);
+  }
 }
