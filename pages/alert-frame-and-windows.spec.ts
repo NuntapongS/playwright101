@@ -28,16 +28,8 @@ export class DemoQaPageAlertFrameAndWindows {
   }
 
   async gotoNewTabFromNewTabButton() {
-    await this.page.waitForTimeout(1000);
-    const pages = await this.page.context().pages();
-    const newPage = pages[pages.length - 1];
-    await newPage.waitForTimeout(1000);
-    await newPage.goto("https://demoqa.com/sample");
-    await newPage.waitForTimeout(1000);
-    await newPage.close();
+    const newTab = await this.page.waitForEvent("popup");
+    await newTab.goto("https://demoqa.com/sample");
+    await newTab.close();
   }
-
-  // async gotoModalNewWindows() {
-
-  // }
 }
