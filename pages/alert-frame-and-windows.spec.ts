@@ -36,4 +36,8 @@ export class DemoQaPageAlertFrameAndWindows {
     await newPage.waitForTimeout(1000);
     await newPage.close();
   }
+
+  // async gotoModalNewWindows() {
+
+  // }
 }
