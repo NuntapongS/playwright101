@@ -57,4 +57,10 @@ export class DemoQaPageAlertFrameAndWindows {
   async clickButtonToSeeAlert(clickMe: string) {
     await this.page.locator(clickMe).first().click();
   }
+
+  async expectButtonAlertWillAppearAfterFiveSecond() {
+    await expect(
+      this.page.getByText(/On button click, alert will appear after 5 seconds/i)
+    ).toBeVisible();
+  }
 }
