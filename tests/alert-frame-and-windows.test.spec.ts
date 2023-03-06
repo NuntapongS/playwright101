@@ -32,5 +32,6 @@ test.describe("ผู้ใช้งานกดปุ่มต่างๆใ�
       "text=Click Me"
     );
     await demoQaPage.expectButtonAlertWithOkCancel();
+    await demoQaPage.clickButtonConfirmBoxWillAppear("text=Click Me");
   });
 });

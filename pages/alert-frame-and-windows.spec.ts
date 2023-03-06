@@ -73,4 +73,8 @@ export class DemoQaPageAlertFrameAndWindows {
       this.page.getByText(/On button click, confirm box will appear/i)
     ).toBeVisible();
   }
+
+  async clickButtonConfirmBoxWillAppear(clickMe: string) {
+    await this.page.locator(clickMe).nth(2).click();
+  }
 }
