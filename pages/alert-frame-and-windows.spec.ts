@@ -32,4 +32,11 @@ export class DemoQaPageAlertFrameAndWindows {
     await newTab.goto("https://demoqa.com/sample");
     await newTab.close();
   }
+
+  async gotoModalNewWindows() {
+    await this.page.click("text=New Window");
+    const newWindow = await this.page.waitForEvent("popup");
+    await newWindow.goto("https://demoqa.com/sample");
+    await newWindow.close();
+  }
 }
