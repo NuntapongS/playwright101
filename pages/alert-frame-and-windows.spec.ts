@@ -77,4 +77,10 @@ export class DemoQaPageAlertFrameAndWindows {
   async clickButtonConfirmBoxWillAppear(clickMe: string) {
     await this.page.locator(clickMe).nth(2).click();
   }
+
+  async expectTextPromptBox() {
+    await expect(
+      this.page.getByText(/On button click, prompt box will appear/i)
+    ).toBeVisible();
+  }
 }
