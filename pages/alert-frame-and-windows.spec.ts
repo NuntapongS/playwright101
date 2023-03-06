@@ -43,4 +43,8 @@ export class DemoQaPageAlertFrameAndWindows {
   async clickNewTabNewWindowMessage(newTabNewWindowMessage: string) {
     await this.page.click(newTabNewWindowMessage);
   }
+
+  async clickAlerts(alerts: string) {
+    await this.page.locator(alerts).last().click();
+  }
 }

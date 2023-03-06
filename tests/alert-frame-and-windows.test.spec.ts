@@ -19,4 +19,11 @@ test.describe("ผู้ใช้งานกดปุ่มต่างๆใ�
     await demoQaPage.gotoModalNewWindows();
     await demoQaPage.clickNewTabNewWindowMessage("text=New Window Message");
   });
+  test("xxxx", async ({ page }) => {
+    const demoQaPage = new DemoQaPageAlertFrameAndWindows(page);
+    await demoQaPage.expectUrl();
+    await demoQaPage.expectTextAlertFrameAndWindows();
+    await demoQaPage.clickAlertFrameAndWindows("text=Alerts, Frame & Windows");
+    await demoQaPage.clickAlerts("text=Alerts");
+  });
 });
