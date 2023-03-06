@@ -26,5 +26,6 @@ test.describe("ผู้ใช้งานกดปุ่มต่างๆใ�
     await demoQaPage.clickAlertFrameAndWindows("text=Alerts, Frame & Windows");
     await demoQaPage.clickAlerts("text=Alerts");
     await demoQaPage.expectButtonAlert();
+    await demoQaPage.clickButtonToSeeAlert("text=Click Me");
   });
 });
