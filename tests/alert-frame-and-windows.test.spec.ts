@@ -8,7 +8,7 @@ test.beforeEach(async ({ page }) => {
 });
 
 test.describe("ผู้ใช้งานกดปุ่มต่างๆใน step alert frame and windows", () => {
-  test.skip("ผู้งานกดปุ่มใน tab browser windows", async ({ page }) => {
+  test("ผู้งานกดปุ่มใน tab browser windows", async ({ page }) => {
     const demoQaPage = new DemoQaPageAlertFrameAndWindows(page);
     await demoQaPage.expectUrl();
     await demoQaPage.expectTextAlertFrameAndWindows();
@@ -34,5 +34,6 @@ test.describe("ผู้ใช้งานกดปุ่มต่างๆใ�
     await demoQaPage.expectButtonAlertWithOkCancel();
     await demoQaPage.clickButtonConfirmBoxWillAppear("text=Click Me");
     await demoQaPage.expectTextPromptBox();
+    await demoQaPage.clickButtonPromptBox("text=Click Me");
   });
 });

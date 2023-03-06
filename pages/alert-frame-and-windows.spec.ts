@@ -83,4 +83,8 @@ export class DemoQaPageAlertFrameAndWindows {
       this.page.getByText(/On button click, prompt box will appear/i)
     ).toBeVisible();
   }
+
+  async clickButtonPromptBox(clickMe: string) {
+    await this.page.locator(clickMe).nth(3).click();
+  }
 }
