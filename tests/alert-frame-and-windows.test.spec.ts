@@ -17,5 +17,6 @@ test.describe("ผู้ใช้งานกดปุ่มต่างๆใ�
     await demoQaPage.clickNewTab("text=New Tab");
     await demoQaPage.gotoNewTabFromNewTabButton();
     await demoQaPage.gotoModalNewWindows();
+    await demoQaPage.clickNewTabNewWindowMessage("text=New Window Message");
   });
 });

@@ -39,4 +39,8 @@ export class DemoQaPageAlertFrameAndWindows {
     await newWindow.goto("https://demoqa.com/sample");
     await newWindow.close();
   }
+
+  async clickNewTabNewWindowMessage(newTabNewWindowMessage: string) {
+    await this.page.click(newTabNewWindowMessage);
+  }
 }
