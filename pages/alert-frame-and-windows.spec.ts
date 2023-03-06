@@ -47,4 +47,10 @@ export class DemoQaPageAlertFrameAndWindows {
   async clickAlerts(alerts: string) {
     await this.page.locator(alerts).last().click();
   }
+
+  async expectButtonAlert() {
+    await expect(
+      this.page.getByText(/Click Button to see alert/i)
+    ).toBeVisible();
+  }
 }
