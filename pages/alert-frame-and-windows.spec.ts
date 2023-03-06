@@ -67,4 +67,10 @@ export class DemoQaPageAlertFrameAndWindows {
   async clickButtonToSeeAlertWillAppearAfterFiveSecond(clickMe: string) {
     await this.page.locator(clickMe).nth(1).click();
   }
+
+  async expectButtonAlertWithOkCancel() {
+    await expect(
+      this.page.getByText(/On button click, confirm box will appear/i)
+    ).toBeVisible();
+  }
 }
