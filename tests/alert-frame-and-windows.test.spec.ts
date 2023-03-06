@@ -28,5 +28,8 @@ test.describe("ผู้ใช้งานกดปุ่มต่างๆใ�
     await demoQaPage.expectButtonAlert();
     await demoQaPage.clickButtonToSeeAlert("text=Click Me");
     await demoQaPage.expectButtonAlertWillAppearAfterFiveSecond();
+    await demoQaPage.clickButtonToSeeAlertWillAppearAfterFiveSecond(
+      "text=Click Me"
+    );
   });
 });
