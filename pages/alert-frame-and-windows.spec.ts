@@ -103,4 +103,12 @@ export class DemoQaPageAlertFrameAndWindows {
   async clickNestedFrames(nestedFrames: string) {
     await this.page.click(nestedFrames);
   }
+
+  async expectTextInTabNestedFrames() {
+    await expect(
+      this.page.getByText(
+        /Sample Nested Iframe page. There are nested iframes in this page. Use browser inspecter or firebug to check out the HTML source. In total you can switch between the parent frame and the nested child frame./i
+      )
+    ).toBeVisible();
+  }
 }
