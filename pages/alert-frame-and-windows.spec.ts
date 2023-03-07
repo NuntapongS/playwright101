@@ -115,4 +115,10 @@ export class DemoQaPageAlertFrameAndWindows {
   async clickModalDialogs(modalDialogs: string) {
     await this.page.click(modalDialogs);
   }
+
+  async expectContainTextInTabModalDialogs() {
+    await expect(
+      this.page.getByText(/Click on button to see modal/i)
+    ).toBeVisible();
+  }
 }
