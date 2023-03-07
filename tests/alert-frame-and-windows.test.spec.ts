@@ -52,4 +52,11 @@ test.describe("ผู้ใช้งานกดปุ่มต่างๆใ�
     await demoQaPage.clickNestedFrames("text=Nested Frames");
     await demoQaPage.expectTextInTabNestedFrames();
   });
+  test("ผู้ใช้งานเห็นข้อความใน tab modal dialogs", async ({ page }) => {
+    const demoQaPage = new DemoQaPageAlertFrameAndWindows(page);
+    await demoQaPage.expectUrl();
+    await demoQaPage.expectTextAlertFrameAndWindows();
+    await demoQaPage.clickAlertFrameAndWindows("text=Alerts, Frame & Windows");
+    await demoQaPage.clickModalDialogs("text=Modal Dialogs");
+  });
 });

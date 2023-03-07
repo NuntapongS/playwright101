@@ -111,4 +111,8 @@ export class DemoQaPageAlertFrameAndWindows {
       )
     ).toBeVisible();
   }
+
+  async clickModalDialogs(modalDialogs: string) {
+    await this.page.click(modalDialogs);
+  }
 }
