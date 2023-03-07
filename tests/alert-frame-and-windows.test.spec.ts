@@ -59,5 +59,6 @@ test.describe("ผู้ใช้งานกดปุ่มต่างๆใ�
     await demoQaPage.clickAlertFrameAndWindows("text=Alerts, Frame & Windows");
     await demoQaPage.clickModalDialogs("text=Modal Dialogs");
     await demoQaPage.expectContainTextInTabModalDialogs();
+    await demoQaPage.clickSmallModal("text=Small modal");
   });
 });

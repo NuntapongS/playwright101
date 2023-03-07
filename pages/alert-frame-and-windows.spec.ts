@@ -121,4 +121,8 @@ export class DemoQaPageAlertFrameAndWindows {
       this.page.getByText(/Click on button to see modal/i)
     ).toBeVisible();
   }
+
+  async clickSmallModal(smallModal: string) {
+    await this.page.click(smallModal);
+  }
 }
