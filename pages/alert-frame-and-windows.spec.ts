@@ -143,4 +143,8 @@ export class DemoQaPageAlertFrameAndWindows {
   async expectContainTextInModalLargeModal() {
     await expect(this.page.getByText(/Large Modal/i).last()).toBeVisible();
   }
+
+  async clickCloseLargeModal(close: string) {
+    await this.page.locator(close).last().click();
+  }
 }
