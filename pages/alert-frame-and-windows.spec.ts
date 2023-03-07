@@ -131,4 +131,8 @@ export class DemoQaPageAlertFrameAndWindows {
       this.page.getByText(/This is a small modal. It has very less content/i)
     ).toBeVisible();
   }
+
+  async clickCloseSmallModal(close: string) {
+    await this.page.locator(close).last().click();
+  }
 }
