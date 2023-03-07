@@ -87,4 +87,8 @@ export class DemoQaPageAlertFrameAndWindows {
   async clickButtonPromptBox(clickMe: string) {
     await this.page.locator(clickMe).nth(3).click();
   }
+
+  async clickFrames(frames: string) {
+    await this.page.click(frames);
+  }
 }

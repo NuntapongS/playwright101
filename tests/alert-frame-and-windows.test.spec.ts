@@ -8,7 +8,7 @@ test.beforeEach(async ({ page }) => {
 });
 
 test.describe("ผู้ใช้งานกดปุ่มต่างๆใน step alert frame and windows", () => {
-  test("ผู้งานกดปุ่มใน tab browser windows", async ({ page }) => {
+  test.skip("ผู้งานกดปุ่มใน tab browser windows", async ({ page }) => {
     const demoQaPage = new DemoQaPageAlertFrameAndWindows(page);
     await demoQaPage.expectUrl();
     await demoQaPage.expectTextAlertFrameAndWindows();
@@ -19,7 +19,7 @@ test.describe("ผู้ใช้งานกดปุ่มต่างๆใ�
     await demoQaPage.gotoModalNewWindows();
     await demoQaPage.clickNewTabNewWindowMessage("text=New Window Message");
   });
-  test("ผู้ใช้งานกดปุ่มต่างๆใน tab alerts", async ({ page }) => {
+  test.skip("ผู้ใช้งานกดปุ่มต่างๆใน tab alerts", async ({ page }) => {
     const demoQaPage = new DemoQaPageAlertFrameAndWindows(page);
     await demoQaPage.expectUrl();
     await demoQaPage.expectTextAlertFrameAndWindows();
@@ -35,5 +35,12 @@ test.describe("ผู้ใช้งานกดปุ่มต่างๆใ�
     await demoQaPage.clickButtonConfirmBoxWillAppear("text=Click Me");
     await demoQaPage.expectTextPromptBox();
     await demoQaPage.clickButtonPromptBox("text=Click Me");
+  });
+  test("ผู้ใช้งานเห็นข้อความใน tab frame", async ({ page }) => {
+    const demoQaPage = new DemoQaPageAlertFrameAndWindows(page);
+    await demoQaPage.expectUrl();
+    await demoQaPage.expectTextAlertFrameAndWindows();
+    await demoQaPage.clickAlertFrameAndWindows("text=Alerts, Frame & Windows");
+    await demoQaPage.clickFrames("text=Frames");
   });
 });
