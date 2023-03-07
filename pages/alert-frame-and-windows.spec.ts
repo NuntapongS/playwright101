@@ -125,4 +125,10 @@ export class DemoQaPageAlertFrameAndWindows {
   async clickSmallModal(smallModal: string) {
     await this.page.click(smallModal);
   }
+
+  async expectContainTextInTabSmallModal() {
+    await expect(
+      this.page.getByText(/This is a small modal. It has very less content/i)
+    ).toBeVisible();
+  }
 }
