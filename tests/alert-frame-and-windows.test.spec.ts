@@ -42,5 +42,6 @@ test.describe("ผู้ใช้งานกดปุ่มต่างๆใ�
     await demoQaPage.expectTextAlertFrameAndWindows();
     await demoQaPage.clickAlertFrameAndWindows("text=Alerts, Frame & Windows");
     await demoQaPage.clickFrames("text=Frames");
+    await demoQaPage.expectTextInTabFrames();
   });
 });

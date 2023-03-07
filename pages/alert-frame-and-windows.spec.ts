@@ -91,4 +91,12 @@ export class DemoQaPageAlertFrameAndWindows {
   async clickFrames(frames: string) {
     await this.page.click(frames);
   }
+
+  async expectTextInTabFrames() {
+    await expect(
+      this.page.getByText(
+        /Sample Iframe page There are 2 Iframes in this page. Use browser inspecter or firebug to check out the HTML source. In total you can switch between the parent frame, which is this window, and the two frames below/i
+      )
+    ).toBeVisible();
+  }
 }
