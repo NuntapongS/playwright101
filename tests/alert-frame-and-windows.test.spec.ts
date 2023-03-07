@@ -62,5 +62,6 @@ test.describe("ผู้ใช้งานกดปุ่มต่างๆใ�
     await demoQaPage.clickSmallModal("text=Small modal");
     await demoQaPage.expectContainTextInTabSmallModal();
     await demoQaPage.clickCloseSmallModal("text=Close");
+    await demoQaPage.clickLargeModal("text=Large modal");
   });
 });
