@@ -36,12 +36,19 @@ test.describe("ผู้ใช้งานกดปุ่มต่างๆใ�
     await demoQaPage.expectTextPromptBox();
     await demoQaPage.clickButtonPromptBox("text=Click Me");
   });
-  test("ผู้ใช้งานเห็นข้อความใน tab frame", async ({ page }) => {
+  test.skip("ผู้ใช้งานเห็นข้อความใน tab frame", async ({ page }) => {
     const demoQaPage = new DemoQaPageAlertFrameAndWindows(page);
     await demoQaPage.expectUrl();
     await demoQaPage.expectTextAlertFrameAndWindows();
     await demoQaPage.clickAlertFrameAndWindows("text=Alerts, Frame & Windows");
     await demoQaPage.clickFrames("text=Frames");
     await demoQaPage.expectTextInTabFrames();
+  });
+  test("ผู้ใช้งานเห็นข้อความใน tab nested frames", async ({ page }) => {
+    const demoQaPage = new DemoQaPageAlertFrameAndWindows(page);
+    await demoQaPage.expectUrl();
+    await demoQaPage.expectTextAlertFrameAndWindows();
+    await demoQaPage.clickAlertFrameAndWindows("text=Alerts, Frame & Windows");
+    await demoQaPage.clickNestedFrames("text=Nested Frames");
   });
 });

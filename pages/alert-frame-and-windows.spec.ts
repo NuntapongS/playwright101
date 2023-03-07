@@ -99,4 +99,8 @@ export class DemoQaPageAlertFrameAndWindows {
       )
     ).toBeVisible();
   }
+
+  async clickNestedFrames(nestedFrames: string) {
+    await this.page.click(nestedFrames);
+  }
 }
