@@ -10,5 +10,6 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน s
   test("ผู้ใช้งานเห็นข้อความใน tab accordian", async ({ page }) => {
     const demoQaPage = new DemoQaPageWidgets(page);
     await demoQaPage.expectDemoqaPageUrl();
+    await demoQaPage.expectContainTextWidgets();
   });
 });
