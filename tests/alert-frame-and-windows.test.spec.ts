@@ -1,6 +1,6 @@
 import { DemoQaPage } from "../pages/elements-qa-page.spec";
 import { test } from "@playwright/test";
-import { DemoQaPageAlertFrameAndWindows } from "../pages/alert-frame-and-windows.spec";
+import { DemoQaPageAlertFrameAndWindows } from "../pages/alert-frame-and-windows-qa-page.spec";
 
 // go to link https://demoqa.com/
 test.beforeEach(async ({ page }) => {
