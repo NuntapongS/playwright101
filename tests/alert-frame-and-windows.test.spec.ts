@@ -66,4 +66,11 @@ test.describe("ผู้ใช้งานกดปุ่มต่างๆใ�
     await demoQaPage.expectContainTextInModalLargeModal();
     await demoQaPage.clickCloseLargeModal("text=Close");
   });
+  test("ผู้ใช้งานเห็นข้อความใน tab widgets", async ({ page }) => {
+    const demoQaPage = new DemoQaPageAlertFrameAndWindows(page);
+    await demoQaPage.expectUrl();
+    await demoQaPage.expectTextAlertFrameAndWindows();
+    await demoQaPage.clickAlertFrameAndWindows("text=Alerts, Frame & Windows");
+    await demoQaPage.clickWidgets("text=Widgets");
+  });
 });

@@ -147,4 +147,8 @@ export class DemoQaPageAlertFrameAndWindows {
   async clickCloseLargeModal(close: string) {
     await this.page.locator(close).last().click();
   }
+
+  async clickWidgets(widgets: string) {
+    await this.page.click(widgets);
+  }
 }
