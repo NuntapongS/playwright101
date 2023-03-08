@@ -13,4 +13,8 @@ export class DemoQaPageWidgets {
   async expectContainTextWidgets() {
     await expect(this.page.getByText(/Widgets/i)).toBeVisible();
   }
+
+  async clickWidgets(selector: string) {
+    await this.page.click(selector);
+  }
 }

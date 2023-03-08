@@ -11,5 +11,6 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน s
     const demoQaPage = new DemoQaPageWidgets(page);
     await demoQaPage.expectDemoqaPageUrl();
     await demoQaPage.expectContainTextWidgets();
+    await demoQaPage.clickWidgets("text=Widgets");
   });
 });
