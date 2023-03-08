@@ -1,5 +1,5 @@
 import { Page } from "@playwright/test";
-export class DemoPageWidgets {
+export class DemoQaPageWidgets {
   readonly page: Page;
 
   constructor(page: Page) {
