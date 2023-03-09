@@ -43,4 +43,8 @@ export class DemoQaPageWidgets {
       this.page.getByText(/Where does it come from?/i)
     ).toBeVisible();
   }
+
+  async clickWhereDoesItComeFrom(selector: string) {
+    await this.page.click(selector);
+  }
 }
