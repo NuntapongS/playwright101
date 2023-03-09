@@ -63,4 +63,8 @@ export class DemoQaPageWidgets {
       )
     ).toBeVisible();
   }
+
+  async expectContainTextWhyDoWeUseIt() {
+    await expect(this.page.getByText(/Why do we use it?/i)).toBeVisible();
+  }
 }
