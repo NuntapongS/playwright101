@@ -30,6 +30,14 @@ export class DemoQaPageWidgets {
     await expect(this.page.getByText(/What is Lorem Ipsum?/i)).toBeVisible();
   }
 
+  async clickWhatIsLoremIpsum(selector: string) {
+    await this.page.click(selector);
+  }
+
+  async clickWhatIsLoremIpsumAgain(selector: string) {
+    await this.page.click(selector);
+  }
+
   async expectTextInFieldWhatIsLoremIpsum() {
     await expect(
       this.page.getByText(

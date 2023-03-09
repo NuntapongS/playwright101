@@ -15,6 +15,8 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน s
     await demoQaPage.expectContainTextAccordian();
     await demoQaPage.clickAccordian("text=Accordian");
     await demoQaPage.expectContainTextWhatIsLoremIpsum();
+    await demoQaPage.clickWhatIsLoremIpsum("text=What is Lorem Ipsum?");
+    await demoQaPage.clickWhatIsLoremIpsumAgain("text=What is Lorem Ipsum?");
     await demoQaPage.expectTextInFieldWhatIsLoremIpsum();
     await demoQaPage.expectContainTextWhereDoesItComeFrom();
     await demoQaPage.clickWhereDoesItComeFrom("text=Where does it come from?");
