@@ -55,4 +55,12 @@ export class DemoQaPageWidgets {
   async clickWhereDoesItComeFrom(selector: string) {
     await this.page.click(selector);
   }
+
+  async expectTextFieldWhereDoesItComeFrom() {
+    await expect(
+      this.page.getByText(
+        /Contrary to popular belief, Lorem Ipsum is not simply random text./i
+      )
+    ).toBeVisible();
+  }
 }

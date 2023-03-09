@@ -20,5 +20,6 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน s
     await demoQaPage.expectTextInFieldWhatIsLoremIpsum();
     await demoQaPage.expectContainTextWhereDoesItComeFrom();
     await demoQaPage.clickWhereDoesItComeFrom("text=Where does it come from?");
+    await demoQaPage.expectContainTextWhereDoesItComeFrom();
   });
 });
