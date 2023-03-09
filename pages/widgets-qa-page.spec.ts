@@ -25,4 +25,8 @@ export class DemoQaPageWidgets {
   async clickAccordian(selector: string) {
     await this.page.click(selector);
   }
+
+  async expectContainTextWhatIsLoremIpsum() {
+    await expect(this.page.getByText(/What is Lorem Ipsum?/i)).toBeVisible();
+  }
 }
