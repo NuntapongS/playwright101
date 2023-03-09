@@ -67,4 +67,8 @@ export class DemoQaPageWidgets {
   async expectContainTextWhyDoWeUseIt() {
     await expect(this.page.getByText(/Why do we use it?/i)).toBeVisible();
   }
+
+  async clickWhyDoWeUseIt(selector: string) {
+    await this.page.click(selector);
+  }
 }

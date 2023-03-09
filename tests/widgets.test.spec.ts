@@ -22,5 +22,6 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน s
     await demoQaPage.clickWhereDoesItComeFrom("text=Where does it come from?");
     await demoQaPage.expectTextFieldWhereDoesItComeFrom();
     await demoQaPage.expectContainTextWhyDoWeUseIt();
+    await demoQaPage.clickWhyDoWeUseIt("text=Why do we use it?");
   });
 });
