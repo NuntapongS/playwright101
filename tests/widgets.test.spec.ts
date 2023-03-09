@@ -13,5 +13,6 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน s
     await demoQaPage.expectContainTextWidgets();
     await demoQaPage.clickWidgets("text=Widgets");
     await demoQaPage.expectContainTextAccordian();
+    await demoQaPage.clickAccordian("text=Accordian");
   });
 });
