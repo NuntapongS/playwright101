@@ -29,4 +29,12 @@ export class DemoQaPageWidgets {
   async expectContainTextWhatIsLoremIpsum() {
     await expect(this.page.getByText(/What is Lorem Ipsum?/i)).toBeVisible();
   }
+
+  async expectTextInFieldWhatIsLoremIpsum() {
+    await expect(
+      this.page.getByText(
+        /Lorem Ipsum is simply dummy text of the printing and typesetting industry./i
+      )
+    ).toBeVisible();
+  }
 }
