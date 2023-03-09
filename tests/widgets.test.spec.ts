@@ -16,5 +16,6 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน s
     await demoQaPage.clickAccordian("text=Accordian");
     await demoQaPage.expectContainTextWhatIsLoremIpsum();
     await demoQaPage.expectTextInFieldWhatIsLoremIpsum();
+    await demoQaPage.expectContainTextWhereDoesItComeFrom();
   });
 });

@@ -37,4 +37,10 @@ export class DemoQaPageWidgets {
       )
     ).toBeVisible();
   }
+
+  async expectContainTextWhereDoesItComeFrom() {
+    await expect(
+      this.page.getByText(/Where does it come from?/i)
+    ).toBeVisible();
+  }
 }
