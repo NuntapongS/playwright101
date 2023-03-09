@@ -17,4 +17,8 @@ export class DemoQaPageWidgets {
   async clickWidgets(selector: string) {
     await this.page.click(selector);
   }
+
+  async expectContainTextAccordian() {
+    await expect(this.page.getByText(/Accordian/i)).toBeVisible();
+  }
 }
