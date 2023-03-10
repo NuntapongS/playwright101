@@ -98,4 +98,8 @@ export class DemoQaPageWidgets {
     const subjectsInput = await this.page.$("#autoCompleteMultipleInput");
     await subjectsInput?.type(selector);
   }
+
+  async expectContainTextTypeSingleColorName() {
+    await expect(this.page.getByText(/Type single color name/i)).toBeVisible();
+  }
 }
