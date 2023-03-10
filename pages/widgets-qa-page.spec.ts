@@ -93,4 +93,9 @@ export class DemoQaPageWidgets {
       this.page.getByText(/Type multiple color names/i)
     ).toBeVisible();
   }
+
+  async typeColorInField(selector: string) {
+    const subjectsInput = await this.page.$("#autoCompleteMultipleInput");
+    await subjectsInput?.type(selector);
+  }
 }

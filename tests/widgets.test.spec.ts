@@ -33,5 +33,6 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน s
     await demoQaPage.expectContainTextAutoComplete();
     await demoQaPage.clickAutoComplete("text=Auto Complete");
     await demoQaPage.expectContainTextTypeMultipleColorNames();
+    await demoQaPage.typeColorInField("Red, Green");
   });
 });
