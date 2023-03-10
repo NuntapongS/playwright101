@@ -83,4 +83,8 @@ export class DemoQaPageWidgets {
   async expectContainTextAutoComplete() {
     await expect(this.page.getByText(/Auto Complete/i)).toBeVisible();
   }
+
+  async clickAutoComplete(selector: string) {
+    await this.page.click(selector);
+  }
 }
