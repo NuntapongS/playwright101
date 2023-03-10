@@ -87,4 +87,10 @@ export class DemoQaPageWidgets {
   async clickAutoComplete(selector: string) {
     await this.page.click(selector);
   }
+
+  async expectContainTextTypeMultipleColorNames() {
+    await expect(
+      this.page.getByText(/Type multiple color names/i)
+    ).toBeVisible();
+  }
 }
