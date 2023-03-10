@@ -102,4 +102,9 @@ export class DemoQaPageWidgets {
   async expectContainTextTypeSingleColorName() {
     await expect(this.page.getByText(/Type single color name/i)).toBeVisible();
   }
+
+  async typeColorInFieldSingleColorName(selector: string) {
+    const subjectsInput = await this.page.$("#autoCompleteSingleInput");
+    await subjectsInput?.type(selector);
+  }
 }
