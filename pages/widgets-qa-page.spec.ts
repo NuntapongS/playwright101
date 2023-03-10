@@ -79,4 +79,8 @@ export class DemoQaPageWidgets {
       )
     ).toBeVisible();
   }
+
+  async expectContainTextAutoComplete() {
+    await expect(this.page.getByText(/Auto Complete/i)).toBeVisible();
+  }
 }
