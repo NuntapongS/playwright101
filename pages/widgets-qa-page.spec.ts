@@ -128,4 +128,10 @@ export class DemoQaPageWidgets {
   async expectContainTextSelectDateAndTime() {
     await expect(this.page.getByText(/Date And Time/i)).toBeVisible();
   }
+
+  async clickSelectDateAndTime() {
+    await this.page.click("#dateAndTimePickerInput");
+    await this.page.locator("text=31").last().click();
+    await this.page.locator("text=22:00").last().click();
+  }
 }

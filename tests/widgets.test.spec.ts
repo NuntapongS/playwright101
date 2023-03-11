@@ -47,5 +47,6 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน s
     await demoQaPage.expectContainTextSelectDate();
     await demoQaPage.clickSelectDate();
     await demoQaPage.expectContainTextSelectDateAndTime();
+    await demoQaPage.clickSelectDateAndTime();
   });
 });
