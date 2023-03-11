@@ -142,4 +142,10 @@ export class DemoQaPageWidgets {
   async clickSlider(selector: string) {
     await this.page.click(selector);
   }
+
+  async handleSlider() {
+    const slider = await this.page.$("#slider");
+    await slider?.hover();
+    await slider?.click({ position: { x: 100, y: 0 } });
+  }
 }

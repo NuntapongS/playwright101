@@ -56,5 +56,6 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน s
     await demoQaPage.clickWidgets("text=Widgets");
     await demoQaPage.expectContainTextSlider();
     await demoQaPage.clickSlider("text=Slider");
+    await demoQaPage.handleSlider();
   });
 });
