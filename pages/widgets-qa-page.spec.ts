@@ -138,4 +138,8 @@ export class DemoQaPageWidgets {
   async expectContainTextSlider() {
     await expect(this.page.getByText(/Slider/i)).toBeVisible();
   }
+
+  async clickSlider(selector: string) {
+    await this.page.click(selector);
+  }
 }
