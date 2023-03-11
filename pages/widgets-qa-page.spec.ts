@@ -115,4 +115,8 @@ export class DemoQaPageWidgets {
   async clickDatePicker(selector: string) {
     await this.page.click(selector);
   }
+
+  async expectContainTextSelectDate() {
+    await expect(this.page.getByText(/Select Date/i)).toBeVisible();
+  }
 }
