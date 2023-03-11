@@ -134,4 +134,8 @@ export class DemoQaPageWidgets {
     await this.page.locator("text=31").last().click();
     await this.page.locator("text=22:00").last().click();
   }
+
+  async expectContainTextSlider() {
+    await expect(this.page.getByText(/Slider/i)).toBeVisible();
+  }
 }
