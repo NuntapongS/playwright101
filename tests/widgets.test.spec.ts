@@ -45,5 +45,6 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน s
     await demoQaPage.expectContainTextDatePicker();
     await demoQaPage.clickDatePicker("text=Date Picker");
     await demoQaPage.expectContainTextSelectDate();
+    await demoQaPage.clickSelectDate();
   });
 });
