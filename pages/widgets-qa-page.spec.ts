@@ -124,4 +124,8 @@ export class DemoQaPageWidgets {
     await this.page.click("#datePickerMonthYearInput");
     await this.page.locator("text=31").last().click();
   }
+
+  async expectContainTextSelectDateAndTime() {
+    await expect(this.page.getByText(/Date And Time/i)).toBeVisible();
+  }
 }
