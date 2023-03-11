@@ -107,4 +107,8 @@ export class DemoQaPageWidgets {
     const subjectsInput = await this.page.$("#autoCompleteSingleInput");
     await subjectsInput?.type(selector);
   }
+
+  async expectContainTextDatePicker() {
+    await expect(this.page.getByText(/Date Picker/i)).toBeVisible();
+  }
 }
