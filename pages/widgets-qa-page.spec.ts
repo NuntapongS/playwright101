@@ -181,4 +181,10 @@ export class DemoQaPageWidgets {
   async clickTabs(selector: string) {
     await this.page.click(selector);
   }
+
+  async expectContainTextinTabs() {
+    await expect(
+      this.page.getByText(/Details about Lorem Ipsum/i)
+    ).toBeVisible();
+  }
 }
