@@ -164,4 +164,9 @@ export class DemoQaPageWidgets {
   async clickStart() {
     await this.page.click("#startStopButton");
   }
+
+  async expectContainTextReset() {
+    await this.page.waitForTimeout(8000);
+    await expect(this.page.getByText(/Reset/i)).toBeVisible();
+  }
 }

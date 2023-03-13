@@ -67,5 +67,6 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน s
     await demoQaPage.clickProgressBar("text=Progress Bar");
     await demoQaPage.expectContainTextStart();
     await demoQaPage.clickStart();
+    await demoQaPage.expectContainTextReset();
   });
 });
