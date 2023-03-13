@@ -58,4 +58,11 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน s
     await demoQaPage.clickSlider("text=Slider");
     await demoQaPage.handleSlider();
   });
+  test("ผู้ใช้งานเห็นข้อความใน tab progress bar", async ({ page }) => {
+    const demoQaPage = new DemoQaPageWidgets(page);
+    await demoQaPage.expectDemoqaPageUrl();
+    await demoQaPage.expectContainTextWidgets();
+    await demoQaPage.clickWidgets("text=Widgets");
+    await demoQaPage.expectContainTextProgressBar();
+  });
 });

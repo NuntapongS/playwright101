@@ -148,4 +148,8 @@ export class DemoQaPageWidgets {
     await slider?.hover();
     await slider?.click({ position: { x: 100, y: 0 } });
   }
+
+  async expectContainTextProgressBar() {
+    await expect(this.page.getByText(/Progress Bar/i)).toBeVisible();
+  }
 }
