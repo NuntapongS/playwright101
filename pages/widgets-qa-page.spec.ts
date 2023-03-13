@@ -160,4 +160,8 @@ export class DemoQaPageWidgets {
   async expectContainTextStart() {
     await expect(this.page.getByText(/Start/i)).toBeVisible();
   }
+
+  async clickStart() {
+    await this.page.click("#startStopButton");
+  }
 }
