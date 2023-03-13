@@ -173,4 +173,8 @@ export class DemoQaPageWidgets {
   async clickReset() {
     await this.page.click("#resetButton");
   }
+
+  async expectContainTextTabs() {
+    await expect(this.page.getByText(/Tabs/i)).toBeVisible();
+  }
 }

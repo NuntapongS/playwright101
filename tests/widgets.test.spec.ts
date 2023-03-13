@@ -70,4 +70,11 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน s
     await demoQaPage.expectContainTextReset();
     await demoQaPage.clickReset();
   });
+  test("ผู้ใช้งานเห็นข้อความใน tab tabs", async ({ page }) => {
+    const demoQaPage = new DemoQaPageWidgets(page);
+    await demoQaPage.expectDemoqaPageUrl();
+    await demoQaPage.expectContainTextWidgets();
+    await demoQaPage.clickWidgets("text=Widgets");
+    await demoQaPage.expectContainTextTabs();
+  });
 });
