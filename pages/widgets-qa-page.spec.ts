@@ -156,4 +156,8 @@ export class DemoQaPageWidgets {
   async clickProgressBar(selector: string) {
     await this.page.click(selector);
   }
+
+  async expectContainTextStart() {
+    await expect(this.page.getByText(/Start/i)).toBeVisible();
+  }
 }
