@@ -177,4 +177,8 @@ export class DemoQaPageWidgets {
   async expectContainTextTabs() {
     await expect(this.page.getByText(/Tabs/i)).toBeVisible();
   }
+
+  async clickTabs(selector: string) {
+    await this.page.click(selector);
+  }
 }
