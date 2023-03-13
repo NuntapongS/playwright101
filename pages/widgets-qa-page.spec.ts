@@ -166,7 +166,11 @@ export class DemoQaPageWidgets {
   }
 
   async expectContainTextReset() {
-    await this.page.waitForTimeout(8000);
+    await this.page.waitForTimeout(9000);
     await expect(this.page.getByText(/Reset/i)).toBeVisible();
+  }
+
+  async clickReset() {
+    await this.page.click("#resetButton");
   }
 }

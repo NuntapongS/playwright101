@@ -68,5 +68,6 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน s
     await demoQaPage.expectContainTextStart();
     await demoQaPage.clickStart();
     await demoQaPage.expectContainTextReset();
+    await demoQaPage.clickReset();
   });
 });
