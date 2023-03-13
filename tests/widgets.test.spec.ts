@@ -64,5 +64,6 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน s
     await demoQaPage.expectContainTextWidgets();
     await demoQaPage.clickWidgets("text=Widgets");
     await demoQaPage.expectContainTextProgressBar();
+    await demoQaPage.clickProgressBar("text=Progress Bar");
   });
 });
