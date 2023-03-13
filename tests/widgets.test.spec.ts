@@ -77,7 +77,8 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน s
     await demoQaPage.clickWidgets("text=Widgets");
     await demoQaPage.expectContainTextTabs();
     await demoQaPage.clickTabs("text=Tabs");
-    await demoQaPage.expectContainTextinTabs();
+    await demoQaPage.expectContainTextInTabs();
     await demoQaPage.expectHeaderWhat();
+    await demoQaPage.expectTextInFieldWhat();
   });
 });
