@@ -187,4 +187,8 @@ export class DemoQaPageWidgets {
       this.page.getByText(/Details about Lorem Ipsum/i)
     ).toBeVisible();
   }
+
+  async expectHeaderWhat() {
+    await expect(this.page.getByText(/What/i)).toBeVisible();
+  }
 }

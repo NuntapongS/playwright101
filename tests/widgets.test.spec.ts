@@ -78,5 +78,6 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน s
     await demoQaPage.expectContainTextTabs();
     await demoQaPage.clickTabs("text=Tabs");
     await demoQaPage.expectContainTextinTabs();
+    await demoQaPage.expectHeaderWhat();
   });
 });
