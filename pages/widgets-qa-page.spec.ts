@@ -219,4 +219,8 @@ export class DemoQaPageWidgets {
   async expectHeaderUse() {
     await expect(this.page.getByRole("tab", { name: "Use" })).toBeVisible();
   }
+
+  async clickHeaderUse(selector: string) {
+    await this.page.locator(selector).nth(1).click();
+  }
 }
