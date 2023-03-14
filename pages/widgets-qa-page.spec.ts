@@ -235,4 +235,8 @@ export class DemoQaPageWidgets {
   async expectHeaderMore() {
     await expect(this.page.getByRole("tab", { name: "More" })).toBeVisible();
   }
+
+  async expectContainTextToolTips() {
+    await expect(this.page.getByText(/Tool Tips/i)).toBeVisible();
+  }
 }

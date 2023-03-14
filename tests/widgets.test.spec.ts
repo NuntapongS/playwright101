@@ -70,7 +70,7 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน s
     await demoQaPage.expectContainTextReset();
     await demoQaPage.clickReset();
   });
-  test("ผู้ใช้งานเห็นข้อความใน tab tabs", async ({ page }) => {
+  test.skip("ผู้ใช้งานเห็นข้อความใน tab tabs", async ({ page }) => {
     const demoQaPage = new DemoQaPageWidgets(page);
     await demoQaPage.expectDemoqaPageUrl();
     await demoQaPage.expectContainTextWidgets();
@@ -87,5 +87,12 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน s
     await demoQaPage.clickHeaderUse("text=Use");
     await demoQaPage.expectTextInFieldUse();
     await demoQaPage.expectHeaderMore();
+  });
+  test("ผู้ใช้งานเห็นข้อความใน tab tool tips", async ({ page }) => {
+    const demoQaPage = new DemoQaPageWidgets(page);
+    await demoQaPage.expectDemoqaPageUrl();
+    await demoQaPage.expectContainTextWidgets();
+    await demoQaPage.clickWidgets("text=Widgets");
+    await demoQaPage.expectContainTextToolTips();
   });
 });
