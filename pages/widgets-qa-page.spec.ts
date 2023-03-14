@@ -215,4 +215,8 @@ export class DemoQaPageWidgets {
       )
     ).toBeVisible();
   }
+
+  async expectHeaderUse() {
+    await expect(this.page.getByRole("tab", { name: "Use" })).toBeVisible();
+  }
 }
