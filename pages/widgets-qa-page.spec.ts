@@ -231,4 +231,8 @@ export class DemoQaPageWidgets {
       )
     ).toBeVisible();
   }
+
+  async expectHeaderMore() {
+    await expect(this.page.getByRole("tab", { name: "More" })).toBeVisible();
+  }
 }
