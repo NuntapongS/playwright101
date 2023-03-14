@@ -239,4 +239,8 @@ export class DemoQaPageWidgets {
   async expectContainTextToolTips() {
     await expect(this.page.getByText(/Tool Tips/i)).toBeVisible();
   }
+
+  async clickToolTips(selector: string) {
+    await this.page.click(selector);
+  }
 }
