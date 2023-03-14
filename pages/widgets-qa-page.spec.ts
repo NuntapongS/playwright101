@@ -203,4 +203,8 @@ export class DemoQaPageWidgets {
   async expectHeaderOrigin() {
     await expect(this.page.getByRole("tab", { name: "Origin" })).toBeVisible();
   }
+
+  async clickHeaderOrigin(selector: string) {
+    await this.page.click(selector);
+  }
 }
