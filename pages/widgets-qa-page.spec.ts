@@ -207,4 +207,12 @@ export class DemoQaPageWidgets {
   async clickHeaderOrigin(selector: string) {
     await this.page.click(selector);
   }
+
+  async expectTextInFieldOrigin() {
+    await expect(
+      this.page.getByText(
+        /Contrary to popular belief, Lorem Ipsum is not simply random text./i
+      )
+    ).toBeVisible();
+  }
 }

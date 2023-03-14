@@ -82,5 +82,6 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน s
     await demoQaPage.expectTextInFieldWhat();
     await demoQaPage.expectHeaderOrigin();
     await demoQaPage.clickHeaderOrigin("text=Origin");
+    await demoQaPage.expectTextInFieldOrigin();
   });
 });
