@@ -243,4 +243,8 @@ export class DemoQaPageWidgets {
   async clickToolTips(selector: string) {
     await this.page.click(selector);
   }
+
+  async expectContainTextHoverMeToSee() {
+    await expect(this.page.getByText(/Hover me to see/i)).toBeVisible();
+  }
 }
