@@ -247,4 +247,8 @@ export class DemoQaPageWidgets {
   async expectContainTextHoverMeToSee() {
     await expect(this.page.getByText(/Hover me to see/i)).toBeVisible();
   }
+
+  async hoverHoverMeToSee() {
+    await this.page.hover("#toolTipButton");
+  }
 }

@@ -96,5 +96,6 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน s
     await demoQaPage.expectContainTextToolTips();
     await demoQaPage.clickToolTips("text=Tool Tips");
     await demoQaPage.expectContainTextHoverMeToSee();
+    await demoQaPage.hoverHoverMeToSee();
   });
 });
