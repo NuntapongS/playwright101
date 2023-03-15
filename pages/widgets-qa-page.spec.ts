@@ -261,4 +261,12 @@ export class DemoQaPageWidgets {
   async hoverWhenHover() {
     await this.page.hover("#toolTipTextField");
   }
+
+  async expectTextUnderTextFieldHoverMeToSee() {
+    await expect(
+      this.page.getByText(
+        /Contrary to popular belief, Lorem Ipsum is not simply random text./i
+      )
+    ).toBeVisible();
+  }
 }
