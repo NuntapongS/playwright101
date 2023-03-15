@@ -98,5 +98,6 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน s
     await demoQaPage.expectContainTextHoverMeToSee();
     await demoQaPage.hoverHoverMeToSee();
     await demoQaPage.expectContainTextWhenHover();
+    await demoQaPage.hoverWhenHover();
   });
 });

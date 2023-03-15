@@ -257,4 +257,8 @@ export class DemoQaPageWidgets {
       this.page.getByText(/You hovered over the Button/i)
     ).toBeVisible();
   }
+
+  async hoverWhenHover() {
+    await this.page.hover("#toolTipTextField");
+  }
 }
