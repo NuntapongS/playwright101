@@ -269,4 +269,8 @@ export class DemoQaPageWidgets {
       )
     ).toBeVisible();
   }
+
+  async expectContainTextMenu() {
+    await expect(this.page.locator("text=Menu").first()).toBeVisible();
+  }
 }
