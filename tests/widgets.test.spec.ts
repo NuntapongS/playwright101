@@ -109,5 +109,6 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน s
     await demoQaPage.expectContainTextMenu();
     await demoQaPage.clickMenu("text=Menu");
     await demoQaPage.expectContainTextMainItem1();
+    await demoQaPage.hoverMainItem1("text=Main Item 1");
   });
 });

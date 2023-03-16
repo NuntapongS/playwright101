@@ -281,4 +281,8 @@ export class DemoQaPageWidgets {
   async expectContainTextMainItem1() {
     await expect(this.page.getByText(/Main Item 1/i)).toBeVisible();
   }
+
+  async hoverMainItem1(selector: string) {
+    await this.page.click(selector);
+  }
 }
