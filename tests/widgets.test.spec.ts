@@ -113,5 +113,6 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน s
     await demoQaPage.expectContainTextMainItem2();
     await demoQaPage.hoverMainItem2("text=Main Item 2");
     await demoQaPage.expectContainTextInMainItem2();
+    await demoQaPage.expectContainTextMainItem3();
   });
 });

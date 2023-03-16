@@ -300,4 +300,8 @@ export class DemoQaPageWidgets {
     await expect(this.page.getByText(/Sub Sub LIST/i)).toBeVisible();
     await this.page.hover("text=Sub Sub LIST");
   }
+
+  async expectContainTextMainItem3() {
+    await expect(this.page.getByText(/Main Item 3/i)).toBeVisible();
+  }
 }
