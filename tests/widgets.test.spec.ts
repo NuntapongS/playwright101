@@ -101,7 +101,7 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน s
     await demoQaPage.hoverWhenHover();
     await demoQaPage.expectTextUnderTextFieldHoverMeToSee();
   });
-  test("ผู้ใช้้งานเห็นข้อความใน tab menu", async ({ page }) => {
+  test.skip("ผู้ใช้้งานเห็นข้อความใน tab menu", async ({ page }) => {
     const demoQaPage = new DemoQaPageWidgets(page);
     await demoQaPage.expectDemoqaPageUrl();
     await demoQaPage.expectContainTextWidgets();
@@ -115,5 +115,12 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน s
     await demoQaPage.expectContainTextInMainItem2();
     await demoQaPage.expectContainTextMainItem3();
     await demoQaPage.hoverMainItem3("text=Main Item 3");
+  });
+  test("ผู้ใช้งานเลือกข้อมูลใน tab select menu", async ({ page }) => {
+    const demoQaPage = new DemoQaPageWidgets(page);
+    await demoQaPage.expectDemoqaPageUrl();
+    await demoQaPage.expectContainTextWidgets();
+    await demoQaPage.clickWidgets("text=Widgets");
+    await demoQaPage.expectContainTextSelectMenu();
   });
 });

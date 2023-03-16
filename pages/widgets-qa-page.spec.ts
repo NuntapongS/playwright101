@@ -308,4 +308,8 @@ export class DemoQaPageWidgets {
   async hoverMainItem3(selector: string) {
     await this.page.hover(selector);
   }
+
+  async expectContainTextSelectMenu() {
+    await expect(this.page.getByText(/Select Menu/i)).toBeVisible();
+  }
 }
