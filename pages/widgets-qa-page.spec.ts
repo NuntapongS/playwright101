@@ -273,4 +273,8 @@ export class DemoQaPageWidgets {
   async expectContainTextMenu() {
     await expect(this.page.locator("text=Menu").first()).toBeVisible();
   }
+
+  async clickMenu(selector: string) {
+    await this.page.click(selector);
+  }
 }
