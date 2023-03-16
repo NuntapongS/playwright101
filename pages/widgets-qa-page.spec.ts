@@ -293,4 +293,11 @@ export class DemoQaPageWidgets {
   async hoverMainItem2(selector: string) {
     await this.page.hover(selector);
   }
+
+  async expectContainTextInMainItem2() {
+    await expect(this.page.locator("text=Sub Item").first()).toBeVisible();
+    await expect(this.page.locator("text=Sub Item").nth(1)).toBeVisible();
+    await expect(this.page.getByText(/Sub Sub LIST/i)).toBeVisible();
+    await this.page.hover("text=Sub Sub LIST");
+  }
 }
