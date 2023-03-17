@@ -130,5 +130,6 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน s
     await demoQaPage.clickSelectTitle("text=Select Title");
     await demoQaPage.chooseTitle("text=Mr.");
     await demoQaPage.expectContainTextOldStyleSelectMenu();
+    await demoQaPage.clickForSelectColor();
   });
 });

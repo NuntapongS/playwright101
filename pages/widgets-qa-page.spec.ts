@@ -344,4 +344,8 @@ export class DemoQaPageWidgets {
   async expectContainTextOldStyleSelectMenu() {
     await expect(this.page.getByText(/Old Style Select Menu/i)).toBeVisible();
   }
+
+  async clickForSelectColor() {
+    await this.page.click("#oldSelectMenu");
+  }
 }
