@@ -126,5 +126,6 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน s
     await demoQaPage.expectContainTextSelectValue();
     await demoQaPage.clickSelectOption("text=Select Option");
     await demoQaPage.chooseGroupAndOption();
+    await demoQaPage.expectContainTextSelectOne();
   });
 });

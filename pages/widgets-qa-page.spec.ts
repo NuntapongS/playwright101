@@ -328,4 +328,8 @@ export class DemoQaPageWidgets {
   async chooseGroupAndOption() {
     await this.page.click("text=Group 1, option 2");
   }
+
+  async expectContainTextSelectOne() {
+    await expect(this.page.getByText(/Select One/i)).toBeVisible();
+  }
 }
