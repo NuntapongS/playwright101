@@ -324,4 +324,8 @@ export class DemoQaPageWidgets {
   async clickSelectOption(selector: string) {
     await this.page.click(selector);
   }
+
+  async chooseGroupAndOption() {
+    await this.page.click("text=Group 1, option 2");
+  }
 }
