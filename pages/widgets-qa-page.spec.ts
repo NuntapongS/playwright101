@@ -320,4 +320,8 @@ export class DemoQaPageWidgets {
   async expectContainTextSelectValue() {
     await expect(this.page.getByText(/Select Value/i)).toBeVisible();
   }
+
+  async clickSelectOption(selector: string) {
+    await this.page.click(selector);
+  }
 }
