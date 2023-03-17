@@ -336,4 +336,8 @@ export class DemoQaPageWidgets {
   async clickSelectTitle(titlle: string) {
     await this.page.click(titlle);
   }
+
+  async chooseTitle(title: string) {
+    await this.page.click(title);
+  }
 }

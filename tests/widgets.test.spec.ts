@@ -128,5 +128,6 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน s
     await demoQaPage.chooseGroupAndOption("text=Group 1, option 2");
     await demoQaPage.expectContainTextSelectOne();
     await demoQaPage.clickSelectTitle("text=Select Title");
+    await demoQaPage.chooseTitle("text=Mr.");
   });
 });
