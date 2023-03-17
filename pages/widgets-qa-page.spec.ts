@@ -340,4 +340,8 @@ export class DemoQaPageWidgets {
   async chooseTitle(title: string) {
     await this.page.click(title);
   }
+
+  async expectContainTextOldStyleSelectMenu() {
+    await expect(this.page.getByText(/Old Style Select Menu/i)).toBeVisible();
+  }
 }
