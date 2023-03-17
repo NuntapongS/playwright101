@@ -316,4 +316,8 @@ export class DemoQaPageWidgets {
   async clickSelectMenu(selector: string) {
     await this.page.click(selector);
   }
+
+  async expectContainTextSelectValue() {
+    await expect(this.page.getByText(/Select Value/i)).toBeVisible();
+  }
 }

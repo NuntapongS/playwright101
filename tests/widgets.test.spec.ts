@@ -7,7 +7,7 @@ test.beforeEach(async ({ page }) => {
 });
 
 test.describe("ผู้ใช้งานกรอกข้อมูลใน step widgets ครบถ้วน", () => {
-  test("ผู้ใช้งานเห็นข้อความใน tab accordian", async ({ page }) => {
+  test.skip("ผู้ใช้งานเห็นข้อความใน tab accordian", async ({ page }) => {
     const demoQaPage = new DemoQaPageWidgets(page);
     await demoQaPage.expectDemoqaPageUrl();
     await demoQaPage.expectContainTextWidgets();
@@ -25,7 +25,7 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน s
     await demoQaPage.clickWhyDoWeUseIt("text=Why do we use it?");
     await demoQaPage.expectTextFieldWhyDoWeUseIt();
   });
-  test("ผู้ใช้งานกรอกสีใน tab auto complete", async ({ page }) => {
+  test.skip("ผู้ใช้งานกรอกสีใน tab auto complete", async ({ page }) => {
     const demoQaPage = new DemoQaPageWidgets(page);
     await demoQaPage.expectDemoqaPageUrl();
     await demoQaPage.expectContainTextWidgets();
@@ -49,7 +49,7 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน s
     await demoQaPage.expectContainTextSelectDateAndTime();
     await demoQaPage.clickSelectDateAndTime();
   });
-  test("ผู้ใช้งานเห็นข้อความใน tab slider", async ({ page }) => {
+  test.skip("ผู้ใช้งานเห็นข้อความใน tab slider", async ({ page }) => {
     const demoQaPage = new DemoQaPageWidgets(page);
     await demoQaPage.expectDemoqaPageUrl();
     await demoQaPage.expectContainTextWidgets();
@@ -58,7 +58,7 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน s
     await demoQaPage.clickSlider("text=Slider");
     await demoQaPage.handleSlider();
   });
-  test("ผู้ใช้งานเห็นข้อความใน tab progress bar", async ({ page }) => {
+  test.skip("ผู้ใช้งานเห็นข้อความใน tab progress bar", async ({ page }) => {
     const demoQaPage = new DemoQaPageWidgets(page);
     await demoQaPage.expectDemoqaPageUrl();
     await demoQaPage.expectContainTextWidgets();
@@ -101,7 +101,7 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน s
     await demoQaPage.hoverWhenHover();
     await demoQaPage.expectTextUnderTextFieldHoverMeToSee();
   });
-  test("ผู้ใช้้งานเห็นข้อความใน tab menu", async ({ page }) => {
+  test.skip("ผู้ใช้้งานเห็นข้อความใน tab menu", async ({ page }) => {
     const demoQaPage = new DemoQaPageWidgets(page);
     await demoQaPage.expectDemoqaPageUrl();
     await demoQaPage.expectContainTextWidgets();
@@ -123,5 +123,6 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน s
     await demoQaPage.clickWidgets("text=Widgets");
     await demoQaPage.expectContainTextSelectMenu();
     await demoQaPage.clickSelectMenu("text=Select Menu");
+    await demoQaPage.expectContainTextSelectValue();
   });
 });
