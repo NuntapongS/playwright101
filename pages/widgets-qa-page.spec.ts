@@ -325,11 +325,15 @@ export class DemoQaPageWidgets {
     await this.page.click(selector);
   }
 
-  async chooseGroupAndOption() {
-    await this.page.click("text=Group 1, option 2");
+  async chooseGroupAndOption(groupAndOption: string) {
+    await this.page.click(groupAndOption);
   }
 
   async expectContainTextSelectOne() {
     await expect(this.page.getByText(/Select One/i)).toBeVisible();
+  }
+
+  async clickSelectTitle(titlle: string) {
+    await this.page.click(titlle);
   }
 }

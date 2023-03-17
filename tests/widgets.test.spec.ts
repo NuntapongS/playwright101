@@ -125,7 +125,8 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน s
     await demoQaPage.clickSelectMenu("text=Select Menu");
     await demoQaPage.expectContainTextSelectValue();
     await demoQaPage.clickSelectOption("text=Select Option");
-    await demoQaPage.chooseGroupAndOption();
+    await demoQaPage.chooseGroupAndOption("text=Group 1, option 2");
     await demoQaPage.expectContainTextSelectOne();
+    await demoQaPage.clickSelectTitle("text=Select Title");
   });
 });
