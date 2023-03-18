@@ -7,7 +7,7 @@ test.beforeEach(async ({ page }) => {
 });
 
 test.describe("ผู้ใช้งานกรอกข้อมูลใน step widgets ครบถ้วน", () => {
-  test.skip("ผู้ใช้งานเห็นข้อความใน tab accordian", async ({ page }) => {
+  test("ผู้ใช้งานเห็นข้อความใน tab accordian", async ({ page }) => {
     const demoQaPage = new DemoQaPageWidgets(page);
     await demoQaPage.expectDemoqaPageUrl();
     await demoQaPage.expectContainTextWidgets();
@@ -25,7 +25,7 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน s
     await demoQaPage.clickWhyDoWeUseIt("text=Why do we use it?");
     await demoQaPage.expectTextFieldWhyDoWeUseIt();
   });
-  test.skip("ผู้ใช้งานกรอกสีใน tab auto complete", async ({ page }) => {
+  test("ผู้ใช้งานกรอกสีใน tab auto complete", async ({ page }) => {
     const demoQaPage = new DemoQaPageWidgets(page);
     await demoQaPage.expectDemoqaPageUrl();
     await demoQaPage.expectContainTextWidgets();
@@ -37,7 +37,7 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน s
     await demoQaPage.expectContainTextTypeSingleColorName();
     await demoQaPage.typeColorInFieldSingleColorName("Blue");
   });
-  test.skip("ผู้ใช้งานเห็นข้อความใน tab date picker", async ({ page }) => {
+  te("ผู้ใช้งานเห็นข้อความใน tab date picker", async ({ page }) => {
     const demoQaPage = new DemoQaPageWidgets(page);
     await demoQaPage.expectDemoqaPageUrl();
     await demoQaPage.expectContainTextWidgets();
@@ -131,6 +131,6 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน s
     await demoQaPage.chooseTitle("text=Mr.");
     await demoQaPage.expectContainTextOldStyleSelectMenu();
     await demoQaPage.clickForSelectColor();
-    await demoQaPage.expectMutiselectDropDown();
+    await demoQaPage.expectMultiselectDropDown();
   });
 });
