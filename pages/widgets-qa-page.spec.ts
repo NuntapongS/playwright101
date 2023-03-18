@@ -348,4 +348,8 @@ export class DemoQaPageWidgets {
   async clickForSelectColor() {
     await this.page.click("#oldSelectMenu");
   }
+
+  async expectMultiselectDropDown() {
+    await expect(this.page.getByText(/Multiselect drop down/i)).toBeVisible();
+  }
 }
