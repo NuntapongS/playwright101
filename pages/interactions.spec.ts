@@ -10,4 +10,8 @@ export class DemoQaPageInteractions {
   async expectUrl() {
     await expect(this.page).toHaveURL("https://demoqa.com/");
   }
+
+  async expectTextInteractions() {
+    await expect(this.page.getByText(/Interactions/i)).toBeVisible();
+  }
 }
