@@ -1,4 +1,3 @@
-import { DemoQaPage } from "../pages/elements-qa-page.spec";
 import { test } from "@playwright/test";
 import { DemoQaPageAlertFrameAndWindows } from "../pages/alert-frame-and-windows-qa-page.spec";
 
