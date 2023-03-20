@@ -14,4 +14,8 @@ export class DemoQaPageInteractions {
   async expectTextInteractions() {
     await expect(this.page.getByText(/Interactions/i)).toBeVisible();
   }
+
+  async clickInteractions(selector: string) {
+    await this.page.click(selector);
+  }
 }

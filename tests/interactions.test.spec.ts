@@ -11,5 +11,6 @@ test.describe("ผู้ใช้งานลากข้อมูลใน step
     const DemoQaPage = new DemoQaPageInteractions(page);
     await DemoQaPage.expectUrl();
     await DemoQaPage.expectTextInteractions();
+    await DemoQaPage.clickInteractions("text=Interactions");
   });
 });
