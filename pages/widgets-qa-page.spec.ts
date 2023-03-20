@@ -352,4 +352,8 @@ export class DemoQaPageWidgets {
   async expectMultiselectDropDown() {
     await expect(this.page.getByText(/Multiselect drop down/i)).toBeVisible();
   }
+
+  async expectTextStandardMultiSelect() {
+    await expect(this.page.getByText(/Standard multi select/i)).toBeVisible();
+  }
 }
