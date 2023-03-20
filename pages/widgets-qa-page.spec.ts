@@ -356,4 +356,8 @@ export class DemoQaPageWidgets {
   async expectTextStandardMultiSelect() {
     await expect(this.page.getByText(/Standard multi select/i)).toBeVisible();
   }
+
+  async clickForSelectColorInStandardMultiSelect() {
+    await this.page.getByText(/Volvo/i).click();
+  }
 }

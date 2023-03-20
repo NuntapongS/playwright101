@@ -134,5 +134,6 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน s
     await demoQaPage.expectMultiselectDropDown();
     // await demoQaPage.chooseColorInMultiselectDropDown("text=Red");
     await demoQaPage.expectTextStandardMultiSelect();
+    await demoQaPage.clickForSelectColorInStandardMultiSelect();
   });
 });
