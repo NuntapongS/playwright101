@@ -44,4 +44,8 @@ export class DemoQaPageInteractions {
   async expectTextGrid() {
     await expect(this.page.getByText(/Grid/i)).toBeVisible();
   }
+
+  async clickGrid(selector: string) {
+    await this.page.click(selector);
+  }
 }
