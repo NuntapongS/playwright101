@@ -26,4 +26,8 @@ export class DemoQaPageInteractions {
   async clickSortable(selector: string) {
     await this.page.click(selector);
   }
+
+  async expectTextList() {
+    await expect(this.page.getByText(/List/i)).toBeVisible();
+  }
 }
