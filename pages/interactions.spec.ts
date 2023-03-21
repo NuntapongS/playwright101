@@ -30,4 +30,8 @@ export class DemoQaPageInteractions {
   async expectTextList() {
     await expect(this.page.getByText(/List/i)).toBeVisible();
   }
+
+  async clickList(selector: string) {
+    await this.page.click(selector);
+  }
 }

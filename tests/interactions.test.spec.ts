@@ -15,5 +15,6 @@ test.describe("ผู้ใช้งานลากข้อมูลใน step
     await demoQaPage.expectContainTextSortable();
     await demoQaPage.clickSortable("text=Sortable");
     await demoQaPage.expectTextList();
+    await demoQaPage.clickList("text=List");
   });
 });
