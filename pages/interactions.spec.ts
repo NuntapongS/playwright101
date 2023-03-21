@@ -34,4 +34,14 @@ export class DemoQaPageInteractions {
   async clickList(selector: string) {
     await this.page.click(selector);
   }
+
+  // async dragItemOneToItemTwo() {
+  //   const itemOne = await this.page.$("#sortable > li:nth-child(1)");
+  //   const itemTwo = await this.page.$("#sortable > li:nth-child(2)");
+  //   await itemOne?.dragAndDrop(itemTwo!);
+  // }
+
+  async expectTextGrid() {
+    await expect(this.page.getByText(/Grid/i)).toBeVisible();
+  }
 }
