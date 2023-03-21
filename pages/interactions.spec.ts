@@ -49,7 +49,13 @@ export class DemoQaPageInteractions {
     await this.page.click(selector);
   }
 
-  async moveBoxOneToBoxTwo() {
-    await this.page.locator("#dragBox").dragTo("#dropBox");
+  // async moveBoxOneToBoxTwo() {
+  //   const boxOne = await this.page.$("#dragBox");
+  //   const boxTwo = await this.page.$("#dropBox");
+  //   await boxOne?.dragAndDrop(boxTwo!);
+  // }
+
+  async expectContainTextSelectable() {
+    await expect(this.page.getByText(/Selectable/i)).toBeVisible();
   }
 }
