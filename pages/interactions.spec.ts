@@ -48,4 +48,8 @@ export class DemoQaPageInteractions {
   async clickGrid(selector: string) {
     await this.page.click(selector);
   }
+
+  async moveBoxOneToBoxTwo() {
+    await this.page.locator("#dragBox").dragTo("#dropBox");
+  }
 }
