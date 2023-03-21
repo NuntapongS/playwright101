@@ -8,10 +8,11 @@ test.beforeEach(async ({ page }) => {
 
 test.describe("ผู้ใช้งานลากข้อมูลใน step Interactions", () => {
   test("ผู้ใช้งาน sorting ใน tab sortable", async ({ page }) => {
-    const DemoQaPage = new DemoQaPageInteractions(page);
-    await DemoQaPage.expectUrl();
-    await DemoQaPage.expectTextInteractions();
-    await DemoQaPage.clickInteractions("text=Interactions");
-    await DemoQaPage.expectContainTextSortable();
+    const demoQaPage = new DemoQaPageInteractions(page);
+    await demoQaPage.expectUrl();
+    await demoQaPage.expectTextInteractions();
+    await demoQaPage.clickInteractions("text=Interactions");
+    await demoQaPage.expectContainTextSortable();
+    await demoQaPage.clickSortable("text=Sortable");
   });
 });
