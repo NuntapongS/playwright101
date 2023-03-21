@@ -58,4 +58,8 @@ export class DemoQaPageInteractions {
   async expectContainTextSelectable() {
     await expect(this.page.getByText(/Selectable/i)).toBeVisible();
   }
+
+  async clickSelectable(selector: string) {
+    await this.page.click(selector);
+  }
 }
