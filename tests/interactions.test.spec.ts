@@ -28,5 +28,6 @@ test.describe("ผู้ใช้งานลากข้อมูลใน step
     await demoQaPage.clickInteractions("text=Interactions");
     await demoQaPage.expectContainTextSelectable();
     await demoQaPage.clickSelectable("text=Selectable");
+    await demoQaPage.expectTextList();
   });
 });
