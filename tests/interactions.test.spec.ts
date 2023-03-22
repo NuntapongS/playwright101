@@ -7,7 +7,7 @@ test.beforeEach(async ({ page }) => {
 });
 
 test.describe("ผู้ใช้งานลากข้อมูลใน step Interactions", () => {
-  test.skip("ผู้ใช้งาน sorting ใน tab sortable", async ({ page }) => {
+  test("ผู้ใช้งาน sorting ใน tab sortable", async ({ page }) => {
     const demoQaPage = new DemoQaPageInteractions(page);
     await demoQaPage.expectUrl();
     await demoQaPage.expectTextInteractions();
@@ -35,5 +35,6 @@ test.describe("ผู้ใช้งานลากข้อมูลใน step
     await demoQaPage.exepectTextInItem2();
     await demoQaPage.clickItem2("text=Dapibus ac facilisis in");
     await demoQaPage.expectTextInItem3();
+    await demoQaPage.clickItem3("text=Morbi leo risus");
   });
 });
