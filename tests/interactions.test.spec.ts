@@ -38,5 +38,6 @@ test.describe("ผู้ใช้งานลากข้อมูลใน step
     await demoQaPage.clickItem3("text=Morbi leo risus");
     await demoQaPage.expectTextInItem4();
     await demoQaPage.clickItem4("text=Porta ac Consectetur ac");
+    await demoQaPage.expectTextGrid("text=Grid");
   });
 });
