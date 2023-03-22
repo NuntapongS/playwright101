@@ -70,4 +70,8 @@ export class DemoQaPageInteractions {
   async clickItem1(selector: string) {
     await this.page.click(selector);
   }
+
+  async exepectTextInItem2() {
+    await expect(this.page.getByText(/Dapibus ac facilisis in/i)).toBeVisible();
+  }
 }

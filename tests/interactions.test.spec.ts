@@ -32,5 +32,6 @@ test.describe("ผู้ใช้งานลากข้อมูลใน step
     await demoQaPage.clickList("text=List");
     await demoQaPage.expectTextInItem1();
     await demoQaPage.clickItem1("text=Cras justo odio");
+    await demoQaPage.exepectTextInItem2();
   });
 });
