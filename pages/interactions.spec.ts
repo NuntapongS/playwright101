@@ -90,4 +90,8 @@ export class DemoQaPageInteractions {
   async expectTextInItem4() {
     await expect(this.page.getByText(/Porta ac Consectetur ac/i)).toBeVisible();
   }
+
+  async clickItem4(selector: string) {
+    await this.page.click(selector);
+  }
 }
