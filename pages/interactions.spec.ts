@@ -78,4 +78,8 @@ export class DemoQaPageInteractions {
   async clickItem2(selector: string) {
     await this.page.click(selector);
   }
+
+  async expectTextInItem3() {
+    await expect(this.page.getByText(/Morbi leo risus/i)).toBeVisible();
+  }
 }

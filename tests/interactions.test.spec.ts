@@ -34,5 +34,6 @@ test.describe("ผู้ใช้งานลากข้อมูลใน step
     await demoQaPage.clickItem1("text=Cras justo odio");
     await demoQaPage.exepectTextInItem2();
     await demoQaPage.clickItem2("text=Dapibus ac facilisis in");
+    await demoQaPage.expectTextInItem3();
   });
 });
