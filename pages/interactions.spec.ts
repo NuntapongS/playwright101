@@ -62,4 +62,8 @@ export class DemoQaPageInteractions {
   async clickSelectable(selector: string) {
     await this.page.click(selector);
   }
+
+  async expectTextInItem1() {
+    await expect(this.page.getByText(/Cras justo odio/i)).toBeVisible();
+  }
 }
