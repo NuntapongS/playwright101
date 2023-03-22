@@ -86,4 +86,8 @@ export class DemoQaPageInteractions {
   async clickItem3(selector: string) {
     await this.page.click(selector);
   }
+
+  async expectTextInItem4() {
+    await expect(this.page.getByText(/Porta ac Consectetur ac/i)).toBeVisible();
+  }
 }
