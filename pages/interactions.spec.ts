@@ -102,4 +102,8 @@ export class DemoQaPageInteractions {
   async expectTextInItem2InHeaderGrid() {
     await expect(this.page.getByText(/Two/i)).toBeVisible();
   }
+
+  async expectTextInItem3InHeaderGrid() {
+    await expect(this.page.getByText(/Three/i)).toBeVisible();
+  }
 }
