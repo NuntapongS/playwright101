@@ -41,5 +41,6 @@ test.describe("ผู้ใช้งานลากข้อมูลใน step
     await demoQaPage.expectTextGrid();
     await demoQaPage.clickGrid("text=Grid");
     await demoQaPage.expectTextInItem1InHeaderGrid();
+    await demoQaPage.expectTextInItem2InHeaderGrid();
   });
 });
