@@ -94,4 +94,8 @@ export class DemoQaPageInteractions {
   async clickItem4(selector: string) {
     await this.page.click(selector);
   }
+
+  async expectTextInItem1InHeaderGrid() {
+    await expect(this.page.getByText(/One/i)).toBeVisible();
+  }
 }

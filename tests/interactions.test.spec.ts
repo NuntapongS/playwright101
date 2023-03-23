@@ -40,5 +40,6 @@ test.describe("ผู้ใช้งานลากข้อมูลใน step
     await demoQaPage.clickItem4("text=Porta ac Consectetur ac");
     await demoQaPage.expectTextGrid();
     await demoQaPage.clickGrid("text=Grid");
+    await demoQaPage.expectTextInItem1InHeaderGrid();
   });
 });
