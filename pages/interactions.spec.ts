@@ -131,7 +131,7 @@ export class DemoQaPageInteractions {
     await expect(this.page.getByText(/Nine/i)).toBeVisible();
   }
 
-  async clickItem1InHeaderGrid(selector: string) {
+  async clickItemInHeaderGrid(selector: string) {
     await this.page.click(selector);
   }
 }
