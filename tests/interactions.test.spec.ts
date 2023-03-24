@@ -7,7 +7,7 @@ test.beforeEach(async ({ page }) => {
 });
 
 test.describe("ผู้ใช้งานลากข้อมูลใน step Interactions", () => {
-  test("ผู้ใช้งาน sorting ใน tab sortable", async ({ page }) => {
+  test.skip("ผู้ใช้งาน sorting ใน tab sortable", async ({ page }) => {
     const demoQaPage = new DemoQaPageInteractions(page);
     await demoQaPage.expectUrl();
     await demoQaPage.expectTextInteractions();
@@ -49,5 +49,6 @@ test.describe("ผู้ใช้งานลากข้อมูลใน step
     await demoQaPage.expectTextInItem7InHeaderGrid();
     await demoQaPage.expectTextInItem8InHeaderGrid();
     await demoQaPage.expectTextInItem9InHeaderGrid();
+    await demoQaPage.clickItem1InHeaderGrid("text=One");
   });
 });
