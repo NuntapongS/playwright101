@@ -52,5 +52,6 @@ test.describe("ผู้ใช้งานลากข้อมูลใน step
     await demoQaPage.clickItemInHeaderGrid("text=One");
     await demoQaPage.clickItemInHeaderGrid("text=Two");
     await demoQaPage.clickItemInHeaderGrid("text=Three");
+    await demoQaPage.clickItemInHeaderGrid("text=Four");
   });
 });
