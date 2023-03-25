@@ -138,4 +138,8 @@ export class DemoQaPageInteractions {
   async expectContainTextResizable() {
     await expect(this.page.getByText(/Resizable/i)).toBeVisible();
   }
+
+  async clickResizable(selector: string) {
+    await this.page.click(selector);
+  }
 }
