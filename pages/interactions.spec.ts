@@ -134,4 +134,8 @@ export class DemoQaPageInteractions {
   async clickItemInHeaderGrid(selector: string) {
     await this.page.click(selector);
   }
+
+  async expectContainTextResizable() {
+    await expect(this.page.getByText(/Resizable/i)).toBeVisible();
+  }
 }

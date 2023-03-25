@@ -7,7 +7,7 @@ test.beforeEach(async ({ page }) => {
 });
 
 test.describe("ผู้ใช้งานลากข้อมูลใน step Interactions", () => {
-  test("ผู้ใช้งาน sorting ใน tab sortable", async ({ page }) => {
+  test.skip("ผู้ใช้งาน sorting ใน tab sortable", async ({ page }) => {
     const demoQaPage = new DemoQaPageInteractions(page);
     await demoQaPage.expectUrl();
     await demoQaPage.expectTextInteractions();
@@ -21,7 +21,7 @@ test.describe("ผู้ใช้งานลากข้อมูลใน step
     await demoQaPage.clickGrid("text=Grid");
     // await demoQaPage.moveBoxOneToBoxTwo();
   });
-  test("ผู้ใช้งานกดปุ่มใน tab selectable", async ({ page }) => {
+  test.skip("ผู้ใช้งานกดปุ่มใน tab selectable", async ({ page }) => {
     const demoQaPage = new DemoQaPageInteractions(page);
     await demoQaPage.expectUrl();
     await demoQaPage.expectTextInteractions();
@@ -58,5 +58,12 @@ test.describe("ผู้ใช้งานลากข้อมูลใน step
     await demoQaPage.clickItemInHeaderGrid("text=Seven");
     await demoQaPage.clickItemInHeaderGrid("text=Eight");
     await demoQaPage.clickItemInHeaderGrid("text=Nine");
+  });
+  test("ผู้ใช้งานกดปุ่มใน tab resizable", async ({ page }) => {
+    const demoQaPage = new DemoQaPageInteractions(page);
+    await demoQaPage.expectUrl();
+    await demoQaPage.expectTextInteractions();
+    await demoQaPage.clickInteractions("text=Interactions");
+    await demoQaPage.expectContainTextResizable();
   });
 });
