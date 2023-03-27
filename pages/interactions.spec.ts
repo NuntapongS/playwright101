@@ -142,4 +142,13 @@ export class DemoQaPageInteractions {
   async clickResizable(selector: string) {
     await this.page.click(selector);
   }
+
+  // async resizable() {
+  //   const resizable = await this.page.$("#resizable");
+  //   await resizable?.resizeTo(200, 200);
+  // }
+
+  async expectContainTextDroppable() {
+    await expect(this.page.getByText(/Droppable/i)).toBeVisible();
+  }
 }

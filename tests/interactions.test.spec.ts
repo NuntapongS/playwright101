@@ -68,4 +68,11 @@ test.describe("ผู้ใช้งานลากข้อมูลใน step
     await demoQaPage.clickResizable("text=Resizable");
     // await demoQaPage.resizable();
   });
+  test("ผู้ใช้งาน drag and drop ใน tab droppable", async ({ page }) => {
+    const demoQaPage = new DemoQaPageInteractions(page);
+    await demoQaPage.expectUrl();
+    await demoQaPage.expectTextInteractions();
+    await demoQaPage.clickInteractions("text=Interactions");
+    await demoQaPage.expectContainTextDroppable();
+  });
 });
