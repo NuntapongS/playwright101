@@ -151,4 +151,8 @@ export class DemoQaPageInteractions {
   async expectContainTextDroppable() {
     await expect(this.page.getByText(/Droppable/i)).toBeVisible();
   }
+
+  async clickDroppable(selector: string) {
+    await this.page.click(selector);
+  }
 }
