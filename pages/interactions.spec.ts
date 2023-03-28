@@ -164,6 +164,10 @@ export class DemoQaPageInteractions {
     await expect(this.page.getByText(/Accept/i).first()).toBeVisible();
   }
 
+  async expectHeaderPreventPropogation() {
+    await expect(this.page.getByText(/Prevent Propogation/i)).toBeVisible();
+  }
+
   async clickHeaderSimple(selector: string) {
     await this.page.click(selector);
   }
