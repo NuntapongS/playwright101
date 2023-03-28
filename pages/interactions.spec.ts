@@ -163,4 +163,10 @@ export class DemoQaPageInteractions {
   async clickHeaderSimple(selector: string) {
     await this.page.click(selector);
   }
+
+  // async dragAndDrop() {
+  //   const drag = await this.page.$("#draggable");
+  //   const drop = await this.page.$("#droppable");
+  //   await drag?.dragAndDrop(drop!);
+  // }
 }
