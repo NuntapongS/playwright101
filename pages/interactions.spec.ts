@@ -159,4 +159,8 @@ export class DemoQaPageInteractions {
   async expectHeaderSimple() {
     await expect(this.page.getByText(/Simple/i)).toBeVisible();
   }
+
+  async clickHeaderSimple(selector: string) {
+    await this.page.click(selector);
+  }
 }
