@@ -78,6 +78,7 @@ test.describe("ผู้ใช้งานลากข้อมูลใน step
     await demoQaPage.expectHeaderSimple();
     await demoQaPage.expectHeaderAccept();
     await demoQaPage.expectHeaderPreventPropogation();
+    await demoQaPage.expectHeaderRevertDraggable();
     await demoQaPage.clickHeaderSimple("text=Simple");
     // await demoQaPage.dragAndDrop();
   });
