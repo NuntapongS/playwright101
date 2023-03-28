@@ -155,4 +155,8 @@ export class DemoQaPageInteractions {
   async clickDroppable(selector: string) {
     await this.page.click(selector);
   }
+
+  async expectHeaderSimple() {
+    await expect(this.page.getByText(/Simple/i)).toBeVisible();
+  }
 }
