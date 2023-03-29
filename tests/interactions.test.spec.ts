@@ -90,5 +90,6 @@ test.describe("ผู้ใช้งานลากข้อมูลใน step
     await demoQaPage.expectContainTextDragabble();
     await demoQaPage.clickDragabble("text=Dragabble");
     await demoQaPage.expectHeaderSimple();
+    await demoQaPage.expectHeaderAxisRestricted();
   });
 });

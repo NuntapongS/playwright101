@@ -189,4 +189,8 @@ export class DemoQaPageInteractions {
   async clickDragabble(selector: string) {
     await this.page.click(selector);
   }
+
+  async expectHeaderAxisRestricted() {
+    await expect(this.page.getByText(/Axis Restricted/i)).toBeVisible();
+  }
 }
