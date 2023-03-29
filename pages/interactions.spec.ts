@@ -185,4 +185,8 @@ export class DemoQaPageInteractions {
   async expectContainTextDragabble() {
     await expect(this.page.getByText(/Dragabble/i)).toBeVisible();
   }
+
+  async clickDragabble(selector: string) {
+    await this.page.click(selector);
+  }
 }
