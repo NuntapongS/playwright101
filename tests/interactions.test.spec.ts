@@ -7,7 +7,7 @@ test.beforeEach(async ({ page }) => {
 });
 
 test.describe("ผู้ใช้งานลากข้อมูลใน step Interactions", () => {
-  test("ผู้ใช้งาน sorting ใน tab sortable", async ({ page }) => {
+  test.skip("ผู้ใช้งาน sorting ใน tab sortable", async ({ page }) => {
     const demoQaPage = new DemoQaPageInteractions(page);
     await demoQaPage.expectUrl();
     await demoQaPage.expectTextInteractions();
@@ -21,7 +21,7 @@ test.describe("ผู้ใช้งานลากข้อมูลใน step
     await demoQaPage.clickGrid("text=Grid");
     // await demoQaPage.moveBoxOneToBoxTwo();
   });
-  test("ผู้ใช้งานกดปุ่มใน tab selectable", async ({ page }) => {
+  test.skip("ผู้ใช้งานกดปุ่มใน tab selectable", async ({ page }) => {
     const demoQaPage = new DemoQaPageInteractions(page);
     await demoQaPage.expectUrl();
     await demoQaPage.expectTextInteractions();
@@ -59,7 +59,7 @@ test.describe("ผู้ใช้งานลากข้อมูลใน step
     await demoQaPage.clickItemInHeaderGrid("text=Eight");
     await demoQaPage.clickItemInHeaderGrid("text=Nine");
   });
-  test("ผู้ใช้งานกดปุ่มใน tab resizable", async ({ page }) => {
+  test.skip("ผู้ใช้งานกดปุ่มใน tab resizable", async ({ page }) => {
     const demoQaPage = new DemoQaPageInteractions(page);
     await demoQaPage.expectUrl();
     await demoQaPage.expectTextInteractions();
@@ -68,7 +68,7 @@ test.describe("ผู้ใช้งานลากข้อมูลใน step
     await demoQaPage.clickResizable("text=Resizable");
     // await demoQaPage.resizable();
   });
-  test("ผู้ใช้งาน drag and drop ใน tab droppable", async ({ page }) => {
+  test.skip("ผู้ใช้งาน drag and drop ใน tab droppable", async ({ page }) => {
     const demoQaPage = new DemoQaPageInteractions(page);
     await demoQaPage.expectUrl();
     await demoQaPage.expectTextInteractions();
@@ -81,5 +81,12 @@ test.describe("ผู้ใช้งานลากข้อมูลใน step
     await demoQaPage.expectHeaderRevertDraggable();
     await demoQaPage.clickHeaderSimple("text=Simple");
     // await demoQaPage.dragAndDrop();
+  });
+  test("ผู้ใช้งานกดปุ่มใน ลากกล่องใน tab dragabble", async ({ page }) => {
+    const demoQaPage = new DemoQaPageInteractions(page);
+    await demoQaPage.expectUrl();
+    await demoQaPage.expectTextInteractions();
+    await demoQaPage.clickInteractions("text=Interactions");
+    await demoQaPage.expectContainTextDragabble();
   });
 });

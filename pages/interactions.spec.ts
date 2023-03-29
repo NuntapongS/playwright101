@@ -181,4 +181,8 @@ export class DemoQaPageInteractions {
   //   const drop = await this.page.$("#droppable");
   //   await drag?.dragAndDrop(drop!);
   // }
+
+  async expectContainTextDragabble() {
+    await expect(this.page.getByText(/Dragabble/i)).toBeVisible();
+  }
 }
