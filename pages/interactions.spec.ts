@@ -193,4 +193,8 @@ export class DemoQaPageInteractions {
   async expectHeaderAxisRestricted() {
     await expect(this.page.getByText(/Axis Restricted/i)).toBeVisible();
   }
+
+  async expectHeaderContainerRestricted() {
+    await expect(this.page.getByText(/Container Restricted/i)).toBeVisible();
+  }
 }
