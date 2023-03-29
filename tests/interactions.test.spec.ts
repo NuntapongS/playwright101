@@ -89,5 +89,6 @@ test.describe("ผู้ใช้งานลากข้อมูลใน step
     await demoQaPage.clickInteractions("text=Interactions");
     await demoQaPage.expectContainTextDragabble();
     await demoQaPage.clickDragabble("text=Dragabble");
+    await demoQaPage.expectHeaderSimple();
   });
 });
