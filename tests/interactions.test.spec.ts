@@ -93,5 +93,6 @@ test.describe("ผู้ใช้งานลากข้อมูลใน step
     await demoQaPage.expectHeaderAxisRestricted();
     await demoQaPage.expectHeaderContainerRestricted();
     await demoQaPage.expectHeaderCursorStyle();
+    // await demoQaPage.dragBox();
   });
 });
