@@ -197,4 +197,8 @@ export class DemoQaPageInteractions {
   async expectHeaderContainerRestricted() {
     await expect(this.page.getByText(/Container Restricted/i)).toBeVisible();
   }
+
+  async expectHeaderCursorStyle() {
+    await expect(this.page.getByText(/Cursor Style/i)).toBeVisible();
+  }
 }
