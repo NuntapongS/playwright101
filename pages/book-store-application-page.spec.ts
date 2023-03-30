@@ -10,4 +10,8 @@ export class DemoQaPageBookStoreApplication {
   async expectUrl() {
     await expect(this.page).toHaveURL("https://demoqa.com/");
   }
+
+  async expectContainTextBookStoreApplication() {
+    await expect(this.page.getByText(/Book Store Application/i)).toBeVisible();
+  }
 }

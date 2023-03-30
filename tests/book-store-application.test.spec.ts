@@ -10,5 +10,6 @@ test.describe("Book Store Application", () => {
   test("ผู้ใช้งานเข้าสู่ระบบ", async ({ page }) => {
     const demoQaPage = new DemoQaPageBookStoreApplication(page);
     await demoQaPage.expectUrl();
+    await demoQaPage.expectContainTextBookStoreApplication();
   });
 });
