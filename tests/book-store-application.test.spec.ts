@@ -7,7 +7,7 @@ test.beforeEach(async ({ page }) => {
 });
 
 test.describe("Book Store Application", () => {
-  test("ผู้ใช้งานเข้าสู่ระบบ", async ({ page }) => {
+  test("ผู้ใช้งานสมัครสมาชิก", async ({ page }) => {
     const demoQaPage = new DemoQaPageBookStoreApplication(page);
     await demoQaPage.expectUrl();
     await demoQaPage.expectContainTextBookStoreApplication();
@@ -16,6 +16,6 @@ test.describe("Book Store Application", () => {
     await demoQaPage.clickTablogin();
     await demoQaPage.expectContaintextInTabLogin();
     await demoQaPage.expectContaintextUsername();
-    await demoQaPage.fillUsername("Maverick");
+    await demoQaPage.expectContainTextPassword();
   });
 });
