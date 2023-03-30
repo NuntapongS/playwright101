@@ -39,4 +39,8 @@ export class DemoQaPageBookStoreApplication {
   async expectContainTextPassword() {
     await expect(this.page.getByText(/Password/i)).toBeVisible();
   }
+
+  async expectContainTextLogin() {
+    await expect(this.page.getByText(/Login/i).nth(2)).toBeVisible();
+  }
 }

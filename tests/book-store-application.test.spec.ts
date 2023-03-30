@@ -17,5 +17,6 @@ test.describe("Book Store Application", () => {
     await demoQaPage.expectContaintextInTabLogin();
     await demoQaPage.expectContaintextUsername();
     await demoQaPage.expectContainTextPassword();
+    await demoQaPage.expectContainTextLogin();
   });
 });
