@@ -12,5 +12,6 @@ test.describe("Book Store Application", () => {
     await demoQaPage.expectUrl();
     await demoQaPage.expectContainTextBookStoreApplication();
     await demoQaPage.clickBookStoreApplication("text=Book Store Application");
+    await demoQaPage.expectTabLogin();
   });
 });

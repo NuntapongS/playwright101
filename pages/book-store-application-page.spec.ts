@@ -18,4 +18,8 @@ export class DemoQaPageBookStoreApplication {
   async clickBookStoreApplication(bookStoreApplication: string) {
     await this.page.click(bookStoreApplication);
   }
+
+  async expectTabLogin() {
+    await expect(this.page.locator("text=Login").first()).toBeVisible();
+  }
 }
