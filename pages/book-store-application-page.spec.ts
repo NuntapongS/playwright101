@@ -14,4 +14,8 @@ export class DemoQaPageBookStoreApplication {
   async expectContainTextBookStoreApplication() {
     await expect(this.page.getByText(/Book Store Application/i)).toBeVisible();
   }
+
+  async clickBookStoreApplication(bookStoreApplication: string) {
+    await this.page.click(bookStoreApplication);
+  }
 }

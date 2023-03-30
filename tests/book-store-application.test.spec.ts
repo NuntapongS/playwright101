@@ -11,5 +11,6 @@ test.describe("Book Store Application", () => {
     const demoQaPage = new DemoQaPageBookStoreApplication(page);
     await demoQaPage.expectUrl();
     await demoQaPage.expectContainTextBookStoreApplication();
+    await demoQaPage.clickBookStoreApplication("text=Book Store Application");
   });
 });
