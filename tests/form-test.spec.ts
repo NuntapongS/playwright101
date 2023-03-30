@@ -6,7 +6,7 @@ test.beforeEach(async ({ page }) => {
   await page.goto("https://demoqa.com/");
 });
 
-test.describe("ผู้ใช้งานกรอกข้อมูลใน Tab Forms ครบถ้วน", () => {
+test.describe("Forms", () => {
   test("ผู้ใช้งานกรอกข้อมูลใน tab Practice Form", async ({ page }) => {
     const demoQaPageForms = new DemoQaPageForms(page);
     await demoQaPageForms.expectDemoqaUrl();
@@ -19,7 +19,7 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน T
     await demoQaPageForms.typeFirstName("Topgun");
     await demoQaPageForms.typeLastName("Maverick");
     await demoQaPageForms.expectEmail();
-    await demoQaPageForms.typeEmail("marverick@gmail.com")
+    await demoQaPageForms.typeEmail("marverick@gmail.com");
     await demoQaPageForms.expectGender();
     await demoQaPageForms.checkGender();
     await demoQaPageForms.expectMobileNumber();
@@ -33,10 +33,10 @@ test.describe("ผู้ใช้งานกรอกข้อมูลใน T
     await demoQaPageForms.checkReadingHobbies();
     await demoQaPageForms.checkMusicHobbies();
     await demoQaPageForms.expectPicture();
-    await demoQaPageForms.expectSelectPicture(); 
+    await demoQaPageForms.expectSelectPicture();
     await demoQaPageForms.clickChooseFile();
     await demoQaPageForms.expectCurrentAddress();
     await demoQaPageForms.typeCurrentAddress("Bangkok");
     await demoQaPageForms.enterSubmit();
-   });
+  });
 });
