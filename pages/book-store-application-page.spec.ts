@@ -35,4 +35,8 @@ export class DemoQaPageBookStoreApplication {
   async expectContaintextUsername() {
     await expect(this.page.getByText(/Username/i)).toBeVisible();
   }
+
+  async fillUsername(username: string) {
+    await this.page.getByPlaceholder("Username").type(username);
+  }
 }
