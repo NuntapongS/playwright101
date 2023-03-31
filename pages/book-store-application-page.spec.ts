@@ -83,4 +83,8 @@ export class DemoQaPageBookStoreApplication {
   async expectTextPassword() {
     await expect(this.page.getByText(/Password/i)).toBeVisible();
   }
+
+  async fillPassword(password: string) {
+    await this.page.getByPlaceholder("Password").type(password);
+  }
 }
