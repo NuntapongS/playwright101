@@ -20,5 +20,6 @@ test.describe("Book Store Application", () => {
     await demoQaPage.expectContainTextLogin();
     await demoQaPage.expectContainTextNewUser();
     await demoQaPage.clickNewUserButton();
+    await demoQaPage.expectContaintextRegister();
   });
 });
