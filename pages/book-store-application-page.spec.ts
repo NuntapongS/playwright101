@@ -47,4 +47,8 @@ export class DemoQaPageBookStoreApplication {
   async expectContainTextNewUser() {
     await expect(this.page.getByText(/New User/i)).toBeVisible();
   }
+
+  async clickNewUserButton() {
+    await this.page.click("text=New User");
+  }
 }
