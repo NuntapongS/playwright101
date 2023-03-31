@@ -22,5 +22,6 @@ test.describe("Book Store Application", () => {
     await demoQaPage.clickNewUserButton();
     await demoQaPage.expectContaintextRegister();
     await demoQaPage.expectTextFirstName();
+    await demoQaPage.fillFirstName("Maverick");
   });
 });
