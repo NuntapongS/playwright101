@@ -71,4 +71,8 @@ export class DemoQaPageBookStoreApplication {
   async fillLastName(lastName: string) {
     await this.page.getByPlaceholder("Last Name").type(lastName);
   }
+
+  async expectTextUserName() {
+    await expect(this.page.getByText(/UserName/i)).toBeVisible();
+  }
 }
