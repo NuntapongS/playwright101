@@ -55,4 +55,8 @@ export class DemoQaPageBookStoreApplication {
   async expectContaintextRegister() {
     await expect(this.page.getByText(/Register to Book Store/i)).toBeVisible();
   }
+
+  async expectTextFirstName() {
+    await expect(this.page.getByText(/First Name/i)).toBeVisible();
+  }
 }
