@@ -87,4 +87,12 @@ export class DemoQaPageBookStoreApplication {
   async fillPassword(password: string) {
     await this.page.getByPlaceholder("Password").type(password);
   }
+
+  // async clickCheckboxIAmNotARobot() {
+  //   await this.page.click("text=I'm not a robot"), { force: true };
+  // }
+
+  async expectTextRegister() {
+    await expect(this.page.getByText(/Register/i)).toBeVisible();
+  }
 }
