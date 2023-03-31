@@ -22,7 +22,8 @@ test.describe("Book Store Application", () => {
     await demoQaPage.clickNewUserButton();
     await demoQaPage.expectContaintextRegister();
     await demoQaPage.expectTextFirstName();
-    await demoQaPage.fillFirstName("Maverick");
+    await demoQaPage.fillFirstName("Topgun");
     await demoQaPage.expectTextLastName();
+    await demoQaPage.fillLastName("Maverick");
   });
 });
