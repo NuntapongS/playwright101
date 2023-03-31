@@ -27,5 +27,6 @@ test.describe("Book Store Application", () => {
     await demoQaPage.fillLastName("Maverick");
     await demoQaPage.expectTextUserName();
     await demoQaPage.fillUserName("TopgunMaverick");
+    await demoQaPage.expectTextPassword();
   });
 });
