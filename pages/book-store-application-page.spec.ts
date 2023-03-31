@@ -95,4 +95,8 @@ export class DemoQaPageBookStoreApplication {
   async expectTextRegister() {
     await expect(this.page.getByText(/Register/i)).toBeVisible();
   }
+
+  async expectTextBackToLogin() {
+    await expect(this.page.getByText(/Back to Login/i)).toBeVisible();
+  }
 }

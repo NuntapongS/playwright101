@@ -31,5 +31,6 @@ test.describe("Book Store Application", () => {
     await demoQaPage.fillPassword("1999");
     // await demoQaPage.clickCheckboxIAmNotARobot();
     await demoQaPage.expectTextRegister();
+    await demoQaPage.expectTextBackToLogin();
   });
 });
