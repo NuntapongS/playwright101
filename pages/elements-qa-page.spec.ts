@@ -1,10 +1,24 @@
-import { expect, Page } from "@playwright/test";
+import { expect, Page, Locator } from "@playwright/test";
 
 export class DemoQaPage {
   readonly page: Page;
+  readonly textElements: Locator;
+  readonly textBox: Locator;
+  readonly fullName: Locator;
+  readonly email: Locator;
+  readonly address: Locator;
+  readonly permanentAddress: Locator;
+  readonly submitButton: Locator;
 
   constructor(page: Page) {
     this.page = page;
+    this.textElements = page.getByText(/Elements/i);
+    this.textBox = page.getByText(/Text Box/i);
+    this.fullName = page.getByPlaceholder("Full Name");
+    this.email = page.getByPlaceholder("name@example");
+    this.address = page.getByPlaceholder("Current Address");
+    this.permanentAddress = page.locator("#permanentAddress");
+    this.submitButton = page.getByRole("button", { name: "Submit" });
   }
 
   async expectUrl() {
@@ -12,36 +26,35 @@ export class DemoQaPage {
   }
 
   async expectContainTextElements() {
-    await expect(this.page.getByText(/Elements/i)).toBeVisible();
+    await expect(this.textElements).toBeVisible();
   }
 
-  async clickElement(element: string) {
-    await this.page.click(element);
+  async clickElement() {
+    await this.textElements.click();
   }
 
-  async clickTextbox(element: string) {
-    await this.page.click(element);
+  async clickTextbox() {
+    await this.textBox.click();
   }
 
-  async typeFullname(fullname: string) {
-    await this.page.getByPlaceholder("Full Name").type(fullname);
+  async typeFullname() {
+    await this.fullName.type("Maverick");
   }
 
-  async typeEmail(email: string) {
-    await this.page.getByPlaceholder("name@example").type(email);
+  async typeEmail() {
+    await this.email.type("marverick@gmail.com");
   }
 
-  async typeCurrentAddress(currentAddress: string) {
-    await this.page.getByPlaceholder("Current Address").type(currentAddress);
+  async typeCurrentAddress() {
+    await this.address.type("Bangkok");
   }
 
-  async typePermanentAddress(permanentAddress: string) {
-    const address = await this.page.$("#permanentAddress.form-control");
-    await address?.type(permanentAddress);
+  async typePermanentAddress() {
+    await this.permanentAddress.type("Phuket");
   }
 
   async clickSubmit() {
-    await this.page.click("text=Submit");
+    await this.submitButton.click();
   }
 
   async expectContainName() {
@@ -265,9 +278,12 @@ export class DemoQaPage {
   async expectContainTextSelectAFile() {
     await expect(this.page.getByText(/Select a file/i)).toBeVisible();
   }
-  
+
   async chooseFile() {
-    await this.page.setInputFiles("input[type=file]", "/Users/nuntapongsiripanyawong/workspace/learning/playwright101/images/click-PNG-free-PNG-Images_82736.html");
+    await this.page.setInputFiles(
+      "input[type=file]",
+      "/Users/nuntapongsiripanyawong/workspace/learning/playwright101/images/click-PNG-free-PNG-Images_82736.html"
+    );
   }
 
   async expectContaintextDynamicProperties() {
