@@ -32,15 +32,16 @@ test.describe("Elements", () => {
     await demoQaPage.clickTabCheckBox();
     await demoQaPage.checkbox();
   });
-  test.skip("ผู้ใช้งานกด radio button Yes ใน tab Radio Button", async ({
-    page,
-  }) => {
+  test("ผู้ใช้งานกด radio button Yes ใน tab Radio Button", async ({ page }) => {
     const demoQaPage = new DemoQaPage(page);
     await demoQaPage.expectUrl();
     await demoQaPage.expectContainTextElements();
     await demoQaPage.clickElement();
-    await demoQaPage.clickTextbox();
+    await demoQaPage.expectContainRadioButton();
+    await demoQaPage.clickTabRadioButton();
+    await demoQaPage.expectRadioButtonYes();
     await demoQaPage.clickRadioButtonYes();
+    await demoQaPage.expectContainTextWhenClickRadioButtonYes();
   });
 
   test.skip("ผู้ใช้งานกด radio button Impressive ใน tab Radio Button", async ({

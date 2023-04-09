@@ -14,7 +14,10 @@ export class DemoQaPage {
   readonly expectCurrentAddress: Locator;
   readonly expectPermanentAddress: Locator;
   readonly checkBox: Locator;
-  readonly checkBoxHome: Locator;
+  readonly checkBoxTextHome: Locator;
+  readonly radioButtonText: Locator;
+  readonly radioButtonYes: Locator;
+  readonly expectTextWhenClickRadioButtonYes: Locator;
 
   constructor(page: Page) {
     this.page = page;
@@ -30,7 +33,12 @@ export class DemoQaPage {
     this.expectCurrentAddress = page.getByText(/Bangkok/i);
     this.expectPermanentAddress = page.getByText(/Phuket/i);
     this.checkBox = page.getByText(/Check Box/i);
-    this.checkBoxHome = page.getByText(/Home/i);
+    this.checkBoxTextHome = page.getByText(/Home/i);
+    this.radioButtonText = page.getByText(/Radio Button/i);
+    this.radioButtonYes = page.getByText(/Yes/i);
+    this.expectTextWhenClickRadioButtonYes = page.getByText(
+      /You have selected Yes/i
+    );
   }
 
   async expectUrl() {
@@ -94,11 +102,27 @@ export class DemoQaPage {
   }
 
   async checkbox() {
-    await this.page.getByText(/Home/i).click();
+    await this.checkBoxTextHome.click();
+  }
+
+  async expectContainRadioButton() {
+    await expect(this.radioButtonText).toBeVisible();
+  }
+
+  async clickTabRadioButton() {
+    await this.radioButtonText.click();
+  }
+
+  async expectRadioButtonYes() {
+    await expect(this.radioButtonYes).toBeVisible();
   }
 
   async clickRadioButtonYes() {
-    await this.page.click("text=Yes");
+    await this.radioButtonYes.click();
+  }
+
+  async expectContainTextWhenClickRadioButtonYes() {
+    await expect(this.expectTextWhenClickRadioButtonYes).toBeVisible();
   }
 
   async clickRadioButtonImpressive() {
