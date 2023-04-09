@@ -23,12 +23,13 @@ test.describe("Elements", () => {
     await demoQaPage.expectContainCurrentAddress();
     await demoQaPage.expectContainPermanentAddress();
   });
-  test.skip("ผู้ใช้งานกด checkbox ใน tab Check Box", async ({ page }) => {
+  test("ผู้ใช้งานกด checkbox ใน tab Check Box", async ({ page }) => {
     const demoQaPage = new DemoQaPage(page);
     await demoQaPage.expectUrl();
     await demoQaPage.expectContainTextElements();
     await demoQaPage.clickElement();
-    await demoQaPage.clickTextbox();
+    await demoQaPage.expectContainCheckBox();
+    await demoQaPage.clickTabCheckBox();
     await demoQaPage.checkbox();
   });
   test.skip("ผู้ใช้งานกด radio button Yes ใน tab Radio Button", async ({

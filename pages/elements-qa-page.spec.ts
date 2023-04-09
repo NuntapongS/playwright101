@@ -9,6 +9,12 @@ export class DemoQaPage {
   readonly address: Locator;
   readonly permanentAddress: Locator;
   readonly submitButton: Locator;
+  readonly expectName: Locator;
+  readonly expectEmail: Locator;
+  readonly expectCurrentAddress: Locator;
+  readonly expectPermanentAddress: Locator;
+  readonly checkBox: Locator;
+  readonly checkBoxHome: Locator;
 
   constructor(page: Page) {
     this.page = page;
@@ -19,6 +25,12 @@ export class DemoQaPage {
     this.address = page.getByPlaceholder("Current Address");
     this.permanentAddress = page.locator("#permanentAddress");
     this.submitButton = page.getByRole("button", { name: "Submit" });
+    this.expectName = page.getByText(/Maverick/i);
+    this.expectEmail = page.getByText(/marverick@gmail.com/i);
+    this.expectCurrentAddress = page.getByText(/Bangkok/i);
+    this.expectPermanentAddress = page.getByText(/Phuket/i);
+    this.checkBox = page.getByText(/Check Box/i);
+    this.checkBoxHome = page.getByText(/Home/i);
   }
 
   async expectUrl() {
@@ -58,23 +70,31 @@ export class DemoQaPage {
   }
 
   async expectContainName() {
-    await expect(this.page.getByText(/Maverick/i)).toBeVisible();
+    await expect(this.expectName).toBeVisible();
   }
 
   async expectContainEmail() {
-    await expect(this.page.getByText(/marverick@gmail.com/i)).toBeVisible();
+    await expect(this.expectEmail).toBeVisible();
   }
 
   async expectContainCurrentAddress() {
-    await expect(this.page.getByText(/Bangkok/i)).toBeVisible();
+    await expect(this.expectCurrentAddress).toBeVisible();
   }
 
   async expectContainPermanentAddress() {
-    await expect(this.page.getByText(/Phuket/i)).toBeVisible();
+    await expect(this.expectPermanentAddress).toBeVisible();
+  }
+
+  async expectContainCheckBox() {
+    await expect(this.checkBox).toBeVisible();
+  }
+
+  async clickTabCheckBox() {
+    await this.checkBox.click();
   }
 
   async checkbox() {
-    await this.page.click("text=Home");
+    await this.page.getByText(/Home/i).click();
   }
 
   async clickRadioButtonYes() {
