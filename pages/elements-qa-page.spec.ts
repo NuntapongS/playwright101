@@ -18,6 +18,8 @@ export class DemoQaPage {
   readonly radioButtonText: Locator;
   readonly radioButtonYes: Locator;
   readonly expectTextWhenClickRadioButtonYes: Locator;
+  readonly radioButtonImpressive: Locator;
+  readonly expectTextWhenClickRadioButtonImpressive: Locator;
 
   constructor(page: Page) {
     this.page = page;
@@ -38,6 +40,10 @@ export class DemoQaPage {
     this.radioButtonYes = page.getByText(/Yes/i);
     this.expectTextWhenClickRadioButtonYes = page.getByText(
       /You have selected Yes/i
+    );
+    this.radioButtonImpressive = page.getByText(/Impressive/i);
+    this.expectTextWhenClickRadioButtonImpressive = page.getByText(
+      /You have selected Impressive/i
     );
   }
 
@@ -125,8 +131,16 @@ export class DemoQaPage {
     await expect(this.expectTextWhenClickRadioButtonYes).toBeVisible();
   }
 
+  async expectRadioButtonImpressive() {
+    await expect(this.radioButtonImpressive).toBeVisible();
+  }
+
   async clickRadioButtonImpressive() {
-    await this.page.click("text=Impressive");
+    await this.radioButtonImpressive.click();
+  }
+
+  async expectContainTextWhenClickRadioButtonImpressive() {
+    await expect(this.expectTextWhenClickRadioButtonImpressive).toBeVisible();
   }
 
   async clickAddButton() {
