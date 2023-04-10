@@ -20,6 +20,17 @@ export class DemoQaPage {
   readonly expectTextWhenClickRadioButtonYes: Locator;
   readonly radioButtonImpressive: Locator;
   readonly expectTextWhenClickRadioButtonImpressive: Locator;
+  readonly webTables: Locator;
+  readonly addButton: Locator;
+  readonly firstName: Locator;
+  readonly lastName: Locator;
+  readonly age: Locator;
+  readonly salary: Locator;
+  readonly department: Locator;
+  readonly expectFirstName: Locator;
+  readonly expectLastName: Locator;
+  readonly expectAge: Locator;
+  readonly expectDepartment: Locator;
 
   constructor(page: Page) {
     this.page = page;
@@ -45,6 +56,17 @@ export class DemoQaPage {
     this.expectTextWhenClickRadioButtonImpressive = page.getByText(
       /You have selected Impressive/i
     );
+    this.webTables = page.getByText(/Web Tables/i);
+    this.addButton = page.getByRole("button", { name: "Add" });
+    this.firstName = page.getByPlaceholder("First Name");
+    this.lastName = page.getByPlaceholder("Last Name");
+    this.age = page.getByPlaceholder("Age");
+    this.salary = page.getByPlaceholder("Salary");
+    this.department = page.getByPlaceholder("Department");
+    this.expectFirstName = page.getByText(/Topgun/i);
+    this.expectLastName = page.getByText(/Maverick/i);
+    this.expectAge = page.getByText(/30/i);
+    this.expectDepartment = page.getByText(/Developer/i);
   }
 
   async expectUrl() {
@@ -143,44 +165,64 @@ export class DemoQaPage {
     await expect(this.expectTextWhenClickRadioButtonImpressive).toBeVisible();
   }
 
+  async expectContainWebTables() {
+    await expect(this.webTables).toBeVisible();
+  }
+
+  async clickTabWebTables() {
+    await this.webTables.click();
+  }
+
+  async expectContainAddButton() {
+    await expect(this.addButton).toBeVisible();
+  }
+
   async clickAddButton() {
-    await this.page.click("id=addNewRecordButton");
+    await this.addButton.click();
   }
 
-  async typeFirstName(firstName: string) {
-    await this.page.getByPlaceholder("First Name").type(firstName);
+  async typeFirstName() {
+    await this.firstName.type("Topgun");
   }
 
-  async typeLastName(lastName: string) {
-    await this.page.getByPlaceholder("Last Name").type(lastName);
+  async typeLastName() {
+    await this.lastName.type("Maverick");
   }
 
-  async typeAge(age: string) {
-    await this.page.getByPlaceholder("Age").type(age);
+  async typeAge() {
+    await this.age.type("30");
   }
 
-  async typeSalary(salary: string) {
-    await this.page.getByPlaceholder("Salary").type(salary);
+  async typeSalary() {
+    await this.salary.type("42500");
   }
 
-  async typeDepartment(department: string) {
-    await this.page.getByPlaceholder("Department").type(department);
+  async typeDepartment() {
+    await this.department.type("Developer");
+  }
+
+  async expectSubmitButton() {
+    await expect(this.submitButton).toBeVisible();
   }
 
   async clickSubmitButton() {
-    await this.page.click("text=Submit");
+    await this.submitButton.click();
   }
 
   async expectContainFirstName() {
-    await expect(this.page.getByText(/Topgun/i)).toBeVisible();
+    await expect(this.expectFirstName).toBeVisible();
   }
 
   async expectContainLastName() {
-    await expect(this.page.getByText(/Maverick/i)).toBeVisible();
+    await expect(this.expectLastName).toBeVisible();
+  }
+
+  async expectContainAge() {
+    await expect(this.expectAge).toBeVisible();
   }
 
   async expectContaiDepartment() {
-    await expect(this.page.getByText(/Develop/i)).toBeVisible();
+    await expect(this.expectDepartment).toBeVisible();
   }
 
   async doubleClick() {
