@@ -33,6 +33,7 @@ export class DemoQaPage {
   readonly expectDepartment: Locator;
   readonly buttonsTab: Locator;
   readonly doubleClickMe: Locator;
+  readonly expectTextWhenDoubleClick: Locator;
   readonly rightClickMe: Locator;
 
   constructor(page: Page) {
@@ -72,6 +73,9 @@ export class DemoQaPage {
     this.expectDepartment = page.getByText(/Developer/i);
     this.buttonsTab = page.getByText(/Buttons/i);
     this.doubleClickMe = page.getByText(/Double Click Me/i);
+    this.expectTextWhenDoubleClick = page.getByText(
+      /You have done a double click/i
+    );
     this.rightClickMe = page.getByText(/Right Click Me/i);
   }
 
@@ -248,9 +252,7 @@ export class DemoQaPage {
   }
 
   async expectContainDoubleClick() {
-    await expect(
-      this.page.getByText(/You have done a double click/i)
-    ).toBeVisible();
+    await expect(this.expectTextWhenDoubleClick).toBeVisible();
   }
 
   async expectContainRightClickMeButton() {
