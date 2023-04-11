@@ -229,6 +229,10 @@ export class DemoQaPage {
     await expect(this.page.getByText(/Buttons/i)).toBeVisible();
   }
 
+  async clickButtonsTab() {
+    await this.page.getByText(/Buttons/i).click();
+  }
+
   async doubleClick() {
     await this.page.dblclick("text=Double Click Me");
   }
