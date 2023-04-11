@@ -277,6 +277,12 @@ export class DemoQaPage {
     ).toBeVisible();
   }
 
+  async clickDynamicClickMeButton() {
+    await this.page
+      .getByRole("button", { name: "Click Me", exact: true })
+      .click();
+  }
+
   async expectContainLinkOpenNewTab() {
     await expect(
       this.page.getByText(/Following links will open new tab/)
