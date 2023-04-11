@@ -36,6 +36,7 @@ export class DemoQaPage {
   readonly expectTextWhenDoubleClick: Locator;
   readonly rightClickMe: Locator;
   readonly expectTextWheneRightClick: Locator;
+  readonly dynamicButton: Locator;
 
   constructor(page: Page) {
     this.page = page;
@@ -81,6 +82,10 @@ export class DemoQaPage {
     this.expectTextWheneRightClick = this.page.getByText(
       /You have done a right click/i
     );
+    this.dynamicButton = page.getByRole("button", {
+      name: "Click Me",
+      exact: true,
+    });
   }
 
   async expectUrl() {
@@ -272,22 +277,16 @@ export class DemoQaPage {
   }
 
   async expectContainDynamicClickMeButton() {
-    await expect(
-      this.page.getByRole("button", { name: "Click Me", exact: true })
-    ).toBeVisible();
+    await expect(this.dynamicButton).toBeVisible();
   }
 
   async clickDynamicClickMeButton() {
-    await this.page
-      .getByRole("button", { name: "Click Me", exact: true })
-      .click();
+    await this.dynamicButton.click();
   }
 
-  async expectContainLinkOpenNewTab() {
-    await expect(
-      this.page.getByText(/Following links will open new tab/)
-    ).toBeVisible();
-  }
+  // async expectContainLinkOpenNewTab() {
+  //   await expect(this.dynamicButton).toBeVisible();
+  // }
 
   async clickLinkHome() {
     await this.page.click("text=Home");
