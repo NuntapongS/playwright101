@@ -271,6 +271,12 @@ export class DemoQaPage {
     await expect(this.expectTextWheneRightClick).toBeVisible();
   }
 
+  async expectContainDynamicClickMeButton() {
+    await expect(
+      this.page.getByRole("button", { name: "Click Me", exact: true })
+    ).toBeVisible();
+  }
+
   async expectContainLinkOpenNewTab() {
     await expect(
       this.page.getByText(/Following links will open new tab/)
