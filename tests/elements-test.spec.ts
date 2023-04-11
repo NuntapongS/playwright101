@@ -92,8 +92,9 @@ test.describe("Elements", () => {
     await demoQaPage.clickButtonsTab();
     await demoQaPage.expectContainDoubleClickButton();
     await demoQaPage.doubleClick();
-    // await demoQaPage.expectContainDoubleClick();
-    // await demoQaPage.clickRightClick();
+    await demoQaPage.expectContainDoubleClick();
+    await demoQaPage.expectContainRightClickMeButton();
+    await demoQaPage.clickRightClick();
     // await demoQaPage.expectContainRightClick();
   });
 

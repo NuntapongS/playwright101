@@ -33,6 +33,7 @@ export class DemoQaPage {
   readonly expectDepartment: Locator;
   readonly buttonsTab: Locator;
   readonly doubleClickMe: Locator;
+  readonly rightClickMe: Locator;
 
   constructor(page: Page) {
     this.page = page;
@@ -71,6 +72,7 @@ export class DemoQaPage {
     this.expectDepartment = page.getByText(/Developer/i);
     this.buttonsTab = page.getByText(/Buttons/i);
     this.doubleClickMe = page.getByText(/Double Click Me/i);
+    this.rightClickMe = page.getByText(/Right Click Me/i);
   }
 
   async expectUrl() {
@@ -251,8 +253,12 @@ export class DemoQaPage {
     ).toBeVisible();
   }
 
+  async expectContainRightClickMeButton() {
+    await expect(this.rightClickMe).toBeVisible();
+  }
+
   async clickRightClick() {
-    await this.page.locator("text=Right Click Me").click({ button: "right" });
+    await this.rightClickMe.click({ button: "right" });
   }
 
   async expectContainRightClick() {
