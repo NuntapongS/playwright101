@@ -95,7 +95,7 @@ test.describe("Elements", () => {
     await demoQaPage.expectContainDoubleClick();
     await demoQaPage.expectContainRightClickMeButton();
     await demoQaPage.clickRightClick();
-    // await demoQaPage.expectContainRightClick();
+    await demoQaPage.expectContainRightClick();
   });
 
   test.skip("ผู้ใช้งานกด link ใน tab Links", async ({ page }) => {

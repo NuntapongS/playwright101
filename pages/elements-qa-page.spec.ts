@@ -35,6 +35,7 @@ export class DemoQaPage {
   readonly doubleClickMe: Locator;
   readonly expectTextWhenDoubleClick: Locator;
   readonly rightClickMe: Locator;
+  readonly expectTextWheneRightClick: Locator;
 
   constructor(page: Page) {
     this.page = page;
@@ -77,6 +78,9 @@ export class DemoQaPage {
       /You have done a double click/i
     );
     this.rightClickMe = page.getByText(/Right Click Me/i);
+    this.expectTextWheneRightClick = this.page.getByText(
+      /You have done a right click/i
+    );
   }
 
   async expectUrl() {
@@ -264,9 +268,7 @@ export class DemoQaPage {
   }
 
   async expectContainRightClick() {
-    await expect(
-      this.page.getByText(/You have done a right click/i)
-    ).toBeVisible();
+    await expect(this.expectTextWheneRightClick).toBeVisible();
   }
 
   async expectContainLinkOpenNewTab() {
