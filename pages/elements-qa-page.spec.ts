@@ -35,8 +35,9 @@ export class DemoQaPage {
   readonly doubleClickMe: Locator;
   readonly expectTextWhenDoubleClick: Locator;
   readonly rightClickMe: Locator;
-  readonly expectTextWheneRightClick: Locator;
+  readonly expectTextWhenRightClick: Locator;
   readonly dynamicButton: Locator;
+  readonly expectTextWhenClickDynamicButton: Locator;
 
   constructor(page: Page) {
     this.page = page;
@@ -79,13 +80,16 @@ export class DemoQaPage {
       /You have done a double click/i
     );
     this.rightClickMe = page.getByText(/Right Click Me/i);
-    this.expectTextWheneRightClick = this.page.getByText(
+    this.expectTextWhenRightClick = this.page.getByText(
       /You have done a right click/i
     );
     this.dynamicButton = page.getByRole("button", {
       name: "Click Me",
       exact: true,
     });
+    this.expectTextWhenClickDynamicButton = page.getByText(
+      "You have done a dynamic click"
+    );
   }
 
   async expectUrl() {
@@ -273,7 +277,7 @@ export class DemoQaPage {
   }
 
   async expectContainRightClick() {
-    await expect(this.expectTextWheneRightClick).toBeVisible();
+    await expect(this.expectTextWhenRightClick).toBeVisible();
   }
 
   async expectContainDynamicClickMeButton() {
@@ -282,6 +286,10 @@ export class DemoQaPage {
 
   async clickDynamicClickMeButton() {
     await this.dynamicButton.click();
+  }
+
+  async expectContainDynamicClick() {
+    await expect(this.expectTextWhenClickDynamicButton).toBeVisible();
   }
 
   // async expectContainLinkOpenNewTab() {
