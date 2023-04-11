@@ -32,6 +32,7 @@ export class DemoQaPage {
   readonly expectAge: Locator;
   readonly expectDepartment: Locator;
   readonly buttonsTab: Locator;
+  readonly doubleClickMe: Locator;
 
   constructor(page: Page) {
     this.page = page;
@@ -69,6 +70,7 @@ export class DemoQaPage {
     this.expectAge = page.getByText(/30/i);
     this.expectDepartment = page.getByText(/Developer/i);
     this.buttonsTab = page.getByText(/Buttons/i);
+    this.doubleClickMe = page.getByText(/Double Click Me/i);
   }
 
   async expectUrl() {
@@ -236,11 +238,11 @@ export class DemoQaPage {
   }
 
   async expectContainDoubleClickButton() {
-    await expect(this.page.getByText(/Double Click Me/i)).toBeVisible();
+    await expect(this.doubleClickMe).toBeVisible();
   }
 
   async doubleClick() {
-    await this.page.getByText(/Double Click Me/i).dblclick();
+    await this.doubleClickMe.dblclick();
   }
 
   async expectContainDoubleClick() {
