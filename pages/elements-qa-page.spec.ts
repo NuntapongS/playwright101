@@ -43,6 +43,7 @@ export class DemoQaPage {
   readonly home: Locator;
   readonly expectTextLinkApiCall: Locator;
   readonly textCreated: Locator;
+  readonly expectTextWhenClickTextCreatedLink: Locator;
 
   constructor(page: Page) {
     this.page = page;
@@ -104,6 +105,9 @@ export class DemoQaPage {
       /Following links will send an api call/
     );
     this.textCreated = page.getByText(/Created/i);
+    this.expectTextWhenClickTextCreatedLink = page.getByText(
+      /Link has responded with staus 201 and status text Created/i
+    );
   }
 
   async expectUrl() {
@@ -343,11 +347,7 @@ export class DemoQaPage {
   }
 
   async expectContainTextCratedLink() {
-    await expect(
-      this.page.getByText(
-        /Link has responded with staus 201 and status text Created/i
-      )
-    ).toBeVisible();
+    await expect(this.expectTextWhenClickTextCreatedLink).toBeVisible();
   }
 
   async clickNoContentLink() {
