@@ -312,6 +312,10 @@ export class DemoQaPage {
     await expect(this.expectTextInLinkOpenNewTab).toBeVisible();
   }
 
+  async expectLinkHome() {
+    await expect(this.home).toBeVisible();
+  }
+
   async clickLinkHome() {
     await this.home.click();
   }
