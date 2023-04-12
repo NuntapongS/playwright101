@@ -339,7 +339,7 @@ export class DemoQaPage {
   }
 
   async clickCreatedLink() {
-    await this.page.click("text=Created");
+    await this.textCreated.click();
   }
 
   async expectContainTextCratedLink() {
