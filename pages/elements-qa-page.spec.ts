@@ -41,6 +41,7 @@ export class DemoQaPage {
   readonly links: Locator;
   readonly expectTextInLinkOpenNewTab: Locator;
   readonly home: Locator;
+  readonly expectTextLinkApiCall: Locator;
 
   constructor(page: Page) {
     this.page = page;
@@ -98,6 +99,9 @@ export class DemoQaPage {
       "Following links will open new tab"
     );
     this.home = page.getByText(/Home/i).first();
+    this.expectTextLinkApiCall = page.getByText(
+      /Following links will send an api call/
+    );
   }
 
   async expectUrl() {
@@ -325,9 +329,7 @@ export class DemoQaPage {
   }
 
   async expectContainLinkApiCall() {
-    await expect(
-      this.page.getByText(/Following links will send an api call/)
-    ).toBeVisible();
+    await expect(this.expectTextLinkApiCall).toBeVisible();
   }
 
   async clickCreatedLink() {
