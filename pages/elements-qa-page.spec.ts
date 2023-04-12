@@ -38,6 +38,7 @@ export class DemoQaPage {
   readonly expectTextWhenRightClick: Locator;
   readonly dynamicButton: Locator;
   readonly expectTextWhenClickDynamicButton: Locator;
+  readonly links: Locator;
 
   constructor(page: Page) {
     this.page = page;
@@ -90,6 +91,7 @@ export class DemoQaPage {
     this.expectTextWhenClickDynamicButton = page.getByText(
       "You have done a dynamic click"
     );
+    this.links = page.getByText(/Links/i).nth(1);
   }
 
   async expectUrl() {
@@ -290,6 +292,10 @@ export class DemoQaPage {
 
   async expectContainDynamicClick() {
     await expect(this.expectTextWhenClickDynamicButton).toBeVisible();
+  }
+
+  async expectContainLinks() {
+    await expect(this.links).toBeVisible();
   }
 
   // async expectContainLinkOpenNewTab() {
