@@ -115,6 +115,7 @@ test.describe("Elements", () => {
     await demoQaPage.clickLinkHome();
     await demoQaPage.expectContainLinkHome();
     await demoQaPage.expectContainLinkApiCall();
+    await demoQaPage.expectTextCreated();
     // await demoQaPage.clickCreatedLink();
     // await demoQaPage.expectContainTextCratedLink();
     // await demoQaPage.clickNoContentLink();
