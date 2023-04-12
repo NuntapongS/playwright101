@@ -91,7 +91,7 @@ export class DemoQaPage {
     this.expectTextWhenClickDynamicButton = page.getByText(
       "You have done a dynamic click"
     );
-    this.links = page.getByText(/Links/i).nth(1);
+    this.links = page.getByText(/Links/i).first();
   }
 
   async expectUrl() {
@@ -302,9 +302,11 @@ export class DemoQaPage {
     await this.links.click();
   }
 
-  // async expectContainLinkOpenNewTab() {
-  //   await expect(this.dynamicButton).toBeVisible();
-  // }
+  async expectContainLinkOpenNewTab() {
+    await expect(
+      this.page.getByText("Following links will open new tab")
+    ).toBeVisible();
+  }
 
   async clickLinkHome() {
     await this.page.click("text=Home");
