@@ -109,6 +109,7 @@ test.describe("Elements", () => {
     await demoQaPage.expectContainTextElements();
     await demoQaPage.clickElement();
     await demoQaPage.expectContainLinks();
+    await demoQaPage.clickLinksTab();
     // await demoQaPage.expectContainLinkOpenNewTab();
     // await demoQaPage.clickLinkHome();
     // await demoQaPage.expectContainLinkHome();

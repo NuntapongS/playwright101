@@ -298,6 +298,10 @@ export class DemoQaPage {
     await expect(this.links).toBeVisible();
   }
 
+  async clickLinksTab() {
+    await this.links.click();
+  }
+
   // async expectContainLinkOpenNewTab() {
   //   await expect(this.dynamicButton).toBeVisible();
   // }
