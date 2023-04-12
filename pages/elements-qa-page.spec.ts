@@ -40,6 +40,7 @@ export class DemoQaPage {
   readonly expectTextWhenClickDynamicButton: Locator;
   readonly links: Locator;
   readonly expectTextInLinkOpenNewTab: Locator;
+  readonly home: Locator;
 
   constructor(page: Page) {
     this.page = page;
@@ -96,6 +97,7 @@ export class DemoQaPage {
     this.expectTextInLinkOpenNewTab = page.getByText(
       "Following links will open new tab"
     );
+    this.home = page.getByText(/Home/i).first();
   }
 
   async expectUrl() {
@@ -311,7 +313,7 @@ export class DemoQaPage {
   }
 
   async clickLinkHome() {
-    await this.page.click("text=Home");
+    await this.home.click();
   }
 
   async expectContainLinkHome() {
