@@ -350,9 +350,13 @@ export class DemoQaPage {
     await expect(this.expectTextWhenClickTextCreatedLink).toBeVisible();
   }
 
-  async clickNoContentLink() {
-    await this.page.click("text=No Content");
+  async expectContainNoContentLink() {
+    await expect(this.page.getByText("No Content")).toBeVisible();
   }
+
+  // async clickNoContentLink() {
+  //   await this.page.click("text=No Content");
+  // }
 
   async expectContainTextNoContent() {
     await expect(
