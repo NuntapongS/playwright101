@@ -45,6 +45,7 @@ export class DemoQaPage {
   readonly textCreated: Locator;
   readonly expectTextWhenClickTextCreatedLink: Locator;
   readonly noContent: Locator;
+  readonly expectTextNoContent: Locator;
 
   constructor(page: Page) {
     this.page = page;
@@ -110,6 +111,9 @@ export class DemoQaPage {
       /Link has responded with staus 201 and status text Created/i
     );
     this.noContent = page.getByText("No Content");
+    this.expectTextNoContent = page.getByText(
+      /Link has responded with staus 204 and status text No Content/i
+    );
   }
 
   async expectUrl() {
@@ -361,11 +365,7 @@ export class DemoQaPage {
   }
 
   async expectContainTextNoContent() {
-    await expect(
-      this.page.getByText(
-        /Link has responded with staus 204 and status text No Content/i
-      )
-    ).toBeVisible();
+    await expect(this.expectTextNoContent).toBeVisible();
   }
 
   async clickMoved() {
