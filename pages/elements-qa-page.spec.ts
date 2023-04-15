@@ -368,6 +368,10 @@ export class DemoQaPage {
     await expect(this.expectTextNoContent).toBeVisible();
   }
 
+  async expectContainMoved() {
+    await expect(this.page.getByText("Moved")).toBeVisible();
+  }
+
   async clickMoved() {
     await this.page.click("text=Moved");
   }
