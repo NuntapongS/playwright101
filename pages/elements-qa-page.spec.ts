@@ -386,6 +386,10 @@ export class DemoQaPage {
     await expect(this.expectTextWhenClickMovedLink).toBeVisible();
   }
 
+  async expectContainBadRequest() {
+    await expect(this.page.getByText("Bad Request")).toBeVisible();
+  }
+
   async clickBadRequest() {
     await this.page.click("text=Bad Request");
   }

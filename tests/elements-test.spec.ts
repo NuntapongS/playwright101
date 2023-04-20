@@ -124,6 +124,7 @@ test.describe("Elements", () => {
     await demoQaPage.expectContainMoved();
     await demoQaPage.clickMoved();
     await demoQaPage.expectContainTextMoved();
+    await demoQaPage.expectContainBadRequest();
     // await demoQaPage.clickBadRequest();
     // await demoQaPage.expectContainTextBadRequest();
     // await demoQaPage.clickUnauthorized();
