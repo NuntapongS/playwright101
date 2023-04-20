@@ -48,6 +48,7 @@ export class DemoQaPage {
   readonly expectTextNoContent: Locator;
   readonly moved: Locator;
   readonly expectTextWhenClickMovedLink: Locator;
+  readonly badRequest: Locator;
 
   constructor(page: Page) {
     this.page = page;
@@ -120,6 +121,7 @@ export class DemoQaPage {
     this.expectTextWhenClickMovedLink = page.getByText(
       /Link has responded with staus 301 and status text Moved Permanently/i
     );
+    this.badRequest = page.getByText("Bad Request");
   }
 
   async expectUrl() {
@@ -387,11 +389,11 @@ export class DemoQaPage {
   }
 
   async expectContainBadRequest() {
-    await expect(this.page.getByText("Bad Request")).toBeVisible();
+    await expect(this.badRequest).toBeVisible();
   }
 
   async clickBadRequest() {
-    await this.page.click("text=Bad Request");
+    await this.badRequest.click();
   }
 
   async expectContainTextBadRequest() {
