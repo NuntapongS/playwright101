@@ -122,7 +122,7 @@ test.describe("Elements", () => {
     await demoQaPage.clickNoContentLink();
     await demoQaPage.expectContainTextNoContent();
     await demoQaPage.expectContainMoved();
-    // await demoQaPage.clickMoved();
+    await demoQaPage.clickMoved();
     // await demoQaPage.expectContainTextMoved();
     // await demoQaPage.clickBadRequest();
     // await demoQaPage.expectContainTextBadRequest();
