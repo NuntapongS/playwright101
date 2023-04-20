@@ -404,6 +404,10 @@ export class DemoQaPage {
     await expect(this.expectTextWhenClickBadRequestLink).toBeVisible();
   }
 
+  async expectContainUnauthorized() {
+    await expect(this.page.getByText("Unauthorized")).toBeVisible();
+  }
+
   async clickUnauthorized() {
     await this.page.click("text=Unauthorized");
   }
