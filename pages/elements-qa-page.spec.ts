@@ -49,6 +49,7 @@ export class DemoQaPage {
   readonly moved: Locator;
   readonly expectTextWhenClickMovedLink: Locator;
   readonly badRequest: Locator;
+  readonly expectTextWhenClickBadRequestLink: Locator;
 
   constructor(page: Page) {
     this.page = page;
@@ -122,6 +123,9 @@ export class DemoQaPage {
       /Link has responded with staus 301 and status text Moved Permanently/i
     );
     this.badRequest = page.getByText("Bad Request");
+    this.expectTextWhenClickBadRequestLink = page.getByText(
+      /Link has responded with staus 400 and status text Bad Request/i
+    );
   }
 
   async expectUrl() {
@@ -397,11 +401,7 @@ export class DemoQaPage {
   }
 
   async expectContainTextBadRequest() {
-    await expect(
-      this.page.getByText(
-        /Link has responded with staus 400 and status text Bad Request/i
-      )
-    ).toBeVisible();
+    await expect(this.expectTextWhenClickBadRequestLink).toBeVisible();
   }
 
   async clickUnauthorized() {
