@@ -127,7 +127,8 @@ test.describe("Elements", () => {
     await demoQaPage.expectContainBadRequest();
     await demoQaPage.clickBadRequest();
     await demoQaPage.expectContainTextBadRequest();
-    // await demoQaPage.clickUnauthorized();
+    await demoQaPage.expectContainUnauthorized();
+    await demoQaPage.clickUnauthorized();
     // await demoQaPage.expectContainTextUnauthorized();
     // await demoQaPage.clickForbidden();
     // await demoQaPage.expectContainTextForbidden();

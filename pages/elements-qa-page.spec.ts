@@ -50,6 +50,7 @@ export class DemoQaPage {
   readonly expectTextWhenClickMovedLink: Locator;
   readonly badRequest: Locator;
   readonly expectTextWhenClickBadRequestLink: Locator;
+  readonly unauthorized: Locator;
 
   constructor(page: Page) {
     this.page = page;
@@ -126,6 +127,7 @@ export class DemoQaPage {
     this.expectTextWhenClickBadRequestLink = page.getByText(
       /Link has responded with staus 400 and status text Bad Request/i
     );
+    this.unauthorized = page.getByText("Unauthorized");
   }
 
   async expectUrl() {
@@ -405,11 +407,11 @@ export class DemoQaPage {
   }
 
   async expectContainUnauthorized() {
-    await expect(this.page.getByText("Unauthorized")).toBeVisible();
+    await expect(this.unauthorized).toBeVisible();
   }
 
   async clickUnauthorized() {
-    await this.page.click("text=Unauthorized");
+    await this.unauthorized.click();
   }
 
   async expectContainTextUnauthorized() {
