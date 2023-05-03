@@ -135,7 +135,7 @@ test.describe("Elements", () => {
     await demoQaPage.expectContainTextForbidden();
     await demoQaPage.expectContainNotFound();
     await demoQaPage.clickNotFound();
-    // await demoQaPage.expectContainTextNotFound();
+    await demoQaPage.expectContainTextNotFound();
   });
 
   test.skip("ผู้ใช้งานกด link ใน tab Broken Links - Images", async ({
