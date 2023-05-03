@@ -458,6 +458,14 @@ export class DemoQaPage {
     await expect(this.expectContainTextWhenUserClickNotFoundLink).toBeVisible();
   }
 
+  async expectContainBrokenLinksImages() {
+    await expect(this.page.getByText("Broken Links - Images")).toBeVisible();
+  }
+
+  async clickBrokenLinksImagesTab() {
+    await this.page.getByText("Broken Links - Images").click();
+  }
+
   async expectContainTextValidImage() {
     await expect(this.page.getByText(/Valid image/i)).toBeVisible();
   }

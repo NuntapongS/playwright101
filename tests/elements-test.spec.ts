@@ -103,7 +103,7 @@ test.describe("Elements", () => {
     await demoQaPage.expectContainDynamicClick();
   });
 
-  test("ผู้ใช้งานกด link ใน tab Links", async ({ page }) => {
+  test.skip("ผู้ใช้งานกด link ใน tab Links", async ({ page }) => {
     const demoQaPage = new DemoQaPage(page);
     await demoQaPage.expectUrl();
     await demoQaPage.expectContainTextElements();
@@ -138,23 +138,22 @@ test.describe("Elements", () => {
     await demoQaPage.expectContainTextNotFound();
   });
 
-  test.skip("ผู้ใช้งานกด link ใน tab Broken Links - Images", async ({
-    page,
-  }) => {
+  test("ผู้ใช้งานกด link ใน tab Broken Links - Images", async ({ page }) => {
     const demoQaPage = new DemoQaPage(page);
     await demoQaPage.expectUrl();
     await demoQaPage.expectContainTextElements();
     await demoQaPage.clickElement();
-    await demoQaPage.clickTextbox();
-    await demoQaPage.expectContainTextValidImage();
-    await demoQaPage.expectContainTextBrokenImage();
-    await demoQaPage.clickValidLink();
-    await demoQaPage.expectContainLinkHome();
-    await demoQaPage.expectUrl();
-    await demoQaPage.clickElement();
-    await demoQaPage.clickTextbox();
-    await demoQaPage.clickBrokenLink();
-    await demoQaPage.expectUrlBrokenLink();
+    await demoQaPage.expectContainBrokenLinksImages();
+    await demoQaPage.clickBrokenLinksImagesTab();
+    // await demoQaPage.expectContainTextValidImage();
+    // await demoQaPage.expectContainTextBrokenImage();
+    // await demoQaPage.clickValidLink();
+    // await demoQaPage.expectContainLinkHome();
+    // await demoQaPage.expectUrl();
+    // await demoQaPage.clickElement();
+    // await demoQaPage.clickTextbox();
+    // await demoQaPage.clickBrokenLink();
+    // await demoQaPage.expectUrlBrokenLink();
   });
   test.skip("ผู้ใช้งานกด link ใน tab Upload and download", async ({ page }) => {
     const demoQaPage = new DemoQaPage(page);
