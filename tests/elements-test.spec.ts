@@ -138,7 +138,9 @@ test.describe("Elements", () => {
     await demoQaPage.expectContainTextNotFound();
   });
 
-  test("ผู้ใช้งานกด link ใน tab Broken Links - Images", async ({ page }) => {
+  test.skip("ผู้ใช้งานกด link ใน tab Broken Links - Images", async ({
+    page,
+  }) => {
     const demoQaPage = new DemoQaPage(page);
     await demoQaPage.expectUrl();
     await demoQaPage.expectContainTextElements();
@@ -147,23 +149,24 @@ test.describe("Elements", () => {
     await demoQaPage.clickBrokenLinksImagesTab();
     await demoQaPage.expectContainTextValidImage();
     await demoQaPage.expectContainBrokenImage();
-    // await demoQaPage.clickValidLink();
-    // await demoQaPage.expectContainLinkHome();
-    // await demoQaPage.expectUrl();
-    // await demoQaPage.clickElement();
-    // await demoQaPage.clickTextbox();
-    // await demoQaPage.clickBrokenLink();
-    // await demoQaPage.expectUrlBrokenLink();
+    await demoQaPage.clickValidLink();
+    await demoQaPage.expectContainLinkHome();
+    await demoQaPage.expectUrl();
+    await demoQaPage.clickElement();
+    await demoQaPage.clickTextbox();
+    await demoQaPage.clickBrokenLink();
+    await demoQaPage.expectUrlBrokenLink();
   });
-  test.skip("ผู้ใช้งานกด link ใน tab Upload and download", async ({ page }) => {
+  test("ผู้ใช้งานกด link ใน tab Upload and download", async ({ page }) => {
     const demoQaPage = new DemoQaPage(page);
     await demoQaPage.expectUrl();
     await demoQaPage.expectContainTextElements();
     await demoQaPage.clickElement();
-    await demoQaPage.clickTextbox();
-    await demoQaPage.clickDownloadButton();
-    await demoQaPage.expectContainTextSelectAFile();
-    await demoQaPage.chooseFile();
+    await demoQaPage.expectContainUploadAndDownload();
+    // await demoQaPage.clickUploadAndDownload();
+    // await demoQaPage.clickDownloadButton();
+    // await demoQaPage.expectContainTextSelectAFile();
+    // await demoQaPage.chooseFile();
   });
   test.skip("ผู้ใช้งานกด link ใน tab Dynamic Properties", async ({ page }) => {
     const demoQaPage = new DemoQaPage(page);

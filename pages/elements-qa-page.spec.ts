@@ -502,6 +502,10 @@ export class DemoQaPage {
     );
   }
 
+  async expectContainUploadAndDownload() {
+    await expect(this.page.getByText(/Upload and Download/i)).toBeVisible();
+  }
+
   async clickDownloadButton() {
     await this.page.click("text=Download");
   }
