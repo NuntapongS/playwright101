@@ -132,7 +132,7 @@ test.describe("Elements", () => {
     await demoQaPage.expectContainTextUnauthorized();
     await demoQaPage.expectContainForbidden();
     await demoQaPage.clickForbidden();
-    // await demoQaPage.expectContainTextForbidden();
+    await demoQaPage.expectContainTextForbidden();
     // await demoQaPage.clickNotFound();
     // await demoQaPage.expectContainTextNotFound();
   });

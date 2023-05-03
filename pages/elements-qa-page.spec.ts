@@ -429,7 +429,7 @@ export class DemoQaPage {
   }
 
   async clickForbidden() {
-    await this.page.click("text=Forbidden");
+    await this.forbidden.click();
   }
 
   async expectContainTextForbidden() {
