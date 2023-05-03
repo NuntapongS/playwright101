@@ -512,6 +512,12 @@ export class DemoQaPage {
     await this.uploadAndDownload.click();
   }
 
+  async expectTextDownloadInButton() {
+    await expect(
+      this.page.getByRole("link", { name: "Download" })
+    ).toBeVisible();
+  }
+
   async clickDownloadButton() {
     await this.page.click("text=Download");
   }

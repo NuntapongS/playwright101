@@ -164,6 +164,7 @@ test.describe("Elements", () => {
     await demoQaPage.clickElement();
     await demoQaPage.expectContainUploadAndDownload();
     await demoQaPage.clickUploadAndDownload();
+    await demoQaPage.expectTextDownloadInButton();
     // await demoQaPage.clickDownloadButton();
     // await demoQaPage.expectContainTextSelectAFile();
     // await demoQaPage.chooseFile();
