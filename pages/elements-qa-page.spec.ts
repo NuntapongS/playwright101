@@ -58,6 +58,9 @@ export class DemoQaPage {
   readonly expectContainTextWhenUserClickNotFoundLink: Locator;
   readonly brokenLinksImages: Locator;
   readonly validImage: Locator;
+  readonly brokenImage: Locator;
+  readonly textClickHereForValidLink: Locator;
+  readonly textClickHereForBrokenLink: Locator;
 
   constructor(page: Page) {
     this.page = page;
@@ -148,6 +151,13 @@ export class DemoQaPage {
     );
     this.brokenLinksImages = page.getByText("Broken Links - Images");
     this.validImage = page.getByText(/Valid image/i);
+    this.brokenImage = page.getByText(/Broken image/i);
+    this.textClickHereForValidLink = page.getByText(
+      "Click Here for Valid Link"
+    );
+    this.textClickHereForBrokenLink = page.getByText(
+      "Click Here for Broken Link"
+    );
   }
 
   async expectUrl() {
@@ -474,16 +484,16 @@ export class DemoQaPage {
     await expect(this.validImage).toBeVisible();
   }
 
-  async expectContainTextBrokenImage() {
-    await expect(this.page.getByText(/Broken image/i)).toBeVisible();
+  async expectContainBrokenImage() {
+    await expect(this.brokenImage).toBeVisible();
   }
 
   async clickValidLink() {
-    await this.page.click("text=Click Here for Valid Link");
+    await this.textClickHereForValidLink.click();
   }
 
   async clickBrokenLink() {
-    await this.page.click("text=Click Here for Broken Link", { timeout: 9000 });
+    await this.textClickHereForBrokenLink.click({ timeout: 9000 });
   }
 
   async expectUrlBrokenLink() {
