@@ -145,7 +145,7 @@ test.describe("Elements", () => {
     await demoQaPage.clickElement();
     await demoQaPage.expectContainBrokenLinksImages();
     await demoQaPage.clickBrokenLinksImagesTab();
-    // await demoQaPage.expectContainTextValidImage();
+    await demoQaPage.expectContainTextValidImage();
     // await demoQaPage.expectContainTextBrokenImage();
     // await demoQaPage.clickValidLink();
     // await demoQaPage.expectContainLinkHome();
