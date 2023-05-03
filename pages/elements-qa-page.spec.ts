@@ -61,6 +61,7 @@ export class DemoQaPage {
   readonly brokenImage: Locator;
   readonly textClickHereForValidLink: Locator;
   readonly textClickHereForBrokenLink: Locator;
+  readonly uploadAndDownload: Locator;
 
   constructor(page: Page) {
     this.page = page;
@@ -158,6 +159,7 @@ export class DemoQaPage {
     this.textClickHereForBrokenLink = page.getByText(
       "Click Here for Broken Link"
     );
+    this.uploadAndDownload = page.getByText(/Upload and Download/i);
   }
 
   async expectUrl() {
@@ -503,7 +505,11 @@ export class DemoQaPage {
   }
 
   async expectContainUploadAndDownload() {
-    await expect(this.page.getByText(/Upload and Download/i)).toBeVisible();
+    await expect(this.uploadAndDownload).toBeVisible();
+  }
+
+  async clickUploadAndDownload() {
+    await this.uploadAndDownload.click();
   }
 
   async clickDownloadButton() {
