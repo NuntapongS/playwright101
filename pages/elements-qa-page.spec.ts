@@ -440,6 +440,10 @@ export class DemoQaPage {
     await expect(this.expectContainTextWhenClickForbiddenLink).toBeVisible();
   }
 
+  async expectContainNotFound() {
+    await expect(this.page.getByText("Not Found")).toBeVisible();
+  }
+
   async clickNotFound() {
     await this.page.click("text=Not Found");
   }
