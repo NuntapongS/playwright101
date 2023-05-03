@@ -56,6 +56,7 @@ export class DemoQaPage {
   readonly expectContainTextWhenClickForbiddenLink: Locator;
   readonly notFound: Locator;
   readonly expectContainTextWhenUserClickNotFoundLink: Locator;
+  readonly brokenLinksImages: Locator;
 
   constructor(page: Page) {
     this.page = page;
@@ -144,6 +145,7 @@ export class DemoQaPage {
     this.expectContainTextWhenUserClickNotFoundLink = page.getByText(
       /Link has responded with staus 404 and status text Not Found/i
     );
+    this.brokenLinksImages = page.getByText("Broken Links - Images");
   }
 
   async expectUrl() {
@@ -459,11 +461,11 @@ export class DemoQaPage {
   }
 
   async expectContainBrokenLinksImages() {
-    await expect(this.page.getByText("Broken Links - Images")).toBeVisible();
+    await expect(this.brokenLinksImages).toBeVisible();
   }
 
   async clickBrokenLinksImagesTab() {
-    await this.page.getByText("Broken Links - Images").click();
+    await this.brokenLinksImages.click();
   }
 
   async expectContainTextValidImage() {
