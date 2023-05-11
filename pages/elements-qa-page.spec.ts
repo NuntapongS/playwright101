@@ -62,6 +62,7 @@ export class DemoQaPage {
   readonly textClickHereForValidLink: Locator;
   readonly textClickHereForBrokenLink: Locator;
   readonly uploadAndDownload: Locator;
+  readonly downloadButton: Locator;
 
   constructor(page: Page) {
     this.page = page;
@@ -160,6 +161,7 @@ export class DemoQaPage {
       "Click Here for Broken Link"
     );
     this.uploadAndDownload = page.getByText(/Upload and Download/i);
+    this.downloadButton = page.getByText("Download");
   }
 
   async expectUrl() {
@@ -519,7 +521,7 @@ export class DemoQaPage {
   }
 
   async clickDownloadButton() {
-    await this.page.click("text=Download");
+    await this.downloadButton.click();
   }
 
   async expectContainTextSelectAFile() {
