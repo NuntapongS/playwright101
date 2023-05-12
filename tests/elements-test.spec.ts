@@ -165,8 +165,8 @@ test.describe("Elements", () => {
     await demoQaPage.expectContainUploadAndDownload();
     await demoQaPage.clickUploadAndDownload();
     await demoQaPage.expectTextDownloadInButton();
-    // await demoQaPage.clickDownloadButton();
-    // await demoQaPage.expectContainTextSelectAFile();
+    await demoQaPage.clickDownloadButton();
+    await demoQaPage.expectContainTextSelectAFile();
     // await demoQaPage.chooseFile();
   });
   test.skip("ผู้ใช้งานกด link ใน tab Dynamic Properties", async ({ page }) => {
