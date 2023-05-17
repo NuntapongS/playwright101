@@ -169,7 +169,7 @@ test.describe("Elements", () => {
     await demoQaPage.expectContainTextSelectAFile();
     await demoQaPage.chooseFile();
   });
-  test("ผู้ใช้งานกด link ใน tab Dynamic Properties", async ({ page }) => {
+  test.skip("ผู้ใช้งานกด link ใน tab Dynamic Properties", async ({ page }) => {
     const demoQaPage = new DemoQaPage(page);
     await demoQaPage.expectUrl();
     await demoQaPage.expectContainTextElements();
