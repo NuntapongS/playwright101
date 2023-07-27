@@ -134,9 +134,7 @@ test.describe("Elements", () => {
     await demoQaPage.expectContainTextNotFound();
   });
 
-  test.skip("ผู้ใช้งานกด link ใน tab Broken Links - Images", async ({
-    page,
-  }) => {
+  test("ผู้ใช้งานกด link ใน tab Broken Links - Images", async ({ page }) => {
     const demoQaPage = new DemoQaPage(page);
     await demoQaPage.expectUrl();
     await demoQaPage.expectContainTextElements();
@@ -149,9 +147,11 @@ test.describe("Elements", () => {
     await demoQaPage.expectContainLinkHome();
     await demoQaPage.expectUrl();
     await demoQaPage.clickElement();
-    await demoQaPage.clickTextbox();
+    await demoQaPage.clickBrokenLinksImagesTab();
     await demoQaPage.clickBrokenLink();
-    await demoQaPage.expectUrlBrokenLink();
+    await demoQaPage.expectUrlBrokenLink(
+      "http://the-internet.herokuapp.com/status_codes/500"
+    );
   });
   test("ผู้ใช้งานกด link ใน tab Upload and download", async ({ page }) => {
     const demoQaPage = new DemoQaPage(page);
@@ -165,7 +165,7 @@ test.describe("Elements", () => {
     await demoQaPage.expectContainTextSelectAFile();
     await demoQaPage.chooseFile();
   });
-  test.only("ผู้ใช้งานกด link ใน tab Dynamic Properties", async ({ page }) => {
+  test("ผู้ใช้งานกด link ใน tab Dynamic Properties", async ({ page }) => {
     const demoQaPage = new DemoQaPage(page);
     await demoQaPage.expectUrl();
     await demoQaPage.expectContainTextElements();

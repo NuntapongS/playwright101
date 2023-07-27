@@ -508,10 +508,8 @@ export class DemoQaPage {
     await this.textClickHereForBrokenLink.click({ timeout: 9000 });
   }
 
-  async expectUrlBrokenLink() {
-    await expect(this.page).toHaveURL(
-      "http://the-internet.herokuapp.com/status_codes/500"
-    );
+  async expectUrlBrokenLink(brokenUrl: string) {
+    await expect(this.page).toHaveURL(brokenUrl);
   }
 
   async expectContainUploadAndDownload() {
