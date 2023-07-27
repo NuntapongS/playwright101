@@ -64,6 +64,7 @@ export class DemoQaPage {
   readonly uploadAndDownload: Locator;
   readonly downloadButton: Locator;
   readonly selectAFile: Locator;
+  readonly dynamicProperties: Locator;
 
   constructor(page: Page) {
     this.page = page;
@@ -164,6 +165,7 @@ export class DemoQaPage {
     this.uploadAndDownload = page.getByText(/Upload and Download/i);
     this.downloadButton = page.getByRole("link", { name: "Download" });
     this.selectAFile = page.getByText(/Select a file/i);
+    this.dynamicProperties = page.getByText(/Dynamic Properties/i);
   }
 
   async expectUrl() {
@@ -180,6 +182,10 @@ export class DemoQaPage {
 
   async clickTextbox() {
     await this.textBox.click();
+  }
+
+  async clickDynamicProperties() {
+    await this.dynamicProperties.click();
   }
 
   async typeFullname() {
@@ -546,7 +552,7 @@ export class DemoQaPage {
   }
 
   async clickEnableButton() {
-    await this.page.click("text=Will enable 5 seconds", { timeout: 10000 });
+    await this.page.click("text=Will enable 5 seconds", { timeout: 7000 });
   }
 
   async expectContainTextColorChangeButton() {

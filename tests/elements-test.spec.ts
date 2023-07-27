@@ -32,9 +32,7 @@ test.describe("Elements", () => {
     await demoQaPage.clickTabCheckBox();
     await demoQaPage.checkbox();
   });
-  test.skip("ผู้ใช้งานกด radio button Yes ใน tab Radio Button", async ({
-    page,
-  }) => {
+  test("ผู้ใช้งานกด radio button Yes ใน tab Radio Button", async ({ page }) => {
     const demoQaPage = new DemoQaPage(page);
     await demoQaPage.expectUrl();
     await demoQaPage.expectContainTextElements();
@@ -46,7 +44,7 @@ test.describe("Elements", () => {
     await demoQaPage.expectContainTextWhenClickRadioButtonYes();
   });
 
-  test.skip("ผู้ใช้งานกด radio button Impressive ใน tab Radio Button", async ({
+  test("ผู้ใช้งานกด radio button Impressive ใน tab Radio Button", async ({
     page,
   }) => {
     const demoQaPage = new DemoQaPage(page);
@@ -60,7 +58,7 @@ test.describe("Elements", () => {
     await demoQaPage.expectContainTextWhenClickRadioButtonImpressive();
   });
 
-  test.skip("ผู้ใช้งานกดเพิ่มข้อมูลใน tab Web Tables", async ({ page }) => {
+  test("ผู้ใช้งานกดเพิ่มข้อมูลใน tab Web Tables", async ({ page }) => {
     const demoQaPage = new DemoQaPage(page);
     await demoQaPage.expectUrl();
     await demoQaPage.expectContainTextElements();
@@ -83,9 +81,7 @@ test.describe("Elements", () => {
     await demoQaPage.expectContaiDepartment();
   });
 
-  test.skip("ผู้ใช้งานกด double click ปุ่ม Double Click Me", async ({
-    page,
-  }) => {
+  test("ผู้ใช้งานกด double click ปุ่ม Double Click Me", async ({ page }) => {
     const demoQaPage = new DemoQaPage(page);
     await demoQaPage.expectUrl();
     await demoQaPage.expectContainTextElements();
@@ -103,7 +99,7 @@ test.describe("Elements", () => {
     await demoQaPage.expectContainDynamicClick();
   });
 
-  test.skip("ผู้ใช้งานกด link ใน tab Links", async ({ page }) => {
+  test("ผู้ใช้งานกด link ใน tab Links", async ({ page }) => {
     const demoQaPage = new DemoQaPage(page);
     await demoQaPage.expectUrl();
     await demoQaPage.expectContainTextElements();
@@ -157,7 +153,7 @@ test.describe("Elements", () => {
     await demoQaPage.clickBrokenLink();
     await demoQaPage.expectUrlBrokenLink();
   });
-  test.skip("ผู้ใช้งานกด link ใน tab Upload and download", async ({ page }) => {
+  test("ผู้ใช้งานกด link ใน tab Upload and download", async ({ page }) => {
     const demoQaPage = new DemoQaPage(page);
     await demoQaPage.expectUrl();
     await demoQaPage.expectContainTextElements();
@@ -169,12 +165,12 @@ test.describe("Elements", () => {
     await demoQaPage.expectContainTextSelectAFile();
     await demoQaPage.chooseFile();
   });
-  test.skip("ผู้ใช้งานกด link ใน tab Dynamic Properties", async ({ page }) => {
+  test.only("ผู้ใช้งานกด link ใน tab Dynamic Properties", async ({ page }) => {
     const demoQaPage = new DemoQaPage(page);
     await demoQaPage.expectUrl();
     await demoQaPage.expectContainTextElements();
     await demoQaPage.clickElement();
-    await demoQaPage.clickTextbox();
+    await demoQaPage.clickDynamicProperties();
     await demoQaPage.expectContaintextDynamicProperties();
     await demoQaPage.expectContainTextEnableButton();
     await demoQaPage.clickEnableButton();
