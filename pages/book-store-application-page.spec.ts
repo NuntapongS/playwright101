@@ -1,10 +1,34 @@
-import { Page, expect } from "@playwright/test";
+import { Locator, Page, expect } from "@playwright/test";
 
 export class DemoQaPageBookStoreApplication {
   readonly page: Page;
+  readonly textBookStoreApplication: Locator;
+  readonly textLogin: Locator;
+  readonly textWelcome: Locator;
+  readonly textLoginBookStore: Locator;
+  readonly textUsername: Locator;
+  readonly textPassword: Locator;
+  readonly textNewUser: Locator;
+  readonly textRegisterBookStore: Locator;
+  readonly textFirstName: Locator;
+  readonly textLastName: Locator;
+  readonly textRegister: Locator;
+  readonly textBacktoLogin: Locator;
 
   constructor(page: Page) {
     this.page = page;
+    this.textBookStoreApplication = page.getByText(/Book Store Application/i);
+    this.textLogin = page.getByRole("listitem").filter({ hasText: "Login" });
+    this.textWelcome = page.getByText(/Welcome,/i);
+    this.textLoginBookStore = page.getByText(/Login in Book Store/i);
+    this.textUsername = page.getByText(/Username/i);
+    this.textPassword = page.getByText(/Password/i);
+    this.textNewUser = page.getByText(/New User/i);
+    this.textRegisterBookStore = page.getByText(/Register to Book Store/i);
+    this.textFirstName = page.getByText(/First Name/i);
+    this.textLastName = page.getByText(/Last Name/i);
+    this.textRegister = page.getByText(/Register/i).nth(2);
+    this.textBacktoLogin = page.getByText(/Back to Login/i);
   }
 
   async expectUrl() {
@@ -12,7 +36,7 @@ export class DemoQaPageBookStoreApplication {
   }
 
   async expectContainTextBookStoreApplication() {
-    await expect(this.page.getByText(/Book Store Application/i)).toBeVisible();
+    await expect(this.textBookStoreApplication).toBeVisible();
   }
 
   async clickBookStoreApplication(bookStoreApplication: string) {
@@ -20,44 +44,44 @@ export class DemoQaPageBookStoreApplication {
   }
 
   async expectTabLogin() {
-    await expect(this.page.locator("text=Login").first()).toBeVisible();
+    await expect(this.textLogin).toBeVisible();
   }
 
   async clickTablogin() {
-    await this.page.click("text=Login");
+    await this.textLogin.click();
   }
 
   async expectContaintextInTabLogin() {
-    await expect(this.page.getByText(/Welcome,/i)).toBeVisible();
-    await expect(this.page.getByText(/Login in Book Store/i)).toBeVisible();
+    await expect(this.textWelcome).toBeVisible();
+    await expect(this.textLoginBookStore).toBeVisible();
   }
 
   async expectContaintextUsername() {
-    await expect(this.page.getByText(/Username/i)).toBeVisible();
+    await expect(this.textUsername).toBeVisible();
   }
 
   async expectContainTextPassword() {
-    await expect(this.page.getByText(/Password/i)).toBeVisible();
+    await expect(this.textPassword).toBeVisible();
   }
 
   async expectContainTextLogin() {
-    await expect(this.page.getByText(/Login/i).nth(2)).toBeVisible();
+    await expect(this.textLogin).toBeVisible();
   }
 
   async expectContainTextNewUser() {
-    await expect(this.page.getByText(/New User/i)).toBeVisible();
+    await expect(this.textNewUser).toBeVisible();
   }
 
   async clickNewUserButton() {
-    await this.page.click("text=New User");
+    await this.textNewUser.click();
   }
 
   async expectContaintextRegister() {
-    await expect(this.page.getByText(/Register to Book Store/i)).toBeVisible();
+    await expect(this.textRegisterBookStore).toBeVisible();
   }
 
   async expectTextFirstName() {
-    await expect(this.page.getByText(/First Name/i)).toBeVisible();
+    await expect(this.textFirstName).toBeVisible();
   }
 
   async fillFirstName(firstName: string) {
@@ -65,7 +89,7 @@ export class DemoQaPageBookStoreApplication {
   }
 
   async expectTextLastName() {
-    await expect(this.page.getByText(/Last Name/i)).toBeVisible();
+    await expect(this.textLastName).toBeVisible();
   }
 
   async fillLastName(lastName: string) {
@@ -73,7 +97,7 @@ export class DemoQaPageBookStoreApplication {
   }
 
   async expectTextUserName() {
-    await expect(this.page.getByText(/UserName/i)).toBeVisible();
+    await expect(this.textUsername).toBeVisible();
   }
 
   async fillUserName(userName: string) {
@@ -81,22 +105,18 @@ export class DemoQaPageBookStoreApplication {
   }
 
   async expectTextPassword() {
-    await expect(this.page.getByText(/Password/i)).toBeVisible();
+    await expect(this.textPassword).toBeVisible();
   }
 
   async fillPassword(password: string) {
     await this.page.getByPlaceholder("Password").type(password);
   }
 
-  // async clickCheckboxIAmNotARobot() {
-  //   await this.page.click("text=I'm not a robot"), { force: true };
-  // }
-
   async expectTextRegister() {
-    await expect(this.page.getByText(/Register/i).nth(2)).toBeVisible();
+    await expect(this.textRegister).toBeVisible();
   }
 
   async expectTextBackToLogin() {
-    await expect(this.page.getByText(/Back to Login/i)).toBeVisible();
+    await expect(this.textBacktoLogin).toBeVisible();
   }
 }
