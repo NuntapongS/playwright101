@@ -65,6 +65,9 @@ export class DemoQaPage {
   readonly downloadButton: Locator;
   readonly selectAFile: Locator;
   readonly dynamicProperties: Locator;
+  readonly expectTextRandomID: Locator;
+  readonly textEnable: Locator;
+  readonly textColorChange: Locator;
 
   constructor(page: Page) {
     this.page = page;
@@ -166,6 +169,9 @@ export class DemoQaPage {
     this.downloadButton = page.getByRole("link", { name: "Download" });
     this.selectAFile = page.getByText(/Select a file/i);
     this.dynamicProperties = page.getByText(/Dynamic Properties/i);
+    this.expectTextRandomID = page.getByText(/This text has random id/i);
+    this.textEnable = page.getByText(/Will enable 5 seconds/i);
+    this.textColorChange = page.getByText(/Color Change/i);
   }
 
   async expectUrl() {
@@ -542,11 +548,11 @@ export class DemoQaPage {
   }
 
   async expectContaintextDynamicProperties() {
-    await expect(this.page.getByText(/This text has random id/i)).toBeVisible();
+    await expect(this.expectTextRandomID).toBeVisible();
   }
 
   async expectContainTextEnableButton() {
-    await expect(this.page.getByText(/Will enable 5 seconds/i)).toBeVisible();
+    await expect(this.textEnable).toBeVisible();
   }
 
   async clickEnableButton() {
@@ -554,6 +560,6 @@ export class DemoQaPage {
   }
 
   async expectContainTextColorChangeButton() {
-    await expect(this.page.getByText(/Color Change/i)).toBeVisible();
+    await expect(this.textColorChange).toBeVisible();
   }
 }
