@@ -1,10 +1,47 @@
-import { Page, expect } from "@playwright/test";
+import { Locator, Page, expect } from "@playwright/test";
 
 export class DemoQaPageAlertFrameAndWindows {
   readonly page: Page;
+  readonly textForm: Locator;
+  readonly textNewWindow: Locator;
+  readonly textAlert: Locator;
+  readonly textAlertWillAppearFiveSecond: Locator;
+  readonly textAlertOkCancle: Locator;
+  readonly textPromptBox: Locator;
+  readonly textTabFrame: Locator;
+  readonly textNestedFrames: Locator;
+  readonly textModelDialogs: Locator;
+  readonly textInSmallModal: Locator;
+  readonly textInLargeModal: Locator;
 
   constructor(page: Page) {
     this.page = page;
+    this.textForm = page.getByText(/Alerts, Frame & Windows/i);
+    this.textNewWindow = page.getByRole("button", {
+      name: "New Window",
+      exact: true,
+    });
+    this.textAlert = page.getByText(/Click Button to see alert/i);
+    this.textAlertWillAppearFiveSecond = page.getByText(
+      /On button click, alert will appear after 5 seconds/i
+    );
+    this.textAlertOkCancle = page.getByText(
+      /On button click, confirm box will appear/i
+    );
+    this.textPromptBox = page.getByText(
+      /On button click, prompt box will appear/i
+    );
+    this.textTabFrame = page.getByText(
+      /Sample Iframe page There are 2 Iframes in this page. Use browser inspecter or firebug to check out the HTML source. In total you can switch between the parent frame, which is this window, and the two frames below/i
+    );
+    this.textNestedFrames = page.getByText(
+      /Sample Nested Iframe page. There are nested iframes in this page. Use browser inspecter or firebug to check out the HTML source. In total you can switch between the parent frame and the nested child frame./i
+    );
+    this.textModelDialogs = page.getByText(/Click on button to see modal/i);
+    this.textInSmallModal = page.getByText(
+      /This is a small modal. It has very less content/i
+    );
+    this.textInLargeModal = page.getByText(/Large Modal/i).last();
   }
 
   async expectUrl() {
@@ -12,7 +49,7 @@ export class DemoQaPageAlertFrameAndWindows {
   }
 
   async expectTextAlertFrameAndWindows() {
-    await expect(this.page.getByText(/Alerts, Frame & Windows/i)).toBeVisible();
+    await expect(this.textForm).toBeVisible();
   }
 
   async clickAlertFrameAndWindows(alertFrameAndWindows: string) {
@@ -34,7 +71,7 @@ export class DemoQaPageAlertFrameAndWindows {
   }
 
   async gotoModalNewWindows() {
-    await this.page.click("text=New Window");
+    await this.textNewWindow.click();
     const newWindow = await this.page.waitForEvent("popup");
     await newWindow.goto("https://demoqa.com/sample");
     await newWindow.close();
@@ -49,9 +86,7 @@ export class DemoQaPageAlertFrameAndWindows {
   }
 
   async expectButtonAlert() {
-    await expect(
-      this.page.getByText(/Click Button to see alert/i)
-    ).toBeVisible();
+    await expect(this.textAlert).toBeVisible();
   }
 
   async clickButtonToSeeAlert(clickMe: string) {
@@ -59,9 +94,7 @@ export class DemoQaPageAlertFrameAndWindows {
   }
 
   async expectButtonAlertWillAppearAfterFiveSecond() {
-    await expect(
-      this.page.getByText(/On button click, alert will appear after 5 seconds/i)
-    ).toBeVisible();
+    await expect(this.textAlertWillAppearFiveSecond).toBeVisible();
   }
 
   async clickButtonToSeeAlertWillAppearAfterFiveSecond(clickMe: string) {
@@ -69,9 +102,7 @@ export class DemoQaPageAlertFrameAndWindows {
   }
 
   async expectButtonAlertWithOkCancel() {
-    await expect(
-      this.page.getByText(/On button click, confirm box will appear/i)
-    ).toBeVisible();
+    await expect(this.textAlertOkCancle).toBeVisible();
   }
 
   async clickButtonConfirmBoxWillAppear(clickMe: string) {
@@ -79,9 +110,7 @@ export class DemoQaPageAlertFrameAndWindows {
   }
 
   async expectTextPromptBox() {
-    await expect(
-      this.page.getByText(/On button click, prompt box will appear/i)
-    ).toBeVisible();
+    await expect(this.textPromptBox).toBeVisible();
   }
 
   async clickButtonPromptBox(clickMe: string) {
@@ -93,11 +122,7 @@ export class DemoQaPageAlertFrameAndWindows {
   }
 
   async expectTextInTabFrames() {
-    await expect(
-      this.page.getByText(
-        /Sample Iframe page There are 2 Iframes in this page. Use browser inspecter or firebug to check out the HTML source. In total you can switch between the parent frame, which is this window, and the two frames below/i
-      )
-    ).toBeVisible();
+    await expect(this.textTabFrame).toBeVisible();
   }
 
   async clickNestedFrames(nestedFrames: string) {
@@ -105,11 +130,7 @@ export class DemoQaPageAlertFrameAndWindows {
   }
 
   async expectTextInTabNestedFrames() {
-    await expect(
-      this.page.getByText(
-        /Sample Nested Iframe page. There are nested iframes in this page. Use browser inspecter or firebug to check out the HTML source. In total you can switch between the parent frame and the nested child frame./i
-      )
-    ).toBeVisible();
+    await expect(this.textNestedFrames).toBeVisible();
   }
 
   async clickModalDialogs(modalDialogs: string) {
@@ -117,9 +138,7 @@ export class DemoQaPageAlertFrameAndWindows {
   }
 
   async expectContainTextInTabModalDialogs() {
-    await expect(
-      this.page.getByText(/Click on button to see modal/i)
-    ).toBeVisible();
+    await expect(this.textModelDialogs).toBeVisible();
   }
 
   async clickSmallModal(smallModal: string) {
@@ -127,9 +146,7 @@ export class DemoQaPageAlertFrameAndWindows {
   }
 
   async expectContainTextInTabSmallModal() {
-    await expect(
-      this.page.getByText(/This is a small modal. It has very less content/i)
-    ).toBeVisible();
+    await expect(this.textInSmallModal).toBeVisible();
   }
 
   async clickCloseSmallModal(close: string) {
@@ -141,7 +158,7 @@ export class DemoQaPageAlertFrameAndWindows {
   }
 
   async expectContainTextInModalLargeModal() {
-    await expect(this.page.getByText(/Large Modal/i).last()).toBeVisible();
+    await expect(this.textInLargeModal).toBeVisible();
   }
 
   async clickCloseLargeModal(close: string) {
